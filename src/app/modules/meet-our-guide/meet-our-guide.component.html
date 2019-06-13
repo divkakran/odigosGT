@@ -1,0 +1,57 @@
+<section class="banner-header guide-details-banner text-center">
+  <div class="layer">
+    <div class="container">
+      <h1 class="banner-heading">Find Your Odigos Guide<span></span></h1>
+    </div>
+  </div>
+</section>
+<section class="find-guides guide-list">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6" *ngFor="let item of guideList">
+        <div class="listing clearfix">
+          <div class="listing-left"> 
+            <a (click)="viewDetail(item)">
+              <img *ngIf="item.image_url!=''"  [src]="item.image_url" alt="guide1" class="img-responsive">
+              <img *ngIf="item.image_url==''"   src="../../../assets/images/profile-pic1.png" alt="guide1" class="img-responsive">
+            </a> <span class="guide-fee">₹ {{item.package_charges}}</span> 
+          </div>
+          <div class="listing-right">
+            <h3><a (click)="viewDetail(item)">{{(item.name.length>20) ? (item.name | slice:0:20)+'...':(item.name) }}</a><br>
+            <i *ngFor="let rating of [1,2,3,4,5]" [ngClass]= "rating <= item.guide_rating ? 'fa fa-star rated':'fa fa-star'" aria-hidden="true"></i> 
+            <!-- <i class="fa fa-star rated" aria-hidden="true"></i> 
+            <i class="fa fa-star rated" aria-hidden="true"></i> 
+            <i class="fa fa-star rated" aria-hidden="true"></i> 
+            <i class="fa fa-star" aria-hidden="true"></i> -->
+          </h3>
+            <div class="guide-detail row">
+              <div class="col-xs-12 shortnote">
+                <span class="quote"><sup><i class="fa fa-quote-left" aria-hidden="true"></i></sup>
+                  <span [innerHTML]="(item.about_text.length>100) ? ' '+(item.about_text | slice:0:100)+'...':' '+(item.about_text)"></span>
+                  <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
+                </span>
+              </div>
+              <div class="col-xs-4 text-left">
+                <h4><span>Tour</span>{{(item.tourist_place.length>10) ? (item.tourist_place| slice:0:10)+'...':(item.tourist_place) }} </h4>
+              </div>
+              <div class="col-xs-4 text-left">
+                <h4><span>Duration</span>{{item.duration_hours}}</h4>
+              </div>
+              <div class="col-xs-4 text-right" style="margin-top:18px;">
+                <a class="btn button3"  href="/tour-guide/{{item.web_url}}/{{item.place_url}}">View Details</a>
+              </div>
+            </div>
+          </div>
+          <div class="certified-badge">
+            <a data-toggle="tooltip" title="This tour guide has been certified by The Ministry of Tourism, Government of India">
+              <img *ngIf="item.is_certified!=0" src="{{baseImageUrl+'certified-badge.png'}}" class="img-responsive" alt="certified-badge">
+            </a>
+          </div>
+        </div>
+      </div>
+    </div><br>
+    <div class="text-center">
+      <a *ngIf="guideList && totalNumOfRecords > guideList.length" [ngClass] = "{'setDisable':buttonDisable}" class="btn button3" (click)="loadMoreGuideListing()">Load More...</a>
+    </div>
+  </div>
+</section>

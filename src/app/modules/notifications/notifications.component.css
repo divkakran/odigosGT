@@ -1,0 +1,147 @@
+.chat-list-outer {
+    right: 0;
+    top: 86%;
+    z-index: 2;
+    padding: 11px 0 0;
+    position: absolute;
+}
+.chat-list {
+    max-width: 510px;
+    min-width: 510px;
+    max-height: 400px;
+    min-height: 100px;
+    overflow: auto;
+    padding: 15px 30px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px rgba(162, 162, 162, 0.5);
+}
+.chat-list::after {
+    top: 0;
+    right: 41%;
+    width: 0;
+    height: 0;
+    content: "";
+    position: absolute;
+    border-left: 9px solid transparent;
+    border-right: 9px solid transparent;
+    border-bottom: 11px solid #eeeeee;
+    border-top: 0 solid transparent;
+}
+.chat-list .no-notification {
+    position: relative;
+    text-align: center;
+}
+.chat-list .no-notification div {
+    font-size: 16px;
+    color: #333333;
+    line-height: 1.64;
+    top: 20px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    position: absolute;
+}
+.list {
+    margin: 5px 0;
+    padding: 0 10px;
+    border-radius: 5px;
+    background: #ffffff;
+    box-shadow: 0 1px 2px #b1b1b1;
+    border: 1px solid rgba(151, 151, 151, 0.5);
+}
+.list a {
+    color: #666666;
+    display: block;
+    text-decoration: none;
+}
+.list:hover {
+    border: 1px solid #18afc4;
+}
+.list .list-img {
+    width: 15%;
+    float: left;
+    margin: 3px 0 10px;
+}
+.list .list-img img {
+    width: 50px;
+    margin: 10px 10px 0 0;
+    border-radius: 5px;
+}
+.list .list-text {
+    width: 85%;
+    float: right;
+}
+.list .list-text h4 {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 2px;
+    line-height: normal;
+    padding-bottom: 3px;
+    border-bottom: 1px solid rgba(207, 242, 247, 0.5);
+}
+.list .list-text h4 span {
+    float: right;
+    font-size: 12px;
+    color: #666666;
+    margin-top: 3px;
+    font-weight: normal;
+}
+.list .list-text p {
+    font-size: 11px;
+    font-weight: 300;
+    line-height: 1.64;
+    letter-spacing: 0.3px
+}
+@media (max-width: 1199px) {
+    .chat-list::after {
+        right: 35%;
+    }
+}
+@media (max-width: 991px) {
+    .chat-list-outer {
+        top: 90%;
+        right: 10px;
+    }
+    .chat-list::after {
+        right: 33%;
+    }
+}
+@media (max-width: 767px) {
+    .chat-list-outer {
+        top: 45%;
+        right: 8px;
+        padding-top: 9px;
+    }
+    .chat-list {
+        max-width: 300px;
+        min-width: 300px;
+        min-height: 60px;
+        padding: 5px 10px;
+    }
+    .chat-list::after {
+        top: 0;
+        right: 10px;
+        border-left: 7px solid transparent;
+        border-right: 7px solid transparent;
+        border-bottom: 9px solid #eeeeee;
+        border-top: 0 solid transparent;
+    }
+    .list .list-img {
+        width: 20%;
+    }
+    .list .list-img img {
+        width: 35px;
+    }
+    .list .list-text {
+        width: 80%;
+    }
+    .chat-list .no-notification div {
+        font-size: 14px;
+        top: 12px;
+    }
+}
+@media (max-width: 480px) {
+    .chat-list-outer {
+        top: 52%;
+    }
+}

@@ -1,0 +1,10 @@
+<section class="payment-thankyou">
+  <div class="container">
+    <div class="payment-thankyou-inner">
+      <p><img src="{{baseImageUrl+'success-icon.png'}}" alt="success" class="success-img"></p>
+      <h3 class="heading4">Booking Successful<span></span></h3>
+      <p *ngIf="apiResponse" [innerHTML]="apiResponse.message"></p><br>
+      <a href="my-trips" class="btn button3 text-uppercase">Go To Dashboard</a>
+    </div>
+  </div>
+</section>

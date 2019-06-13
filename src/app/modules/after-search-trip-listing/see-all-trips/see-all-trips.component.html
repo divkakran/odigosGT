@@ -1,0 +1,28 @@
+<section class="trending text-center">
+  <div class="container">
+    <h2 *ngIf="apiData" class="main_heading">{{apiData.cat_name}}</h2>
+    <div class="row">
+      <div class="col-sm-4 col-xs-6 trending-outer apply-pointer" *ngFor = "let item of tourList" (click)="viewDetail(item)">
+        <a href="/tour-guide/{{item.web_url}}/{{item.place_url}}"><div class="trending-box">
+          <a><img *ngIf="item.package_image!=''"  [src]="item.package_image" alt="Trending Destinations" class="img-responsive">
+            <img *ngIf="item.package_image==''" src="{{baseImageUrl+'no-img.png'}}" alt="Trending Destinations" class="img-responsive">
+          </a>
+          <div class="trending-inner">
+            <h3 class="heading1"><a>{{(item.tour_name.length>20) ? (item.tour_name | slice:0:20)+'...':(item.tour_name)}}</a></h3>
+            <p class="guide-name">By {{(item.guide_name.length>20)? (item.guide_name | slice:0:15)+'...':(item.guide_name) }}
+              <span class="rating">
+                <i *ngFor="let rating of [1,2,3,4,5]" [ngClass]="item.guide_rating >= rating?'fa fa-star':'fa fa-star-o'" aria-hidden="true"></i>
+                <!-- <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i> -->
+              </span><span class="amount">&#8377; {{item.guide_charges}}</span></p>
+          </div>
+        </div></a>
+      </div>
+    </div>
+    <div class="text-center load-more-button">
+      <button *ngIf="tourList && totalNumOfRecords > tourList.length" [ngClass] = "{'setDisable':buttonDisable}" class="btn button3" (click)="loadMoreDestinations()" [disabled]="buttonDisable">Load More...</button>
+    </div>
+  </div>
+</section>

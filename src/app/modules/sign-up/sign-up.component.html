@@ -1,0 +1,56 @@
+<div id="Signup" class="login-signup right" style="position: fixed;right: 0;top: 0;z-index: 1;">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <a class="close" (click)="closeSignUpFormOnClick(true,false)"><img src="{{baseImageUrl+'cross-icon.png'}}" alt="X"></a>
+        <h3>Sign Up</h3>
+      </div>
+      <div class="modal-body">
+        <form *ngIf="signUpFormObject" (ngSubmit)="signUpClick(signUp.value)" #signUp="ngForm">
+          <div class="social-login"><a  (click)="socialSignUp('FB')" class="btn facebook social-login apply-pointer"><span><img src="{{baseImageUrl+'facebook.png'}}" alt="f"></span>Login</a><a  (click)="socialSignUp('GOOGLE_PLUS')" class="btn google social-login apply-pointer"><span><img src="{{baseImageUrl+'google+.png'}}" alt="g"></span>Login</a></div>
+          <h4>Or</h4>
+          <h5>Create Account</h5>
+          <div class="form-box">
+            <div class="form-group text-left">
+              <label>Name</label>
+              <input type="text" name="name" [(ngModel)]="signUpFormObject.name" autocomplete="off" class="form-control" placeholder="Abcde Fghij" [readonly]="isReadOnly">
+            </div>
+            <div class="form-group small-box text-left">
+              <label>Country</label>
+              <select class="form-control" (change)="dropdownsValueClicked($event.target.value,'country')">
+                <option selected [value]="0">Select Country</option>
+                <option *ngFor="let country of countryList" [value]="country.id">{{country.name}}</option>
+              </select>
+            </div>
+            <div class="form-group small-box pull-right text-left">
+              <label>Currency</label>
+              <select class="form-control" (change)="dropdownsValueClicked($event.target.value,'currency')">
+                <option selected  [value]="0">Select Currency</option>
+                <option *ngFor="let currency of currencyList" [value]="currency.id">{{currency.name}}</option>
+              </select>
+            </div>
+            <div class="form-group text-left">
+              <label>Mobile</label>
+              <input type="tel" name="mobile" onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106) || (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )"  maxlength="10" autocomplete="off" [(ngModel)]="signUpFormObject.mobile" class="form-control" placeholder="Enter your mobile no.">
+            </div>
+            <div class="form-group text-left">
+              <label>Email-id</label>
+              <input type="email" name="email" [(ngModel)]="signUpFormObject.email" class="form-control" autocomplete="off" placeholder="abcde@gmail.com" [readonly]="isReadOnly">
+            </div>
+            <div class="form-group text-left">
+              <label>Password</label>
+              <input [type]="showPassword?'text':'password'" class="form-control" name="password" [(ngModel)]="signUpFormObject.password" id="myInput2" maxlength="15" placeholder="* * * * * * * *" autocomplete="off">
+              <img   [src] ="showPassword? baseImageUrl+'show-password.png' : baseImageUrl+'hide-password.png'" (click)="showPasswordClick()" class="password-checkbox apply-pointer" alt="hide password">
+            </div>
+            <div class="form-group text-left">
+              <input type="checkbox" (change)="acceptTermsAndConditions()"> I have read &amp; accepted the <a class="apply-pointer" (click)="navigation()">Terms &amp; Conditions.</a>
+            </div>
+            <button type="submit" class="btn submit button4 text-uppercase"  [disabled]="setButtonDisable">Sign Up</button>
+            <p>Already have an account? <a (click)="closeSignUpFormOnClick(false , true)" class="login-link apply-pointer">Login</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+ </div>

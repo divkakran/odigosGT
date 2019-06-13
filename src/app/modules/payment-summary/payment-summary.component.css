@@ -1,0 +1,268 @@
+.make-payment,
+.payment-summary {
+    padding: 20px 0;
+}
+.make-payment .chating-box {
+    margin: 10px 0;
+    padding: 25px 0 0;
+}
+.make-payment-inner,
+.payment-summary-inner {
+    padding: 15px;
+    border-radius: 4px;
+    background: #ffffff;
+}
+.payment-summary-box h4 {
+    font-size: 18px;
+    color: #797979;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #999999;
+}
+.payment-summary-box .payment-inner {
+    padding: 0;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.payment-summary-box .payment-inner li {
+    font-size: 15px;
+    color: #797979;
+    font-weight: normal;
+    line-height: normal;
+    padding: 5px 0;
+}
+.payment-summary-box .payment-inner li.total {
+    font-size: 16px;    
+    color: #333333;
+    font-weight: 500;
+    margin: 8px 0 20px;
+    padding: 15px 0;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+}
+.payment-summary-box .payment-inner li.partial-payment {
+    font-size: 16px;
+    color: #333333;
+    margin: 10px 0;
+    padding: 5px 10px;
+    border-radius: 2px;    
+    border: 1px solid rgba(24, 175, 196, 0.5);
+}
+.payment-summary-box .payment-inner li span {
+    float: right;
+    letter-spacing: 0.3px;
+}
+.payment-summary-box .payment-inner li.partial-payment span {
+    font-weight: 700;
+}
+.payment-summary-box .payment-inner li strong.discount {
+    /* opacity: 0.7; */
+    font-size: 13px;
+    margin-right: 10px;
+    font-weight: normal;
+    text-decoration: line-through;
+}
+.payment-summary-box .payment-inner .credit-points-text {
+    font-size: 14px;
+    color: #797979;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: normal;
+}
+.payment-summary-box .apply-coupon {
+    position: relative;
+}
+.payment-summary-box .apply-coupon .form-group {
+    width: 100%;
+}
+.payment-summary-box .apply-coupon .button3 {
+    padding: 6px 32px;
+} 
+.payment-summary-box .apply-coupon .applied {
+    left: 0;
+    bottom: 13px;
+    font-size: 12px;
+    color: #38b963;
+    font-weight: 500;
+    line-height: normal;
+    position: absolute;
+}
+.payment-summary-box .apply-coupon-heading {
+    font-size: 16px;
+    color: #333333;
+    font-weight: 500;
+    line-height: normal;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.payment-summary-box .apply-coupon .form-control {
+    font-size: 16px;
+    color: #333333;
+    border: none;
+    height: 32px;
+    padding: 0;
+    box-shadow: none;
+    border-radius: 0;
+   appearance: none;
+    -ms-appearance: none;
+   -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none !important;
+    border-bottom: 1px solid #edecec;
+}
+.payment-summary-box .apply-coupon .form-control::-webkit-input-placeholder {
+    color: #999999;
+}
+.payment-summary-box .apply-coupon .form-control:-moz-placeholder {/* FF 4-18 */
+    color: #999999;
+}
+.payment-summary-box .apply-coupon .form-control::-moz-placeholder {/* FF 19+ */
+    color: #999999;
+}
+.payment-summary-box .apply-coupon .form-control:-ms-input-placeholder {/* IE 10+ */
+    color: #999999;
+}
+.payment-summary-box .apply-coupon .credit-points {
+    font-size: 13px;
+    color: #f4a044;
+    font-weight: 500;
+    margin: 20px 0 10px;
+    text-align: right;
+    line-height: normal;
+}
+.payment-summary-box .apply-coupon .credit-points span {
+    margin-left: 10px;
+    padding: 4px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.3px;
+    border: 1px solid #f4a044;
+}
+.payment-summary-box .button3.cancel {
+    color: #ffffff;
+    background: #c7c7c7;
+    border: 1px solid #c7c7c7;
+}
+.payment-summary-box .short-decription {
+    font-size: 14px;
+    color: #797979;
+    margin-top: 20px;
+    text-align: center;
+    font-weight: normal;
+    line-height: normal;
+}
+@media (max-width: 767px) {
+    .make-payment-inner,
+    .payment-summary-inner {
+        padding: 5px 15px;
+    }
+    .make-payment .chating-box {
+        font-size: 16px;
+        padding: 0 15px;
+    }
+    .payment-summary-box .apply-coupon .credit-points {
+        margin: 10px 0;
+    }
+    .payment-summary-box .apply-coupon .button3 {
+        padding: 5px 15px;
+    }
+    .payment-summary-box .apply-coupon .form-control {
+        font-size: 14px;
+        width: auto;
+        height: 26px;
+        display: inline-block;
+    }
+    .payment-summary-box .payment-inner {
+        margin-bottom: 10px;
+    }
+    .payment-summary-box h4 {
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+    .payment-summary-box .payment-inner .credit-points-text {
+        font-size: 13px;
+    }
+    .payment-summary-box .payment-inner li {
+        font-size: 13px;
+    }
+    .payment-summary-box .payment-inner li.total {
+        font-size: 14px;
+        padding: 10px 0;
+    }
+    .payment-summary-box .payment-inner li.partial-payment {
+        font-size: 14px;
+    }
+    .payment-summary-box .payment-inner .button1 {
+        margin-top: -10px;
+    }
+}
+@media (max-width: 480px) {
+    .payment-summary-box .apply-coupon .credit-points {
+        margin: 10px 0;
+        font-size: 12px;
+    }
+    .payment-summary-box .apply-coupon .credit-points span {
+        margin-left: 5px;
+        padding: 3px 6px;
+    }
+    .payment-summary-box .payment-inner .button1 {
+        width: 100%;
+    }
+}
+
+/* checkbox */
+.payment-summary-box .credit-points-text {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ }
+ .payment-summary-box .credit-points-text input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+     z-index: 1;
+     left: 5px;
+ }
+ /* Create a custom checkbox */
+ .payment-summary-box .checkmark {
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    border: 1px solid #979797;
+ }
+ /* Create the checkmark/indicator (hidden when not checked) */
+ .payment-summary-box .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+ }
+ /* Show the checkmark when checked */
+ .payment-summary-box .credit-points-text input:checked ~ .checkmark:after {
+    display: block;
+ }
+ .payment-summary-box .credit-points-text input:checked ~ .checkmark {
+     border-radius: 2px;
+     background: #18afc4;
+    border: 1px solid #18afc4;
+ }
+ /* Style the checkmark/indicator */
+ .payment-summary-box .checkmark:after {
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 11px;
+    border: solid #ffffff;
+    border-width: 0 1.5px 1.5px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+ }

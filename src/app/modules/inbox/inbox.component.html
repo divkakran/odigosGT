@@ -1,0 +1,58 @@
+<section *ngIf="isChatAvailable" class="inbox">
+  <div class="container">
+    <div class="chat-box clearfix">
+      <div class="col-md-4 col-sm-5 chat-left">
+        <h3>Inbox</h3>
+        <div class="chat-left-inner">
+          <div class="chat-list">
+            <!--<form method="get">
+              <div class="input-group">
+                <img src="images/search-icon.png" alt="search icon">
+                <input type="text" class="form-control" placeholder="Search">
+              </div>
+            </form>-->
+            <div class="list active apply-pointer" *ngFor="let item of chatList" (click)="loadChatDetail(item)">
+              <a class="apply-pointer" class="clearfix"><div class="list-img"><img [src]="item.image_url" alt="{{item.guide_name}}"></div>
+                <div class="list-text">
+                  <h4>{{item.guide_name | titlecase}}<span>{{returnTimeFromTimeStamp(item.time)}}</span></h4>
+                  <p>{{item.message}}.</p>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-8 col-sm-7 chat-right">
+        <h1>{{guideName | titlecase}}<span>{{msgTime}}</span></h1>
+        <div class="chating-box">
+          <div class="msg-box-outer">
+            <div class="msg-box clearfix">
+              <div class="msg" *ngFor="let chat of msgList" [ngClass]="chat.sender_type=='GUIDE' ? 'received':'send'">{{chat.message}}</div>
+              <!-- <div class="msg received">I will meet you at IGI airport at 9 am.<br>Good Bye</div>
+              <div class="msg send">Ok Ravi, See you there.</div>
+              <div class="msg send">Good Bye</div>
+              <div class="msg received">Hi Chris,</div>
+              <div class="msg received">I will meet you at IGI airport at 9 am.<br>Good Bye</div>
+              <div class="msg send">Ok Ravi, See you there.</div>
+              <div class="msg send">Good Bye</div> -->
+            </div>
+          </div>
+          <form class="msg-input" (ngSubmit)="sendMsg(msg.value)" #msg="ngForm">
+            <div class="input-group">
+              <input type="text" class="form-control" [(ngModel)]="textMsg" name="msg" placeholder="Type a message" autocomplete="off">
+              <span class="input-group-btn"><input type="image" cl src="{{baseImageUrl+'send-button.png'}}"></span>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section *ngIf="!isChatAvailable" class="no-chat">
+  <div class="container">
+    <div class="no-chat-inner">
+      <p><img src="{{baseImageUrl+'no-result.png'}}" class="img-responsive"><br><br>Sorry..!! No Messages Found</p>
+    </div>
+  </div>
+</section>

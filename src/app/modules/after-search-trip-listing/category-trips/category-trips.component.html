@@ -1,0 +1,22 @@
+<section class="trending text-center" *ngFor="let tourCategory of tourList" style="padding-bottom:0;">
+  <div class="container">
+    <h2 class="main_heading">{{tourCategory.cat_name_display}}</h2>
+    <div class="row">
+      <div class="col-sm-4" *ngFor="let tourList of tourCategory.cat_list ; let i = index" (click)="viewDetail(tourList)">
+        <a href="/tour-guide/{{tourList.web_url}}/{{tourList.place_url}}"><div class="trending-box" *ngIf="i<3"  (click)= "viewDetail(tourList)"> <a class="apply-pointer">
+          <img *ngIf="tourList.package_image!=''" [src]=tourList.package_image alt="Trending Destinations" class="img-responsive">
+          <img *ngIf="tourList.package_image==''" src="{{baseImageUrl+'no-img.png'}}" alt="Trending Destinations" class="img-responsive">
+        </a>
+          <div class="trending-inner">
+            <h3 class="heading1"><a>{{(tourList.tour_name.length > 15)? (tourList.tour_name | slice:0:15)+'...':(tourList.tour_name)}}</a></h3>
+            <p class="guide-name">By {{(tourList.guide_name.length>15)?(tourList.guide_name | slice:0:15)+'...':tourList.guide_name}}
+              <span class="rating">
+                <i *ngFor = "let rating of [1,2,3,4,5]" [ngClass]= "rating <= tourList.guide_rating ? 'fa fa-star':'fa fa-star-o'"  aria-hidden="true"></i>
+              </span><span class="amount">&#8377; {{tourList.guide_charges}}</span></p>
+          </div>
+        </div></a>
+      </div>
+    </div>
+    <p class="view-all apply-pointer"><a (click)="seeAll(tourCategory)">See All</a></p><br/>
+  </div>
+</section>

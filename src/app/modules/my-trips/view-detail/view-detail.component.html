@@ -1,0 +1,27 @@
+ <!-- detail box -->
+<div id="ViewDetails" class="main-listing" style="position: fixed;left: 0;right: 0;top: 0;z-index: 1;">
+  <div class="modal-dialog detail-box">
+    <!-- Modal content-->
+    <div class="modal-content" *ngIf="tripDetail">
+      <div class="modal-body">
+        <a class="close apply-pointer" (click)="closeViewDetail()"><img src="{{baseImageUrl+'cross-icon.png'}}" alt="X"></a>
+        <h3 class="heading4 text-center">View Details<span></span></h3>
+        <ul class="pending-trips-detail">
+          <li *ngIf="tripDetail.tripType=='UPCOMING' || tripDetail.tripType=='PAST'"><img src="{{baseImageUrl+'date-icon.png'}}" alt="Destination">Booking Id<span>{{tripDetail.tripList.booking_id}}</span></li>
+          <li><img src="{{baseImageUrl+'place-icon.png'}}" alt="Destination"> Destination<span>{{(tripDetail.tripList.tour_name.length>10)? ' '+(tripDetail.tripList.tour_name | slice:0:10)+'...':' '+(tripDetail.tripList.tour_name)}}</span></li>
+          <li><img src="{{baseImageUrl+'date-icon.png'}}" alt="Tour Date"> Tour Date<span>{{tripDetail.tripList.date_of_tour  | date: 'dd-MM-yyyy'}}</span></li>
+          <li><img src="{{baseImageUrl+'coin-icon.png'}}" alt="Booking Rate"> Booking Rate<span *ngIf="tripDetail.tripType!='UPCOMING' && tripDetail.tripType!='PAST'">₹{{tripDetail.tripList.guide_charges | number: '.0-0'}}</span>
+            <span *ngIf="tripDetail.tripType=='UPCOMING' || tripDetail.tripType=='PAST'">₹{{tripDetail.tripList.booking_amount | number: '.0-0'}}</span>
+          </li>
+          <li><img src="{{baseImageUrl+'duration-icon.png'}}" alt="Duration"> Duration<span>{{tripDetail.tripList.duration_hours}}</span></li>
+          <li><img src="{{baseImageUrl+'persons-icon.png'}}" alt="Duration"> No. of Persons<span>{{+tripDetail.tripList.no_of_children + +tripDetail.tripList.no_of_adults}}</span></li>
+          <li><img src="{{baseImageUrl+'status-icon.png'}}" alt="Status"> Status<span style="color:#e89c59;">{{tripDetail.tripType}}</span></li>
+          <li *ngIf="tripDetail.tripType!='CANCELLED' && tripDetail.tripType!='PENDING' && tripDetail.tripType!='PAST'"><img src="{{baseImageUrl+'passcode-icon.png'}}" alt="Duration"> Tour Passcode<span>{{tripDetail.tripList.pass_code}}</span></li>
+          <li *ngIf="tripDetail.tripType!='CANCELLED' && tripDetail.tripType!='PENDING'"><img src="{{baseImageUrl+'amount-icon.png'}}" alt="Duration"> Advance Amount<span>₹{{tripDetail.tripList.paid_amount | number: '.0-0'}}</span></li>
+          <li *ngIf="tripDetail.tripType=='PAST'"><img src="{{baseImageUrl+'amount-icon.png'}}" alt="Duration"> Advance (By Cash)<span>₹{{tripDetail.tripList.due_amount | number: '.0-0'}}</span></li>
+          <li *ngIf="tripDetail.tripType!='CANCELLED' && tripDetail.tripType!='PENDING'  && tripDetail.tripType!='PAST' "><img src="{{baseImageUrl+'amount-icon.png'}}" alt="Duration"> Due Amount<span>₹{{tripDetail.tripList.due_amount | number: '.0-0'}}</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

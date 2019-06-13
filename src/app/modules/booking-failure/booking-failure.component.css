@@ -1,0 +1,22 @@
+.payment-thankyou {
+    padding: 20px 0;
+}
+.payment-thankyou .payment-thankyou-inner {
+    padding: 70px 15px;
+    text-align: center;
+    border-radius: 4px;
+    background: #ffffff;
+    color: #333333;
+}
+.payment-thankyou .success-img {    
+    width: 56px;
+}
+@media (max-width: 767px) {
+    .payment-thankyou .payment-thankyou-inner {
+        font-size: 16px;
+        padding: 20px 15px;
+    }
+    .payment-thankyou .success-img {
+        width: 38px;
+    }
+}

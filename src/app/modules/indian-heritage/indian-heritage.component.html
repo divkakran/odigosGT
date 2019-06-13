@@ -1,0 +1,5 @@
+<iframe *ngIf="!isIphone" 
+[ngClass]="{'web':'!isIphone'}" [src]="indianHeritageUrl | safe" id="myiframe"></iframe>
+
+
+<iframe *ngIf="isIphone"   [src]="indianHeritageUrl | safe" scrolling="no" id="myiframe"></iframe>

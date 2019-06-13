@@ -1,0 +1,105 @@
+<section class="main-listing otherPackages">
+  <div class="container">
+    <div class="row">
+      <div *ngIf="guideInfo" class="col-sm-12 otherRow1">
+        <div class="listing clearfix">
+          <div class="listing-left">
+            <a><img [src]="guideInfo.guide_image" alt="guide1" class="img-responsive"></a>
+          </div>
+          <div class="listing-right">
+            <h3><a>{{guideInfo.guide_name}}</a></h3>
+            <i *ngFor="let i of [1,2,3,4,5]" [ngClass]="{'rated':guideInfo.guide_rating>=i}" class="fa fa-star" aria-hidden="true"></i>
+          </div>
+          <div class="certified-badge" *ngIf="guideInfo.is_certified!='0'"><a data-toggle="tooltip" title="This tour guide has been certified by The Ministry of Tourism, Government of India"><img src="{{baseImageUrl+'certified-badge.png'}}" class="img-responsive" alt="certified-badge"></a></div>
+        </div> 
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-6 col-xs-12" *ngFor = "let item of guidePackages">
+        <div class="listing clearfix">
+          <div class="listing-left">
+            <a *ngIf="item.guide_image!=''"><img [src]="item.guide_image" alt="guide3" class="img-responsive"></a>
+            <a *ngIf="item.guide_image==''"><img src="{{baseImageUrl+'placeholder-icon.png'}}" alt="guide3" class="img-responsive"></a>
+          </div>
+          <div class="listing-right">
+            <div class="row">
+              <div class="col-xs-12 col-sm-8 text-left">
+                <h4 style="max-height: 37px;"><span>Tour</span>{{(item.tour_name.length > 15)? (item.tour_name | slice:0:15)+'...':(item.tour_name)}}</h4>
+              </div>
+              <div class="col-sm-4 col-xs-12 textRight">
+                <h4><span>Date</span>{{item.tour_date}}</h4>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-5 text-left">
+                <span class="guide-fee" style="margin-top:0;" >&#8377; {{item.guide_charges}}</span>
+              </div>
+              <div class="col-xs-7 text-right">
+                <a *ngIf="item.is_booked=='0' && isUserLogin" data-toggle="modal" data-dismiss="modal" data-target="#BookNow" class="apply-pointe btn button7 text-uppercase" (click)="setTripDetail(item)">Request Now</a>
+                <a *ngIf="!isUserLogin  && item.is_booked=='0'" data-toggle="modal" data-dismiss="modal" data-target="#NotLogin" class="apply-pointer" class="btn button7 text-uppercase">Request Now</a>
+                <a *ngIf="item.is_booked!='0'" class="btn text-uppercase guideButtonBooked">Booked</a>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-xs-12 text-right">
+                <div class="borderTop"></div>
+                <a href="/tour-guide/{{item.web_url}}/{{item.place_url}}" (click)="setActualTripDate(item.tour_date)"class="btn button6 details">View Details</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center load-more-button col-xs-12" *ngIf="guidePackages"><br/>
+        <button *ngIf="totalCount > guidePackages.length" [ngClass] = "{'setDisable':buttonDisable}" class="btn button3" (click)="loadMoreTrips()" [disabled]="buttonDisable">Load More...</button>
+      </div>
+    </div>
+  </div>
+   <!-- loader -->
+  <div *ngIf="showLoader" class="loader-container">
+    <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+  </div>
+  <!-- loader -->
+</section>
+
+
+<!-- Book now Modal -->
+<div id="BookNow" class="modal download-app-now fade">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content text-center">
+      <div class="modal-body" *ngIf="tripDetailForBooking">
+        <a class="close" data-dismiss="modal"><img src="{{baseImageUrl+'cross-icon.png'}}" alt="X"></a>
+        <p class="col-xs-10 col-xs-offset-1">You are requesting for <span class="blue">{{tripName}}</span> on <br/>{{tripDetailForBooking.tour_date}}</p>
+        <form (ngSubmit)="requestNowTrip(request.value)" #request="ngForm">
+          <div class="form-group">
+            <label>Mobile Number</label>
+            <input type="text" name="mobile" [(ngModel)]="guideNumber"
+            onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106) || (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )" maxlength="10" autocomplete="off" [value]="guideNumber" class="form-control">
+          </div>
+          <div class="form-group">
+            <input type="button" class="button8 text-uppercase" data-dismiss="modal" value="CANCEL"> &nbsp; 
+            <input type="hidden" id="closeModelOnClick"  data-dismiss="modal" value="Submit">
+            <input type="submit" class="button9 text-uppercase" [disabled] = "disableSubmit" value="Submit">
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+  <!-- end book modal -->
+  
+  <!-- Login pop up if user is not logged in -->
+  <div id="NotLogin" class="modal not-login fade">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content text-center">
+        <div class="modal-body">
+          <a class="close" data-dismiss="modal"><img src="{{baseImageUrl+'cross-icon.png'}}" alt="X"></a>
+          <p>&nbsp;</p>
+          <p>You need to login to process your request!</p><br>
+          <!-- <a href="#" class="button8 text-uppercase">Cancel</a> &nbsp; <a (click)="openLoginForm=true" class="button9 text-uppercase">Login</a> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Login pop up if user is not logged in -->

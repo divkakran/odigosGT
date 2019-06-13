@@ -1,0 +1,100 @@
+<section class="signup">
+  <div class="layer">
+    <div class="container">
+      <h1 class="text-center">Become A Guide With Odigos<span></span></h1>
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="signup-box clearfix">
+            <div class="image-box">
+              <img src="{{baseImageUrl+'earn-more.png'}}" alt="Earn More" class="img-responsive">
+            </div>
+            <div class="content-box">
+              <h2 class="text-center text-uppercase">Earn More<span></span></h2>
+              <h3>Become an Odigos Guide, and earn more income. A few of the requirements to become an Odigos guide are:</h3>
+              <ul>
+                <li>Ministry of Tourism Certified Guide Licence</li>
+                <li>Valid Aadhar Card</li>
+                <li>Police Verification</li>
+                <li>PAN Card</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="signup-box clearfix">
+            <div class="image-box">
+              <img src="{{baseImageUrl+'easy-to-start.png'}}" alt="Its Easy To Start" class="img-responsive">
+            </div>
+            <div class="content-box">
+              <h2 class="text-center text-uppercase">Its Easy To Start<span></span></h2>
+              <div class="start">
+                <div class="counts">1</div>
+                <h3>Sign Up Online</h3>
+                <p>Tell us about yourself and your experience,if you have some. If you don't, we'll help you get it.</p>
+              </div>
+              <div class="start">
+                <div class="counts">2</div>
+                <h3>Share some documents</h3>
+                <p>We'll need a copy of the required documents mentioned on the left.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="buttom-box">
+        <h4>Be Your Own Boss</h4>
+        <p class="text-center"><a href="https://form.jotform.me/81998928582480" target="_blank" class="button1" style="text-decoration:none;">Sign Up Now</a></p>
+      </div>
+      <div class="bottom"><h5 class="text-center">Download App<span></span></h5>
+        <a href="https://play.google.com/store/apps/details?id=com.birdapps.odigos" target="_blank">
+          <img src="{{baseImageUrl+'google-play.png'}}" alt="Google Store" id="GoogleStore" title="GoogleStore" class="img-responsive" />
+        </a> &nbsp;
+        <a href="https://itunes.apple.com/in/app/odigos-for-tour-guides/id1369919119" target="_blank">
+          <img src="{{baseImageUrl+'app-store.png'}}" alt="App Store" id="AppStore" title="AppStore" class="img-responsive" />
+        </a><br>The information provided on this web page is intended for informational purposes only and may not be applicable in your country, region, or city. It is subject to change and may be updated without notice.</div>
+    </div>          
+  </div>
+</section>
+<section class="contact" id="contact-outer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-10 col-sm-offset-1">
+        <h2 class="main_heading text-center">Get In Touch<span></span></h2>
+        <form *ngIf="getInTouchObject" name="contact-form" (ngSubmit)="getInTouchSubmit(getInTouch.value)" class="form text-center" #getInTouch="ngForm">
+          <span id="msg_span" ></span>
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="text" name="contact_name" [(ngModel)]="getInTouchObject.name" autocomplete="off"  placeholder="NAME" class="form-control" maxlength="20">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="tel" name="contact_mobile" [(ngModel)]="getInTouchObject.mobile" autocomplete="off" onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106) || (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )" placeholder="MOBILE" maxlength="10" class="form-control" >
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="email" name="contact_email" [(ngModel)]="getInTouchObject.email" autocomplete="off" placeholder="EMAIL" class="form-control" >
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <input type="text" name="contact_city" [(ngModel)]="getInTouchObject.city" autocomplete="off" placeholder="CITY" class="form-control" >
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <textarea name ="contact_comments"  [(ngModel)]="getInTouchObject.comment" placeholder="COMMENTS" class="form-control"></textarea>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <input type="hidden" name="submit_btn" value="submit_btn">
+              <button type="submit" [ngClass]="{'set-disable': setButtonDisable}" name="btn_cont" id="btn_cont" class="btn contact-btn"  >Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

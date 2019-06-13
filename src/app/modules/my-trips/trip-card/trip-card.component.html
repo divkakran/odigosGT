@@ -1,0 +1,99 @@
+<div class="my-trips container">
+  <div class="tab-content" *ngIf="tripDetail">
+    <div id="PendingTrips" class="main-listing tab-pane fade in active">
+      <div class="bread-crumb">
+        <p>My Trips &nbsp; > &nbsp; <a>{{tripDetail.type}}</a></p>
+        <p *ngIf="tripDetail.totalRecords!='0'">Showing 1 - {{tripDetail.tripList.length}} of {{tripDetail.totalRecords}} Result</p>
+      </div>
+      <div class="row" *ngIf="tripDetail.tripList.length>0" id="accordion">
+        <div class="col-sm-6 panel" *ngFor="let item of tripDetail.tripList">
+          <div class="listing clearfix">
+            <div class="listing-left">
+              <a>
+                <img *ngIf="item.guide_image!=''" [src]="item.guide_image" alt="guide1" class="img-responsive">
+                <img *ngIf="item.guide_image==''" src="{{baseImageUrl+'no-img.png'}}" alt="guide1" class="img-responsive">
+              </a>
+              <span class="guide-fee" *ngIf="tripDetail.type != 'Upcoming Trips' && tripDetail.type != 'Past Trips'">₹{{item.guide_charges | number: '.0-0'}}</span>
+              <span class="guide-fee" *ngIf="tripDetail.type == 'Upcoming Trips' || tripDetail.type == 'Past Trips'">₹{{item.booking_amount | number: '.0-0'}}</span>
+            </div>
+            <div class="listing-right">
+              <h3><a>{{(item.guide_name.length>15)?(item.guide_name | slice:0:15)+'...':(item.guide_name)}}</a> &nbsp;<span>({{item.language_name}})</span></h3>
+              <a *ngIf="tripDetail.type != 'Cancelled Trips' && tripDetail.type != 'Past Trips'" class="cancel-btn apply-pointer" data-toggle='modal' data-target="#CancelRequest" (click)="cancelTripMethod(item)">Cancel</a>
+              <div class="guide-detail row">
+                <div class="col-xs-6 text-left">
+                  <h4><span>Tour</span>{{(item.tour_name.length>10)? ' '+(item.tour_name | slice:0:10)+'...':' '+(item.tour_name)}}</h4>
+                  <a class="button6 text-uppercase" (click)="openViewDetail(item.id,item.booking_id,tripDetail.type)">View Details</a>
+                </div>
+                <div class="col-xs-6 text-right">
+                  <h4><span>Date</span>{{item.date_of_tour  | date: 'dd-MM-yyyy'}}</h4>
+                  <a *ngIf="tripDetail.type == 'Pending Trips'" [ngClass]= "{'btn-disable': item.request_status!='1'}" class="button7  text-uppercase" (click)="sendDataToPaymentPage(item)">Make Payment</a>
+                  <span *ngIf="tripDetail.type == 'Pending Trips' && item.request_status=='1'" class="time-remain">Time remaining - {{getHoursFromTimeStamp(item.time_remaining)}}</span>
+                  <a *ngIf="tripDetail.type == 'Upcoming Trips'" class="button7 text-uppercase" (click)="sendMessage(item.guide_id)">Message</a>
+                  <a *ngIf="tripDetail.type == 'Past Trips' && item.trip_rating=='0'" class="button7 text-uppercase" data-target="#Rateme" data-dismiss="modal" data-toggle="modal" (click)="getTripIdForRating(item.id)"><i class="fa fa-star" style="color:#ffffff;" aria-hidden="true"></i>&nbsp; Rate Me</a>
+                  <a *ngIf="tripDetail.type == 'Past Trips' && item.trip_rating!='0'" class="button6 text-uppercase">Rating &nbsp;
+                    <i *ngFor="let rate of [1,2,3,4,5]" [ngClass]="{'rated': item.trip_rating>=rate}" class="fa fa-star" aria-hidden="true"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+            <div class="clearfix"></div>
+            <div *ngIf="tripDetail.type != 'Upcoming Trips' && item.request_status!='1' && tripDetail.type != 'Cancelled Trips' && tripDetail.type != 'Past Trips'" class="request-pending">Request pending from {{(item.guide_name.length>20)?(item.guide_name | slice:0:20)+'...':(item.guide_name)}}</div>
+            <div *ngIf="tripDetail.type == 'Cancelled Trips'" style="color:red" class="request-pending">{{cancelBy(item.request_status , item.action_by)}}</div>
+          </div>
+        </div>
+      </div>
+      
+      <div *ngIf="tripDetail.tripList.length<=0" class="no-trips">
+        <p><img src="{{baseImageUrl+'no-trips.png'}}" alt="No Trips" class="img-responsive"></p>
+        <p class="no-trips-content">Say yes to new adventures!</p>
+        <p><a href="" class="btn button1 text-uppercase">Hire A Guide</a></p>
+      </div>
+    </div>
+  </div>
+</div>
+<app-view-detail *ngIf="viewDetailLoad" [tripDetail] = "viewDetail" (viewDetailCloseEvent)="viewDetailLoad=false"></app-view-detail>
+
+<!-- rate me pop up -->
+<div id="Rateme" class="modal rate-me fade">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content text-center">
+      <div class="modal-body">
+        <a class="close" id="popUp" data-dismiss="modal"><img src="{{baseImageUrl+'cross-icon.png'}}" alt="X"></a><br>
+        <p>
+          <i [ngClass]="ratingNumber>=1 && ratingNumber!=0 ? 'fa-star': 'fa-star-o'" class="fa apply-pointer"  (click)="rateMePopUp(1)" aria-hidden="true"></i>
+          <i [ngClass]="ratingNumber>=2 && ratingNumber!=0 ? 'fa-star': 'fa-star-o'" class="fa apply-pointer"  (click)="rateMePopUp(2)" aria-hidden="true"></i> 
+          <i [ngClass]="ratingNumber>=3 && ratingNumber!=0 ? 'fa-star': 'fa-star-o'" class="fa apply-pointer"  (click)="rateMePopUp(3)" aria-hidden="true"></i>
+          <i [ngClass]="ratingNumber>=4 && ratingNumber!=0 ? 'fa-star': 'fa-star-o'" class="fa apply-pointer"  (click)="rateMePopUp(4)" aria-hidden="true"></i> 
+          <i [ngClass]="ratingNumber>=5 && ratingNumber!=0 ? 'fa-star': 'fa-star-o'" class="fa apply-pointer"  (click)="rateMePopUp(5)" aria-hidden="true"></i>
+        </p><br>
+        <a  data-dismiss="modal" class="button8 text-uppercase apply-pointer">Rate Later</a> &nbsp; <a (click)="callRateMeApi()" [ngClass]="{'disable-pointer':setButtonDisable}" class="button9 text-uppercase apply-pointer">Submit</a>
+        <p></p>
+      </div>
+    </div>
+  </div>
+ </div>
+<!-- rate me pop up -->
+
+
+
+<!-- cancel tour confirmation -->
+<div id="CancelRequest" class="modal cancel-request fade">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content text-center">
+      <div class="modal-body">
+        <a class="close" data-dismiss="modal"><img src="{{baseImageUrl+'cross-icon.png'}}" alt="X"></a>
+        <p>&nbsp;</p>
+        <p>Are you sure to cancel this request?</p><br>
+        <a class="button8 text-uppercase apply-href" data-dismiss="modal">No</a> &nbsp; <a (click)="cancelTripMethod(tripDetailForCancel,'1')" class="button8 text-uppercase apply-pointer" data-dismiss="modal">Yes</a>
+        <p>&nbsp;</p>
+      </div>
+    </div>
+  </div>
+  </div>
+<!-- cancel tour confirmation -->
+
+<!-- payment -->
+<!-- <app-trip-detail-for-payment *ngIf="openTripDetailForPayment"></app-trip-detail-for-payment> -->
+<!-- payment -->

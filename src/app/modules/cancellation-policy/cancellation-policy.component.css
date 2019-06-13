@@ -1,0 +1,66 @@
+.cancellation {
+    padding: 70px 0;
+}
+.cancellation .cancellation-box {
+    padding: 30px 10px;
+    background: #ffffff;
+    box-shadow: 0 1px 5px rgba(153, 153, 153, 0.5);
+}
+.cancellation .cancellation-box h3 {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: normal;
+    line-height: normal;
+    background: #18afc4;
+    letter-spacing: 0.5px;
+    padding: 10px 10px 11px 50px;
+}
+.cancellation .cancellation-box strong {
+    font-weight: 500;
+}
+.cancellation .cancellation-box ul {
+    margin-top: -10px;
+    padding: 10px 0 10px 66px;
+    background: rgba(24, 175, 196, 0.15);
+}
+.cancellation .cancellation-box ul li {
+    font-size: 18px;
+    color: #999999;
+    font-weight: normal;
+    line-height: normal;
+    padding: 5px 0;
+    letter-spacing: 0.5px;
+}
+.cancellation .cancellation-box ul li span {
+    color: #333333;
+}
+@media (max-width: 767px) {
+    .cancellation {
+                   padding: 20px 0;
+    }
+    .cancellation .cancellation-box {
+                   padding: 0 10px;
+                   box-shadow: 0 0 5px rgba(153, 153, 153, 0.5);
+    }
+    .cancellation .cancellation-box h3 {
+                   font-size: 16px;
+                   margin: 10px 0 10px;
+                   padding: 10px 10px 11px 15px;
+    }
+    .cancellation .cancellation-box ul {
+                   margin-top: -10px;
+                   padding: 10px 10px 10px 26px;
+    }
+    .cancellation .cancellation-box ul li {
+                   font-size: 16px;
+                   padding: 3px 0;
+    }
+}
+@media (max-width: 480px) {
+    .cancellation .cancellation-box h3 {
+                   font-size: 15px;
+    }
+    .cancellation .cancellation-box ul li {
+                   font-size: 14px;
+    }
+}

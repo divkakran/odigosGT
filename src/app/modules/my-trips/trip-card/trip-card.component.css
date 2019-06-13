@@ -1,0 +1,637 @@
+.rate-me i {
+    font-size: 44px;
+    margin: 10px 5px 20px;
+}
+.rate-me .fa-star-o {
+    color: #eeeeee;
+}
+.disable-pointer{
+    pointer-events: none;
+}
+.rate-me .fa-star {
+    color: #fed953;
+}
+.rate-me .modal-dialog {
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+   transform: translate(-50%, -50%) !important;
+   -o-transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+   -moz-transform: translate(-50%, -50%) !important;
+   -webkit-transform: translate(-50%, -50%) !important;
+}
+@media (min-width: 481px) {
+    .rate-me .modal-dialog {
+        width: 400px;
+    }
+}
+.rate-me .close {
+    z-index: 1;
+    position: relative;
+    opacity: 1 !important;
+}
+.rate-me .close img {
+    width: 15px;
+}
+@media (max-width: 767px) {
+    .rate-me .modal-dialog, {
+        width: 60%;
+    }
+}
+@media (max-width: 480px) {
+    .rate-me .modal-dialog {
+        width: 90%;
+    }
+}
+.bread-crumb {
+    font-size: 14px;
+    color: #333333;
+    padding: 15px 0 0;
+    font-weight: normal;
+    line-height: normal;
+    margin-bottom: -20px;
+}
+.bread-crumb a {
+    color: #18afc4;    
+    text-decoration: none;
+}
+.bread-crumb a:hover {
+    color: #333333;    
+}
+@media (max-width: 767px) {
+    .bread-crumb {
+        font-size: 13px;
+        margin-bottom: -10px;
+    }
+}
+@media (max-width: 480px) {
+    .bread-crumb {
+        font-size: 12px;
+        margin-bottom: -10px;
+    }
+}
+.main-listing {
+    padding: 0 0 50px;
+    position: relative;
+}
+.main-listing .panel {
+    margin-bottom: 0;
+    background: none;
+    border-radius: 0;
+    box-shadow: none;
+}
+.main-listing .listing {
+    margin-top: 30px;
+    position: relative;
+    border-radius: 4px;
+    background: #ffffff;
+    padding: 22px 22px 0;
+    box-shadow: 0 2px 4px 2px #e2e1e1;
+}
+.main-listing .certified-badge {
+    right: 0;
+    top: 35px;
+    position: absolute;
+}
+.main-listing .certified-badge .tooltip {
+    opacity: 1;
+}
+.main-listing .certified-badge .tooltip-arrow {
+    left: auto;
+    right: 10px;
+    border-top-color: #f2f1f1;
+}
+.main-listing .certified-badge .tooltip-inner {
+    font-size: 7px;
+    color: #333333;
+    font-weight: normal;
+   line-height: 1.43;
+    border-radius: 4px;
+    background: #f2f1f1;
+    letter-spacing: 0.4px;
+}
+.main-listing .certified-badge img {
+    width: 143px;
+}
+.main-listing .listing-left {
+    width: 14%;
+    float: left;
+    padding-bottom: 22px;
+}
+.main-listing .listing-left a {
+    display: block;
+    position: relative;
+}
+.main-listing .listing-left a::before {
+    top: 0;
+    width: 4px;
+    left: -22px;
+    content: "";
+    height: 100%;
+    position: absolute;
+    background: #e89c59;
+}
+.main-listing .listing-left .guide-fee {
+    font-size: 16px;
+    color: #38b963;
+    font-weight: 500;
+    line-height: normal;
+    padding: 5px;
+    display: block;
+    margin-top: 10px;
+    text-align: center;
+    border-radius: 2px;
+    border: 1px solid rgba(206, 204, 204, 0.5);
+}
+.main-listing .listing-right {
+    width: 82%;
+    float: right;
+    position: relative;
+    padding-bottom: 22px;
+}
+.main-listing .listing-right h3 {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0;
+    line-height: normal;
+}
+.main-listing .listing-right h3 a {
+    color: #333333;
+    text-decoration: none;
+}
+.main-listing .listing-right h3 a:hover {
+    color: #18afc4;
+}
+.main-listing .listing-right h3 span {
+    font-size: 14px;
+    color: #18afc4;
+    font-weight: normal;
+    line-height: normal;
+}
+.main-listing .listing-right .cancel-btn {
+    top: 0;
+    right: 0;
+    font-size: 14px;
+    color: #999999;
+    font-weight: 500;
+    position: absolute;
+    line-height: normal;
+    letter-spacing: 0.4px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+.main-listing .listing-right .cancel-btn:hover {
+    color: #18afc4;
+}
+.main-listing .listing-right i {
+    font-size: 16px;
+    color: #e6e6e6;
+}
+.main-listing .listing-right i.rated {
+    color: #fed953;
+}
+.main-listing .listing-right h4 {
+    font-size: 16px;
+    color: #666666;
+    font-weight: 500;
+    min-height: 42px;
+    margin: 15px 0 20px;
+    line-height: normal;
+}
+.main-listing .listing-right h4 span {
+    font-size: 14px;
+    display: block;
+    margin-bottom: 3px;
+    font-weight: normal;
+}
+.main-listing .listing-right .time-remain {
+    font-size: 12px;
+    color: #f4a044;
+    font-weight: 500;
+    display: block;
+    line-height: normal;
+    margin: 12px 10px 0 0;
+}
+.main-listing .guide-detail {
+    position: relative;
+}
+.main-listing .guide-detail::before {
+    top: 7px;
+    left: 10px;
+    right: 10px;
+    content: "";
+    height: 1px;
+    width: 96%;
+    position: absolute;
+    background: #edebeb;
+}
+.main-listing .detail-box {
+    font-size: 14px;
+    z-index: 1;
+    padding: 10px;
+    position: relative;
+    border-radius: 4px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px 2px #e2e1e1;
+}
+.main-listing .detail-box ul {    
+    border-bottom: 1px solid #edebeb;
+}
+.main-listing .detail-box li {
+    margin-bottom: 0;
+}
+.main-listing .detail-box li a {
+    font-size: 14px;
+    color: #666666;
+    line-height: normal;
+    border: none;
+    margin: 0;
+    font-weight: normal;
+    border-bottom: 2px solid transparent;
+}
+.main-listing .detail-box li.active a {
+    border: none;
+    outline: none;
+    color: #333333;
+    font-weight: 500;
+    border-bottom: 2px solid #18afc4;
+}
+.main-listing .detail-box .tab-content {
+    padding: 10px;
+}
+.main-listing .detail-box .tab-content i {
+    font-size: 14px;
+    color: #e6e6e6;
+}
+.main-listing .detail-box .tab-content i.rated {
+    color: #fed953;
+}
+.main-listing .detail-box .guide-desc {
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.5;
+    padding: 10px 0;
+    margin-top: 15px;
+    border-top: 1px solid #edebeb;
+}
+.main-listing .detail-box .package-box {
+    margin: 5px;
+    padding: 5px 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px 2px #e2e1e1;    
+}
+.main-listing .detail-box .package-box .rate {
+    color: #38b963;
+    font-weight: 500;
+}
+.main-listing .detail-box .package-box .duration {
+    float: right;
+    color: #18afc4;
+    font-weight: 500;
+}
+.main-listing .detail-box .pending-trips-detail {
+    font-size: 16px;
+    color: #999999;
+    margin: 10px 0;
+    list-style: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: solid 1px #edebeb;
+}
+.main-listing .detail-box .pending-trips-detail li {
+    padding: 10px 0;
+    border-bottom: solid 1px #edecec;    
+}
+.main-listing .detail-box .pending-trips-detail li img {
+    margin-right: 10px;
+    width: 24px;
+}
+.main-listing .detail-box .pending-trips-detail li:last-child {
+    border-bottom: none;    
+}
+.main-listing .detail-box .pending-trips-detail li span {
+    float: right;
+    color: #333333;
+}
+.main-listing .detail-box .carousel-control {
+    opacity: 1;
+    width: auto;
+    background: none;
+}
+.main-listing .detail-box .item {
+    width: 96%;
+    margin: 0 auto;
+}
+.main-listing .detail-box .carousel-control i {
+    top: 50%;
+    color: #666666;
+   font-size: 25px;
+    text-shadow: none;
+    position: absolute;
+    transform: translateY(-50%);
+    -o-transition: translateY(-50%);
+    -ms-transition: translateY(-50%);
+    -moz-transition: translateY(-50%);
+    -webkit-transition: translateY(-50%);    
+}
+.main-listing .listing .cancelled-trip,
+.main-listing .listing .request-pending {
+    font-size: 14px;
+    color: #666666;
+    font-weight: 500;
+    padding: 5px;
+    line-height: normal;
+    position: relative;
+    text-align: center;
+}
+.main-listing .listing .cancelled-trip::before,
+.main-listing .listing .request-pending::before {
+    top: 0;
+    left: -22px;
+    right: -22px;
+    height: 1px;
+    content: "";
+    position: absolute;
+    background: rgba(153,153,153, 0.5);
+}
+.main-listing .listing .cancelled-trip {
+    color: #f44336;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .main-listing .listing-left .guide-fee {
+        font-size: 14px;
+        padding: 5px;
+    }
+    .main-listing .listing-left {
+        width: 20%;
+    }
+    .main-listing .listing-right {
+        width: 76%;
+        padding-bottom: 10px;
+    }
+    .main-listing .listing-right h3 {
+        font-size: 14px;
+    }
+    .main-listing .listing-right h3 span {
+        font-size: 13px;
+    }
+    .main-listing .listing-right .cancel-btn {
+        top: 3px;
+        font-size: 12px;
+        letter-spacing: 0;
+    }
+    .main-listing .listing-right h4 {
+        font-size: 14px;
+        margin: 10px 0 5px;
+    }
+    .main-listing .listing-right h4 span {
+        font-size: 12px;
+    }
+    .main-listing .listing-right .time-remain {
+        font-size: 11px;
+        margin: 5px 0 0;
+    }
+    .main-listing .listing-right i {
+        font-size: 12px;
+    }
+    .main-listing .certified-badge {
+        top: 25px;
+    }
+    .main-listing .certified-badge img {
+        width: 120px;
+    }
+    .main-listing .guide-detail .text-left {
+        padding-right: 10px;
+    }
+    .main-listing .guide-detail .text-right {
+        padding-left: 10px;
+    }
+    .main-listing .guide-detail .button4 {
+        width: auto;
+        font-size: 13px;
+        padding: 5px 12px;
+    }
+    .main-listing .guide-detail .text-right .button6 {
+        bottom: -31px;
+        right: 0;
+        position: absolute;
+    }
+    .main-listing .detail-box .pending-trips-detail {
+        font-size: 14px;
+    }
+    .main-listing .detail-box .pending-trips-detail li {
+        padding: 6px 0;
+    }
+    .main-listing .detail-box .pending-trips-detail li img {
+        width: 18px;
+        margin-right: 6px;
+    }
+    .main-listing .detail-box .guide-desc {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 767px) {
+    .main-listing {
+        padding: 0 0 20px;
+    }
+    .main-listing .listing {
+        margin-top: 15px;
+        padding: 10px 10px 0;
+    }    
+    .main-listing .listing-left a::before {
+        width: 3px;
+        left: -10px;
+    }
+    .main-listing .guide-detail .button4 {
+        width: auto;
+        font-size: 13px;
+        padding: 5px 12px;
+    }
+    .main-listing .listing .cancelled-trip,
+    .main-listing .listing .request-pending {
+        font-size: 13px;
+        padding: 6px 5px;
+    }
+    .main-listing .listing .cancelled-trip::before,
+    .main-listing .listing .request-pending::before {
+        left: -10px;
+        right: -10px;
+    }
+}
+@media (max-width: 640px) {
+    .main-listing .listing-right h3 {
+        font-size: 14px;
+    }
+    .main-listing .listing-right h3 span {
+        font-size: 13px;
+    }
+    .main-listing .certified-badge {
+        top: 20px;
+    }
+    .main-listing .certified-badge img {
+        width: 100px;
+    }
+    .main-listing .listing-left .guide-fee {
+        font-size: 14px;
+        padding: 5px;
+    }
+    .main-listing .listing-right i {
+        font-size: 12px;
+    }
+    .main-listing .listing-right h4 {
+        font-size: 14px;
+        margin: 10px 0 5px;
+    }
+    .main-listing .listing-right h4 span {
+        font-size: 12px;
+    }
+    .main-listing .listing-right .time-remain {
+        font-size: 11px;
+        margin: 5px 0 0;
+    }
+    .main-listing .listing-right .cancel-btn {
+        font-size: 13px;
+        letter-spacing: 0;
+    }
+    .main-listing .detail-box .pending-trips-detail {
+        font-size: 14px;
+        margin: 25px 0 0;
+    }
+    .main-listing .detail-box .pending-trips-detail li {
+        padding: 6px 0;
+    }
+    .main-listing .detail-box .pending-trips-detail li img {
+        width: 18px;
+        margin-right: 6px;
+    }
+    .main-listing .detail-box .guide-desc {
+        font-size: 12px;
+        padding: 8px 0 0;
+        margin-top: 10px;
+    }
+    .main-listing .listing .cancelled-trip,
+    .main-listing .listing .request-pending {
+        font-size: 12px;
+    }
+}
+@media (max-width: 480px) {
+    .main-listing .listing-left {
+        width: 20%;
+    }
+    .main-listing .listing-right {
+        width: 76%;
+        padding-bottom: 10px;
+    }
+    .main-listing .guide-detail .text-left {
+        padding-right: 5px;
+    }
+    .main-listing .guide-detail .text-right {
+        padding-left: 5px;
+    }
+    .main-listing .detail-box li a {
+        font-size: 13px;
+        padding: 6px 10px;
+    }
+    .main-listing .listing-right h4 {
+        font-size: 13px;
+        margin: 10px 0 5px;
+    }
+    .main-listing .listing-right .time-remain {
+        font-size: 10px;
+        right: 12px;
+        bottom: -16px;
+        position: absolute;
+        white-space: nowrap;
+    }
+    .main-listing .listing-right .cancel-btn {
+        top: 3px;
+        font-size: 12px;
+    }
+    .main-listing .listing-right i {
+        font-size: 8px;
+    }
+    .main-listing .guide-detail .button4 {
+        font-size: 11px;
+        padding: 4px 6px;
+    }
+    .main-listing .detail-box .pending-trips-detail {
+        font-size: 13px;
+    }
+    .main-listing .detail-box .pending-trips-detail li {
+        padding: 5px 0;
+    }
+    .main-listing .detail-box .pending-trips-detail li img {
+        width: 16px;
+    }
+}
+.my-trips .no-trips {
+    margin-top: 40px;
+    padding: 50px 15px;
+    text-align: center;
+    border-radius: 4px;
+    background: #ffffff;    
+}
+.my-trips .no-trips img {
+    width: 220px;
+}
+.my-trips .no-trips .no-trips-content {
+    font-size: 16px;
+    color: #333333;
+    font-weight: 500;
+    line-height: 1.38;
+    margin: 30px 0;
+    letter-spacing: 0.5px;
+}
+@media (max-width: 767px) {
+    .my-trips .no-trips {
+        margin-top: 40px;
+        padding: 15px 10px;
+    }
+    .my-trips .no-trips img {
+        width: 150px;
+    }
+    .my-trips .no-trips .no-trips-content {
+        margin: 15px 0;
+    }
+}
+@media (max-width: 480px) {
+    .my-trips .no-trips {
+        padding: 10px;
+        margin-top: 30px;
+    }
+    .my-trips .no-trips img {
+        width: 100px;
+    }
+}
+.cancel-request .modal-dialog {
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+     transform: translate(-50%, -50%) !important;
+     -o-transform: translate(-50%, -50%) !important;
+     -ms-transform: translate(-50%, -50%) !important;
+     -moz-transform: translate(-50%, -50%) !important;
+     -webkit-transform: translate(-50%, -50%) !important;
+ }
+ @media (min-width: 481px) {
+    .cancel-request .modal-dialog {
+        width: 400px;
+    }
+ }
+ @media (max-width: 480px) {
+    .cancel-request .modal-dialog {
+        width: 90%;
+    }
+ }
+ .cancel-request .close {
+    z-index: 1;
+    position: relative;
+    opacity: 1 !important;
+ }
+ .cancel-request .close img {
+    width: 15px;
+ }

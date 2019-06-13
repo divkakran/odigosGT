@@ -1,0 +1,332 @@
+.make-payment .chating-box {
+    margin: 10px 0;
+    padding: 25px 15px;
+}
+.payment-summary-box h4 {
+    font-size: 18px;
+    color: #333333;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dedede;
+}
+.payment-summary-box .payment-inner {
+    padding: 0 15px;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.payment-summary-box .payment-inner li {
+    font-size: 16px;
+    color: #666666;
+    font-weight: normal;
+    line-height: normal;
+    padding: 5px 0;
+}
+.payment-summary-box .payment-inner li.total {
+    color: #333333;
+    font-weight: 500;
+    margin: 8px 0 15px;
+    padding: 15px 0;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+}
+.payment-summary-box .payment-inner li.half-payment {
+    color: #333333;
+    margin: 10px 0;
+    padding: 5px 10px;
+    background: rgba(24, 175, 196, 0.2);
+}
+.payment-summary-box .payment-inner li span {
+    float: right;
+    color: #333333;
+}
+.payment-summary-box .payment-inner li.half-payment span {
+    font-weight: 700;
+}
+@media (max-width: 767px) {
+    .make-payment .chating-box {
+        font-size: 16px;
+        padding: 15px;
+    }
+}
+/*-------------------------My Profile-----------------------*/
+.my-profile {
+    padding: 50px 0;
+}
+.my-profile .my-profile-inner {
+    border-radius: 4px;
+    background: #ffffff;
+}
+.my-profile .my-profile-box {
+    position: relative;
+}
+.my-profile .profile-pic {
+    top: 40px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+}
+.my-profile .profile-pic a {
+    margin: 0 auto;
+    position: relative;
+    display: inline-block;
+}
+.my-profile .profile-pic a > img {
+    width: 120px;
+    border-radius: 5px;
+    border: 1px solid #ffffff;
+    box-shadow: 0 2px 4px rgba(193, 191, 191, 0.5);
+}
+.my-profile .profile-pic .camera {
+    width: 35px;
+    right: -17px;
+    bottom: -17px;
+    position: absolute;
+}
+.my-profile label {
+    font-size: 14px;
+    color: #797979;
+    font-weight: 300;
+    line-height: normal;
+    display: block;
+    margin: 10px 0 0;
+}
+.my-profile form {
+    padding: 30px 40px 10px 10px;
+}
+.my-profile .form-control {
+    font-size: 16px;
+    color: #333333;
+    font-weight: normal;
+    height: 36px;
+    border: none;
+    padding: 0 0;
+    box-shadow: none;
+    border-radius: 0;
+   appearance: none;
+    -ms-appearance: none;
+   -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none !important;
+    background: none !important;
+    border-bottom: 1px solid #edecec;
+    text-decoration: none !important;
+}
+.my-profile .form-control::-webkit-input-placeholder {
+    color: #c7c7c7;
+}
+.my-profile .form-control:-moz-placeholder {/* FF 4-18 */
+    color: #c7c7c7;
+}
+.my-profile .form-control::-moz-placeholder {/* FF 19+ */
+    color: #c7c7c7;
+}
+.my-profile .form-control:-ms-input-placeholder {/* IE 10+ */
+    color: #c7c7c7;
+}
+.my-profile select.form-control {
+   appearance: none;
+    -moz-appearance: none;
+   -webkit-appearance: none;
+    background: url("../../../assets/images/select-arrow.png") no-repeat right center / 15px !important;
+}
+.my-profile form .button {
+    font-size: 14px;    
+    font-weight: 500;    
+    margin-top: 30px;
+}
+.my-profile .small-box {
+    width: 45%;
+    float: left;
+    position: relative;
+}
+.my-profile .small-box .email-verify-icon {
+    top: 60%;
+    right: 0;
+    width: 16px;
+    position: absolute;
+}
+.my-profile .radio-wrap {
+    font-size: 16px;
+    color: #333333;
+    font-weight: normal;
+    display: inline-block;
+    position: relative;
+    padding-right: 25px;
+    cursor: pointer;
+    margin: 3px 10px 3px 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.my-profile .radio-wrap:last-child {
+    margin-right: 0;
+}
+.my-profile .radio-wrap [type="radio"] {
+    opacity: 0;
+}
+.my-profile .checkmark {
+    position: absolute;
+    top: -2px;
+    width: 24px;
+    height: 24px;
+    background: transparent;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 1px solid #b4b3b4;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+.my-profile .checkmark i {
+    width: 14px;
+    height: 14px;
+    background: #0d3a43;
+    border-radius: 50%;
+    display: none;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+/* On mouse-over, add a grey background color */
+
+.my-profile .radio-wrap input:checked ~ .checkmark {
+   border-color: #18afc4;
+}
+/* When the radio button is checked, add a blue background */
+
+.my-profile .radio-wrap input:checked ~ .checkmark i {
+    background-color: #18afc4;
+    display: block;
+}
+@media (min-width: 768px) {
+    .my-profile .my-profile-box {
+        max-height: 380px;
+        overflow: hidden;
+    }
+}
+@media (max-width: 767px) {
+    .my-profile{
+        padding: 20px 0;
+    }
+    .my-profile form {    
+        padding: 20px 20px 0 0; 
+    }
+    .my-profile form .btn {    
+        margin-top: 20px;
+    }
+    .my-profile label {
+        font-size: 13px;
+    }
+    .my-profile .form-control {
+        font-size: 14px;
+        height: 30px;
+    }
+    .my-profile .radio-wrap {
+        font-size: 14px;
+        padding-right: 25px;
+    }
+    .my-profile .checkmark {
+        top: 1px;
+        width: 20px;
+        height: 20px;
+    }
+    .my-profile .checkmark i {
+        width: 11px;
+        height: 11px;
+    }
+    .my-profile .small-box {
+        margin-bottom: 10px;
+    }
+    .my-profile select.form-control {
+        background: url("../../../assets/images/select-arrow.png") no-repeat right center / 12px !important;
+    }
+}
+@media (max-width: 560px) {
+    .my-profile .my-profile-box,
+    .my-profile .my-profile-form,
+    .my-profile .small-box {
+        width: 100%;
+        float: none;
+    }
+    .my-profile form {
+        padding: 20px 15px;
+    }
+    .my-profile .my-profile-box {
+        max-height: 150px;
+        overflow: hidden;
+    }
+    .my-profile .my-profile-box img {
+        border-radius: 5px 5px 0 0;
+    }
+    .my-profile .profile-pic a > img {
+        width: 70px;
+    }
+    .my-profile .profile-pic .camera {
+        width: 25px;
+        right: -7px;
+        bottom: 0;
+        position: absolute;
+    }
+    .my-profile form .btn {
+        font-size: 14px;
+        padding: 5px 10px;        
+        margin-top: 10px;
+    }
+    .my-profile .radio-wrap {
+        padding-right: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .my-profile .form-box .form-control {
+        font-size: 14px;
+    }
+}
+
+/* not verify email */
+.not-verify .modal-dialog {
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    position: fixed;
+   transform: translate(-50%, -50%) !important;
+   -o-transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+   -moz-transform: translate(-50%, -50%) !important;
+   -webkit-transform: translate(-50%, -50%) !important;
+}
+.not-verify .close {
+    z-index: 1;
+    position: relative;
+    opacity: 1 !important;
+}
+.not-verify .close img {
+    width: 15px;
+}
+@media (min-width: 481px) {
+    .not-verify .modal-dialog {
+        width: 400px;
+    }
+}
+@media (max-width: 480px) {
+    .not-verify .modal-dialog {
+        width: 90%;
+    }
+}

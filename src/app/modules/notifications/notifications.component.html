@@ -1,0 +1,86 @@
+<!-- <section class="notification">
+  <div class="container">
+    <div class="chat-box clearfix">
+      <div class="col-md-4 col-sm-5 chat-left">
+        <h3>Notifications</h3>
+        <div class="chat-left-inner">
+          <div class="chat-list">
+            <div class="list active" *ngFor="let item of notificationListing">
+              <a href="#" class="clearfix">
+                <div class="list-img">
+                  <img *ngIf="item.image!=''"[src]="item.image" alt="{{item.title}}">
+                  <img *ngIf="item.image==''" src="{{baseImageUrl+'placeholder-icon.png'}}" alt="item.title">
+                </div>
+              <div class="list-text">
+                <h4>{{item.title}}<span>{{returnTimeFromTimeStamp(item.time)}} (IST)</span></h4>
+                <p>{{item.message}}</p>
+              </div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col-md-8 col-sm-7 chat-right">
+        <h1>Ravi Sharma<span>14:33 (IST)</span></h1>
+        <div class="chating-box">
+          <div class="row">
+            <div class="col-sm-12 success-msg">
+              <p><img src="{{baseImageUrl+'success-icon.png'}}" alt="success"></p>
+              <p>Your request for tour guide has been accepted by <span class="blue">" Ravi Verma "</span></p>
+            </div>
+            <div class="col-sm-10 col-sm-offset-1">
+              <h5>Trip Details :</h5>
+              <div class="chating-inner">
+                <ul>
+                  <li>Destination <span>Qutub Minar</span></li>
+                  <li>Date <span>05 Mar, 2018</span></li>
+                  <li>Rate <span>$ 100</span></li>
+                  <li>Visit <span>1 Places</span></li>
+                  <li>Duration <span>03 Hours</span></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-10 col-sm-offset-1">
+              <h5>Please Pay to Confirm :<br><span class="blue" style="font-size:14px; font-weight:normal;">( Time Remaining - 16 hrs 15 min )</span></h5>
+              <div class="chating-inner">
+                <form>
+                  <div class="form-group radio-form">
+                    <label for="full-pay" class="radio-wrap">Pay Full Amount
+                    <input type="radio" name="payment" id="full-pay" value="Pay Full Amount" checked="checked">
+                    <span class="checkmark"><i></i></span> </label>
+                  </div>
+                  <div class="form-group radio-form">
+                    <label for="half-pay" class="radio-wrap">30% Advance &amp; Rest in Cash
+                    <input type="radio" name="payment" id="half-pay" value="30% Advance">
+                    <span class="checkmark"><i></i></span> </label>
+                  </div>
+                </form>
+              </div>
+            </div> 
+          </div>
+          <a href="#" data-toggle="modal" data-dismiss="modal" data-target="#BookingSuccessful" class="btn button1">Proceed</a>
+        </div>
+      </div>
+     
+    </div>
+  </div>
+</section> -->
+<div class="chat-list-outer">
+  <div *ngIf="notificationListing.length>0" class="chat-list">
+    <div class="list" *ngFor="let item of notificationListing">
+      <a class="clearfix apply-pointer"><div class="list-img">
+          <img *ngIf="item.image!=''"[src]="item.image" alt="{{item.title}}">
+          <img *ngIf="item.image==''" src="{{baseImageUrl+'placeholder-icon.png'}}" alt="item.title">
+      </div>
+      <div class="list-text">
+        <h4>{{item.title}}<span>{{returnTimeFromTimeStamp(item.time)}}</span></h4>
+        <p>{{item.message}}</p>
+      </div></a>
+    </div>
+  </div>
+  <div *ngIf="notificationListing.length == 0" class="chat-list">
+    <div class="no-notification">
+      <div>No Notification Available</div>
+    </div>
+  </div>
+</div>

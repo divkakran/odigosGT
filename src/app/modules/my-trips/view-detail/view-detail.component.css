@@ -1,0 +1,171 @@
+.main-listing {
+    padding: 0 0 50px;
+    position: relative;
+}
+@media (min-width: 768px) {
+    .detail-box {
+        width: 600px;
+    }
+}
+.detail-box .close {
+    z-index: 1;
+    right: 15px;
+    position: absolute;
+    opacity: 1 !important;
+}
+.detail-box .close img {
+    width: 15px;
+}
+.main-listing .detail-box {
+    font-size: 14px;
+    z-index: 1;
+    /*padding: 10px;
+    position: relative;
+    border-radius: 4px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px 2px #e2e1e1;*/
+}
+.main-listing .detail-box ul {    
+    border-bottom: 1px solid #edebeb;
+}
+.main-listing .detail-box li {
+    margin-bottom: 0;
+}
+.main-listing .detail-box li a {
+    font-size: 14px;
+    color: #666666;
+    line-height: normal;
+    border: none;
+    margin: 0;
+    font-weight: normal;
+    border-bottom: 2px solid transparent;
+}
+.main-listing .detail-box li.active a {
+    border: none;
+    outline: none;
+    color: #333333;
+    font-weight: 500;
+    border-bottom: 2px solid #18afc4;
+}
+.main-listing .detail-box .tab-content {
+    padding: 10px;
+}
+.main-listing .detail-box .tab-content i {
+    font-size: 14px;
+    color: #e6e6e6;
+}
+.main-listing .detail-box .tab-content i.rated {
+    color: #fed953;
+}
+.main-listing .detail-box .guide-desc {
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.5;
+    padding: 10px 0;
+    margin-top: 15px;
+    border-top: 1px solid #edebeb;
+}
+.main-listing .detail-box .package-box {
+    margin: 5px;
+    padding: 5px 10px;
+    background: #ffffff;
+    box-shadow: 0 2px 4px 2px #e2e1e1;    
+}
+.main-listing .detail-box .package-box .rate {
+    color: #38b963;
+    font-weight: 500;
+}
+.main-listing .detail-box .package-box .duration {
+    float: right;
+    color: #18afc4;
+    font-weight: 500;
+}
+.main-listing .detail-box .pending-trips-detail {
+    font-size: 16px;
+    color: #999999;
+    margin: 10px 0;
+    list-style: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    border: solid 1px #edebeb;
+}
+.main-listing .detail-box .pending-trips-detail li {
+    padding: 10px 0;
+    border-bottom: solid 1px #edecec;    
+}
+.main-listing .detail-box .pending-trips-detail li img {
+    width: 24px;
+    margin-right: 10px;
+}
+.main-listing .detail-box .pending-trips-detail li:last-child {
+    border-bottom: none;    
+}
+.main-listing .detail-box .pending-trips-detail li span {
+    float: right;
+    color: #333333;
+}
+.main-listing .detail-box .carousel-control {
+    opacity: 1;
+    width: auto;
+    background: none;
+}
+.main-listing .detail-box .item {
+    width: 96%;
+    margin: 0 auto;
+}
+.main-listing .detail-box .carousel-control i {
+    top: 50%;
+    color: #666666;
+   font-size: 25px;
+    text-shadow: none;
+    position: absolute;
+    transform: translateY(-50%);
+    -o-transition: translateY(-50%);
+    -ms-transition: translateY(-50%);
+    -moz-transition: translateY(-50%);
+    -webkit-transition: translateY(-50%);    
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .main-listing .detail-box .pending-trips-detail {
+        font-size: 14px;
+    }
+    .main-listing .detail-box .pending-trips-detail li {
+        padding: 6px 0;
+    }
+    .main-listing .detail-box .pending-trips-detail li img {
+        width: 18px;
+        margin-right: 6px;
+    }
+    .main-listing .detail-box .guide-desc {
+        font-size: 13px;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 767px) {
+    .main-listing {
+        padding: 0 0 20px;
+    }
+}
+@media (max-width: 640px) {
+    .main-listing .detail-box .pending-trips-detail {
+        font-size: 14px;
+        margin: 25px 0 0;
+    }
+    .main-listing .detail-box .pending-trips-detail li {
+        padding: 6px 0;
+    }
+    .main-listing .detail-box .pending-trips-detail li img {
+        width: 18px;
+        margin-right: 6px;
+    }
+    .main-listing .detail-box .guide-desc {
+        font-size: 12px;
+        padding: 8px 0 0;
+        margin-top: 10px;
+    }
+}
+@media (max-width: 480px) {
+    .detail-box {
+        width: 90%;
+    }
+}

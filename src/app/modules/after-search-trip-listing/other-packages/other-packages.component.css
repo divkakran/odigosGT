@@ -1,0 +1,720 @@
+.main-listing {
+	padding: 0 0 50px;
+	position: relative;
+}
+.textRight {
+    text-align: right;
+}
+.btnBlock {
+   width: 100% !important;
+   border-radius: 4px !important;
+   margin-left: 0px !important;
+   margin-right: 0px !important;
+}
+.borderTop {
+   border-top: 1px solid #edebeb;
+   padding-top: 5px;
+   margin-top: 10px;
+}
+.main-listing .listing {
+	margin-top: 30px;
+	position: relative;
+	border-radius: 4px;
+	background: #ffffff;
+	padding: 22px 22px 0;
+	box-shadow: 0 2px 4px 2px #e2e1e1;
+}
+/* .main-listing .otherRow1 .listing-left {
+	width: 9%;
+ }
+ .main-listing .otherRow1 .listing-right {
+	width: 91%;
+ } */
+.main-listing .certified-badge {
+	right: 0;
+	top: 35px;
+	position: absolute;
+}
+.main-listing .certified-badge .tooltip {
+	opacity: 1;
+}
+.main-listing .certified-badge .tooltip-arrow {
+	left: auto;
+	right: 10px;
+	border-top-color: #f2f1f1;
+}
+.main-listing .certified-badge .tooltip-inner {
+	font-size: 7px;
+	color: #333333;
+	font-weight: normal;
+    line-height: 1.43;
+	border-radius: 4px;
+	background: #f2f1f1;
+	letter-spacing: 0.4px;
+}
+.main-listing .certified-badge img {
+	width: 143px;
+}
+.main-listing .listing-left {
+	width: 14%;
+	float: left;
+	padding-bottom: 22px;
+}
+.main-listing .listing-left a {
+	display: block;
+	position: relative;
+}
+.main-listing .listing-left a::before {
+	top: 0;
+	width: 4px;
+	left: -22px;
+	content: "";
+	height: 100%;
+	position: absolute;
+	/* background: #e89c59; */
+}
+.main-listing .guide-fee {
+	font-size: 18px;
+	color: #38b963;
+	font-weight: 500;
+	line-height: normal;
+	padding: 5px;
+	display: block;
+	margin-top: 10px;
+	text-align: center;
+	border-radius: 2px;
+	border: 1px solid rgba(206, 204, 204, 0.5);
+}
+.main-listing .listing-right {
+	width: 82%;
+	float: right;
+	position: relative;
+	padding-bottom: 22px;
+}
+.main-listing .listing-right h3 {
+	font-size: 18px;
+	font-weight: 500;
+	margin: 0;
+	line-height: normal;
+}
+.main-listing .listing-right h3 a {
+	color: #333333;
+	text-decoration: none;
+}
+.main-listing .listing-right h3 a:hover {
+	color: #18afc4;
+}
+.main-listing .listing-right h3 span {
+	font-size: 14px;
+	color: #18afc4;
+	font-weight: normal;
+	line-height: normal;
+}
+.main-listing .listing-right .cancel-btn {
+	top: 0;
+	right: 0;
+	font-size: 14px;
+	color: #999999;
+	font-weight: 500;
+	position: absolute;
+	line-height: normal;
+	letter-spacing: 0.4px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+.main-listing .listing-right .cancel-btn:hover {
+	color: #18afc4;
+}
+.main-listing .listing-right i {
+	font-size: 16px;
+	color: #e6e6e6;
+}
+.main-listing .listing-right i.rated {
+	color: #fed953;
+}
+.main-listing .listing-right h4 {
+	font-size: 16px;
+	color: #666666;
+	font-weight: 500;
+	margin: 15px 0 20px;
+	line-height: normal;
+}
+.main-listing .listing-right h4 span {
+	font-size: 14px;
+	display: block;
+	margin-bottom: 3px;
+	font-weight: normal;
+}
+.main-listing .listing-right .time-remain {
+	font-size: 12px;
+	color: #f4a044;
+	font-weight: 500;
+	display: block;
+	line-height: normal;
+	margin: 5px 10px 0 0;
+}
+.main-listing .guide-detail {
+	position: relative;
+}
+.main-listing .guide-detail::before {
+	top: 7px;
+	left: 10px;
+	right: 10px;
+	content: "";
+	height: 1px;
+	width: 96%;
+	position: absolute;
+	background: #edebeb;
+}
+.main-listing .detail-box {
+	font-size: 14px;
+	z-index: 1;
+	/*padding: 10px;
+	position: relative;
+	border-radius: 4px;
+	background: #ffffff;
+	box-shadow: 0 2px 4px 2px #e2e1e1;*/
+}
+.main-listing .detail-box ul {	
+	border-bottom: 1px solid #edebeb;
+}
+.main-listing .detail-box li {
+	margin-bottom: 0;
+}
+.main-listing .detail-box li a {
+	font-size: 14px;
+	color: #666666;
+	line-height: normal;
+	border: none;
+	margin: 0;
+	font-weight: normal;
+	border-bottom: 2px solid transparent;
+}
+.main-listing .detail-box li.active a {
+	border: none;
+	outline: none;
+	color: #333333;
+	font-weight: 500;
+	border-bottom: 2px solid #18afc4;
+}
+.main-listing .detail-box .tab-content {
+	padding: 10px;
+}
+.main-listing .detail-box .tab-content i {
+	font-size: 14px;
+	color: #e6e6e6;
+}
+.main-listing .detail-box .tab-content i.rated {
+	color: #fed953;
+}
+.main-listing .detail-box .guide-desc {
+	font-size: 14px;
+	color: #333333;
+	line-height: 1.5;
+	padding: 10px 0;
+	margin-top: 15px;
+	border-top: 1px solid #edebeb;
+}
+.main-listing .detail-box .package-box {
+	margin: 5px;
+	padding: 5px 10px;
+	background: #ffffff;
+	box-shadow: 0 2px 4px 2px #e2e1e1;	
+}
+.main-listing .detail-box .package-box .rate {
+	color: #38b963;
+	font-weight: 500;
+}
+.main-listing .detail-box .package-box .duration {
+	float: right;
+	color: #18afc4;
+	font-weight: 500;
+}
+.main-listing .detail-box .pending-trips-detail {
+	font-size: 16px;
+	color: #999999;
+	margin: 10px 0;
+	list-style: none;
+	padding: 10px 15px;
+	border-radius: 4px;
+	border: solid 1px #edebeb;
+}
+.main-listing .detail-box .pending-trips-detail li {
+	padding: 10px 0;
+	border-bottom: solid 1px #edecec;	
+}
+.main-listing .detail-box .pending-trips-detail li img {
+	width: 24px;
+	margin-right: 10px;
+}
+.main-listing .detail-box .pending-trips-detail li:last-child {
+	border-bottom: none;	
+}
+.main-listing .detail-box .pending-trips-detail li span {
+	float: right;
+	color: #333333;
+}
+.main-listing .detail-box .carousel-control {
+	opacity: 1;
+	width: auto;
+	background: none;
+}
+.main-listing .detail-box .item {
+	width: 96%;
+	margin: 0 auto;
+}
+.main-listing .detail-box .carousel-control i {
+	top: 50%;
+	color: #666666;
+    font-size: 25px;
+	text-shadow: none;
+	position: absolute;
+	transform: translateY(-50%);
+	-o-transition: translateY(-50%);
+	-ms-transition: translateY(-50%);
+	-moz-transition: translateY(-50%);
+	-webkit-transition: translateY(-50%);	
+}
+.main-listing .listing .cancelled-trip,
+.main-listing .listing .request-pending {
+	font-size: 14px;
+	color: #666666;
+	font-weight: 500;
+	padding: 5px;
+	line-height: normal;
+	position: relative;
+	text-align: center;
+}
+.main-listing .listing .cancelled-trip::before,
+.main-listing .listing .request-pending::before {
+	top: 0;
+	left: -22px;
+	right: -22px;
+	height: 1px;
+	content: "";
+	position: absolute;
+	background: rgba(153,153,153, 0.5);
+} 
+.main-listing .listing .cancelled-trip {
+	color: #f44336;
+}
+.main-listing.guideList .listing {
+    margin-top: 50px;
+}
+.main-listing.guideList .listing {
+    margin-top: 50px;
+}
+.main-listing.guideList .details {
+    font-size: 13px;
+    color: #18afc4;
+    border:  none !important;
+    box-shadow: none !important;
+    padding: 6px 0px 7px;
+}
+.main-listing.guideList .details:hover {
+	background: transparent !important;
+	border:  none !important;
+	color: #18afc4;
+}
+.main-listing.guideList .guideButtonNormal.btn {
+	font-size: 13px;
+	letter-spacing: normal;
+	color: #666666;
+	font-weight: 500;
+	line-height: normal;
+	border-radius: 0px;
+	border-top-left-radius: 4px;
+	border-bottom-left-radius: 4px;
+	background: transparent;
+  	border: solid 1px #cbcbcb;
+	padding: 8px 0px 9px;
+	width: 147px;
+	text-align: center;
+	text-decoration: none;
+	transition: all 0.5s ease 0s;
+	-webkit-transition: all 0.5s ease 0s;
+	-moz-transition: all 0.5s ease 0s;
+	-o-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+	box-shadow: none;	
+}
+.main-listing.guideList .guideButtonNormal.btn:focus {
+	color: #666666;
+}
+.main-listing.guideList .guideButtonNormal.btn:hover {
+	color: #666666;
+	background: transparent;
+}
+.main-listing.guideList .guideOtherPackageBtn .button7 {
+    border-radius: 0px;
+    margin-left: -6px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.main-listing.guideList .button7 {
+    font-size: 13px;
+	padding: 8px 10px 9px;
+	box-shadow: none;
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
+	-ms-box-shadow: none;
+}
+.main-listing.guideList .button7 {
+	width: 147px;
+	text-align: center;
+	padding: 8px 0px 9px;
+}
+.main-listing.otherPackage .listing-left a::before {
+    width: 0px;
+    height: 0%;
+    background: transparent;
+}
+
+.main-listing.guideList .btn.guideButtonBooked {
+    background-color: #f3f2f2;
+    font-size: 13px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #999999;
+	width: 147px;
+	text-align: center;
+    padding: 9px 0px 9px;
+    border-radius: 0px;
+    margin-left: -5px;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    border: 1px solid #f3f2f2;
+    box-shadow: none;
+	outline: none !important;
+	text-decoration: none !important;
+}
+.main-listing .guideButtonBooked{
+	background-color: #f3f2f2;
+	color: #999999;
+	border: 1px solid #f3f2f2;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	.main-listing .listing-left .guide-fee {
+		font-size: 14px;
+		padding: 5px;
+	}
+	.main-listing .listing-left {
+		width: 20%;
+	}
+	.main-listing .listing-right {
+		width: 76%;
+		padding-bottom: 10px;
+	}
+	.main-listing .listing-right h3 {
+		font-size: 14px;
+	}
+	.main-listing .listing-right h3 span {
+		font-size: 13px;
+	}
+	.main-listing .listing-right .cancel-btn {
+		top: 3px;
+		font-size: 12px;
+		letter-spacing: 0;
+	}
+	.main-listing .listing-right h4 {
+		font-size: 14px;
+		margin: 10px 0 5px;
+	}
+	.main-listing .listing-right h4 span {
+		font-size: 12px;
+	}
+	.main-listing .listing-right .time-remain {
+		font-size: 11px;
+		margin: 5px 0 0;
+	}
+	.main-listing .listing-right i {
+		font-size: 12px;
+	}
+	.main-listing .certified-badge {
+		top: 25px;
+	}
+	.main-listing .certified-badge img {
+		width: 120px;
+	}
+	.main-listing .guide-detail .text-left {
+		padding-right: 10px;
+	}
+	.main-listing .guide-detail .text-right {
+		padding-left: 10px;
+	}
+	.main-listing .guide-detail .button4 {
+		width: auto;
+		font-size: 13px;
+		padding: 5px 12px;
+	}
+	.main-listing .guide-detail .text-right .button6 {
+		bottom: -31px;
+		right: 0;
+		position: absolute;
+	}
+	.main-listing .detail-box .pending-trips-detail {
+		font-size: 14px;
+	}
+	.main-listing .detail-box .pending-trips-detail li {
+		padding: 6px 0;
+	}
+	.main-listing .detail-box .pending-trips-detail li img {
+		width: 18px;
+		margin-right: 6px;
+	}
+	.main-listing .detail-box .guide-desc {
+		font-size: 13px;
+		margin-top: 10px;
+	}
+}
+@media (max-width: 767px) {
+	.main-listing {
+		padding: 0 0 20px;
+	}
+	.main-listing .listing {
+		margin-top: 15px;
+		padding: 10px 10px 0;
+	}	
+	.main-listing .listing-left a::before {
+		width: 3px;
+		left: -10px;
+	}
+	.main-listing .guide-detail .button4 {
+		width: auto;
+		font-size: 13px;
+		padding: 5px 12px;
+	}
+	.main-listing .listing .cancelled-trip,
+	.main-listing .listing .request-pending {
+		font-size: 13px;
+		padding: 6px 5px;
+	}
+	.main-listing .listing .cancelled-trip::before,
+	.main-listing .listing .request-pending::before {
+		left: -10px;
+		right: -10px;
+	}
+	.main-listing.guideList .listing-right h4 span {
+        display: inline-block;
+        padding-right: 8px;
+    }
+    .textRight {
+        text-align: left;
+    }
+    .btnFifty {
+        width: 50% !important;
+    }    
+    .main-listing.guideList .listing-right {
+        padding-bottom: 0px;
+    }    
+    .main-listing.guideList .listing {
+        padding-bottom: 10px;
+    }
+}
+@media (max-width: 640px) {
+	.main-listing .listing-right h3 {
+		font-size: 14px;
+	}
+	.main-listing .listing-right h3 span {
+		font-size: 13px;
+	}
+	.main-listing .certified-badge {
+		top: 20px;
+	}
+	.main-listing .certified-badge img {
+		width: 100px;
+	}
+	.main-listing .listing-left .guide-fee {
+		font-size: 14px;
+		padding: 5px;
+	}
+	.main-listing .listing-right i {
+		font-size: 12px;
+	}
+	.main-listing .listing-right h4 {
+		font-size: 14px;
+		margin: 10px 0 5px;
+	}
+	.main-listing .listing-right h4 span {
+		font-size: 12px;
+	}
+	.main-listing .listing-right .time-remain {
+		font-size: 11px;
+		margin: 5px 0 0;
+	}
+	.main-listing .listing-right .cancel-btn {
+		font-size: 13px;
+		letter-spacing: 0;
+	}
+	.main-listing .detail-box .pending-trips-detail {
+		font-size: 14px;
+		margin: 25px 0 0;
+	}
+	.main-listing .detail-box .pending-trips-detail li {
+		padding: 6px 0;
+	}
+	.main-listing .detail-box .pending-trips-detail li img {
+		width: 18px;
+		margin-right: 6px;
+	}
+	.main-listing .detail-box .guide-desc {
+		font-size: 12px;
+		padding: 8px 0 0;
+		margin-top: 10px;
+	}
+	.main-listing .listing .cancelled-trip,
+	.main-listing .listing .request-pending {
+		font-size: 12px;
+	}
+}
+@media (max-width: 480px) {
+	.main-listing .listing-left {
+		width: 20%;
+	}
+	.main-listing .listing-right {
+		width: 76%;
+		padding-bottom: 10px;
+	}
+	.main-listing .guide-detail .text-left {
+		padding-right: 5px;
+	}
+	.main-listing .guide-detail .text-right {
+		padding-left: 5px;
+	}
+	.main-listing .detail-box li a {
+		font-size: 13px;
+		padding: 6px 10px;
+	}
+	.main-listing .listing-right h4 {
+		font-size: 13px;
+		margin: 10px 0 5px;
+	}
+	.main-listing .listing-right .time-remain {
+		font-size: 10px;
+		right: 12px;
+		bottom: -16px;
+		position: absolute;
+		white-space: nowrap;
+	}
+	.main-listing .listing-right .cancel-btn {
+		top: 3px;
+		font-size: 12px;
+	}
+	.main-listing .listing-right i {
+		font-size: 10px;
+	}
+	.main-listing .guide-detail .button4 {
+		font-size: 11px;
+		padding: 4px 6px;
+	}
+	.main-listing .detail-box .pending-trips-detail {
+		font-size: 13px;
+	}
+	.main-listing .detail-box .pending-trips-detail li {
+		padding: 5px 0;
+	}
+	.main-listing .detail-box .pending-trips-detail li img {
+		width: 16px;
+	}
+}
+
+/* book now css */
+.download-app-now {
+    color: #333333;
+}
+.download-app-now .close {
+    z-index: 1;
+    position: relative;
+    opacity: 1 !important;
+}
+.download-app-now .close img {
+    width: 15px;
+}
+.download-app-now .form-control {
+    width: auto;
+    font-size: 16px;
+    color: #333333;
+    font-weight: normal;
+    line-height: normal;
+    margin: 0 auto;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+    text-align: center;
+    letter-spacing: 1px;
+    border-bottom: 1px solid rgba(151, 151, 151, 0.5);
+    
+}
+.download-app-now .form-control::-webkit-input-placeholder {
+    color: #949494;
+}
+.download-app-now .form-control:-moz-placeholder {/* FF 4-18 */
+    color: #949494;
+}
+.download-app-now .form-control::-moz-placeholder {/* FF 19+ */
+    color: #949494;
+}
+.download-app-now .form-control:-ms-input-placeholder {/* IE 10+ */
+    color: #949494;
+}
+.download-app-now form label {
+    font-size: 16px;
+    color: #242424;
+    font-weight: normal;
+    line-height: normal;
+    display: block;
+    letter-spacing: 1px;
+}
+.download-app-now .modal-dialog {
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+   transform: translate(-50%, -50%) !important;
+   -o-transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+   -moz-transform: translate(-50%, -50%) !important;
+   -webkit-transform: translate(-50%, -50%) !important;
+}
+.download-app-now .close {
+    z-index: 1;
+    position: relative;
+    opacity: 1 !important;
+}
+.download-app-now .close img {
+    width: 15px;
+}
+/* book now end */
+
+/* login pop */
+.not-login .modal-dialog {
+    top: 50%;
+    left: 50%;
+    margin: 0;
+    position: absolute;
+   transform: translate(-50%, -50%) !important;
+   -o-transform: translate(-50%, -50%) !important;
+    -ms-transform: translate(-50%, -50%) !important;
+   -moz-transform: translate(-50%, -50%) !important;
+   -webkit-transform: translate(-50%, -50%) !important;
+}
+@media (min-width: 481px) {
+    .not-login .modal-dialog {
+        width: 400px;
+    }
+}
+@media (max-width: 480px) {
+    .not-login .modal-dialog {
+        width: 90%;
+    }
+}
+.not-login .close {
+    z-index: 1;
+    position: relative;
+    opacity: 1 !important;
+}
+.not-login .close img {
+    width: 15px;
+}
+/* login popup */

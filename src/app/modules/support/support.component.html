@@ -1,0 +1,38 @@
+<section class="support">
+  <div class="container">
+    <div class="support-inner" *ngIf="userDetail">
+      <form (ngSubmit)="submitSupportRequest(support.value)" #support="ngForm">
+        <h3><img src="{{baseImageUrl+'support-icon.png'}}" align="support icon" class="img-responsive"><br>Have any queries or facing any issues? Share here.</h3>
+        <div class="form-group text-left small-box">
+          <label>Name</label>
+          <input type="text" [(ngModel)]="userDetail.name" name="name" class="form-control" placeholder="Name">
+        </div>
+        <div class="form-group small-box pull-right text-left">
+          <label>Email-id</label>
+          <input type="text" [(ngModel)]="userDetail.email" name="email" class="form-control" placeholder="Email-id">
+        </div>
+        <div class="form-group text-left small-box">
+          <label>Category</label>
+          <select class="form-control" (change)="changeIssueCategory($event.target.value)">
+            <option selected="selected" [value]="0" [selected]="selectDefaultValue == '0'">Select Issue Category</option>
+            <option *ngFor="let item of categoryList"  [value]="item.id">{{item.name}}</option>
+          </select>
+        </div>
+        <div class="form-group small-box pull-right text-left">
+          <label class="hidden-xs"></label>
+          <textarea class="form-control" placeholder="Describe your issue" [(ngModel)]="userDetail.description" name="desc"></textarea>
+        </div>
+        <div class="form-group text-left small-box">
+          <label>Attach File</label>
+          <!-- <label for="file-upload" class="custom-file-upload">Choose file</label> -->
+          <input type="file" id="file-upload" (change)="uploadIssueImage($event)" accept="image/* , application/pdf" >
+          <p class="form-text">You can attach a file such as a document or screenshot of the issue. (JPG,JPEG,PNG or PDF Format)</p>
+        </div>
+        <div style="clear:both;" class="text-center">
+          <button type="submit" class="btn submit button1 text-uppercase" [disabled]="disableSubmit">Submit Request</button>
+          <p class="form-text">You can also write us to: <a href="mailto:support@odigosguides.com">support@odigosguides.com</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,117 @@
+<header class="navbar-static-top clearfix" role="navigation" id="Home">
+  
+  <div id="appLink" class="appLink"  *ngIf="isIphone || isAndroid">
+    <div>
+      <a *ngIf="isIphone" href="https://itunes.apple.com/us/app/odigos-guides/id1389841153?ls=1&amp;mt=8" id="top-app-store" target="_blank">Download Our App <i class="fa fa-apple fa-lg" aria-hidden="true"></i></a>
+      <a *ngIf="isAndroid" href="https://play.google.com/store/apps/details?id=com.birdapps.odigostourist" id="top-play-store" target="_blank">Download Our App <i class="fa fa-android fa-lg" aria-hidden="true"></i></a>
+    </div>
+    <div id="closeLink">
+      <span (click)="closeDownloadMenu()"><img src="{{baseImageUrl+'cross-icon-white.png'}}" alt="close"></span>
+    </div>
+  </div>
+
+  <!-- main menu -->  
+  <div class="col-sm-6 header-left">
+    <div class="navbar">
+      <div id="mySidepanel" class="sidepanel">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" (click)="removeMenuClass()"><img src="{{baseImageUrl+'close-icon.png'}}" width="15" alt="x" class="img-responsive"></a>
+        <ul class="navbar-nav">
+          <!-- <li class="visible-xs"><a class="closebtnOnLink" routerLink="India-heritage-walk-festival" onclick="closeNav()" (click)="removeMenuClass()"><img src="{{baseImageUrl+'ihwf-logo.png'}}" class="img-responsive" width="63" alt="ihwf"></a></li> -->
+          <!-- after login mobile view -->
+          <span *ngIf="isLoggedIn">
+            <li class="visible-xs"><a data-toggle="dropdown" class="dropdown apply-pointer" id="dropdownMenu1" (click)="openLoginMenu()">
+              <img *ngIf="userDetail.image_url==''" src="{{baseImageUrl+'profile-icon.png'}}" class="profile-icon" alt="profile">
+              <img *ngIf="userDetail.image_url!=''" src="{{userDetail.image_url}}" class="profile-icon" alt="profile">  Hi {{touristName}} &nbsp;<i class="fa fa-lg fa-angle-down" aria-hidden="true"></i></a>
+              <div aria-labelledby="dropdownMenu1" class="dropdown-menu"><span class="arrow"></span>
+                <ul class="clearfix">
+                  <li><a class="apply-pointer" routerLink="/my-profile" onclick="closeNav()" (click)="removeMenuClass()"><img src="{{baseImageUrl+'my-profile-icon.png'}}" class="img-responsive" alt="my profile">&nbsp; My Profile</a></li>
+                  <li><a class="apply-pointer"><img src="{{baseImageUrl+'credit-point-icon.png'}}" class="img-responsive" alt="Credit Points">&nbsp; Credit Points<span class="badge">{{userDetail.credit_points}}</span></a></li>
+                  <li><a class="apply-pointer" routerLink="/inbox" onclick="closeNav()" (click)="removeMenuClass()"><img src="{{baseImageUrl+'inbox-icon.png'}}" class="img-responsive" alt="Inbox">&nbsp; Inbox</a></li>
+                  <li><a class="apply-pointer" routerLink="/my-trips" onclick="closeNav()" (click)="removeMenuClass()"><img src="{{baseImageUrl+'trip-icon.png'}}" class="img-responsive" alt="My Trips">&nbsp; My Trips</a></li>
+                  <li><a class="apply-pointer" href="https://goo.gl/forms/pgf5dGrKrNxwymnS2"><img src="{{baseImageUrl+'travel-request-icon.png'}}" class="img-responsive" alt="Travel Request">&nbsp; Travel Request</a></li>
+                  <li><a class="apply-pointer" routerLink="/refer-and-earn" onclick="closeNav()" (click)="removeMenuClass()"><img src="{{baseImageUrl+'refer-earn-icon.png'}}" class="img-responsive" alt="Refer & Earn">&nbsp; Refer &amp; Earn</a></li>
+                  <li><a class="apply-pointer" (click)="logOut()" onclick="closeNav()"><img src="{{baseImageUrl+'logout-icon.png'}}" class="img-responsive" alt="Log Out">&nbsp; Log Out</a></li>
+                </ul>
+              </div>
+            </li>
+          </span>
+          <!-- end of after login mobile view-->
+          <li><a class="closebtnOnLink" routerLink = "/" onclick="closeNav()" (click)="removeMenuClass()">Home</a></li>
+          <li><a class="closebtnOnLink" routerLink = "/blog" (click)="removeMenuClass()">Blog</a></li>
+          <li><a class="closebtnOnLink" routerLink = "/faq" onclick="closeNav()" (click)="removeMenuClass()">FAQ</a></li>
+          <li><a class="closebtnOnLink" routerLink = "/support" onclick="closeNav()">Support</a></li>
+          <li><a class="closebtnOnLink" routerLink = "/enquiry" onclick="closeNav()">Enquiry</a></li>
+          <li><a class="closebtnOnLink" routerLink = "/cancellation-policy" onclick="closeNav()" (click)="removeMenuClass()">Cancellation Policy</a></li>
+          <!-- start : top link will display in side bar in mobile -->
+          <li class="visible-xs"><a class="closebtnOnLink" routerLink="/tour-guides" onclick="closeNav()" (click)="removeMenuClass()">Meet Our Guides</a></li>
+          <li class="visible-xs"><a class="closebtnOnLink" routerLink="/become-guide" onclick="closeNav()" (click)="removeMenuClass()">Become A Guide</a></li>
+          <!-- <li class="visible-xs"><a class="apply-pointer" (click)="openNotification()">Notification<span class="badge">{{notificationCount}}</span></a></li> -->
+          <li *ngIf="!isLoggedIn" class="visible-xs"><a class="closebtnOnLink last" style="cursor: pointer;" onclick="closeNav()" (click)="openLoginForm=true">Login</a></li>
+          <!-- end : top link will display in side bar in mobile -->
+        </ul>
+        <div class="social">
+          <!-- <a href="#" target="_blank"><i class="fa fa-google-plus" aria-hidden="true" rel="nofollow"></i></a> -->
+          <a href="https://www.facebook.com/OdigosApp/" target="_blank"><i class="fa fa-facebook" aria-hidden="true" rel="nofollow"></i></a><a href="https://twitter.com/Odigos_App" target="_blank" rel="nofollow"><i class="fa fa-twitter" aria-hidden="true"></i></a><a href="https://www.instagram.com/Odigos_app/" target="_blank" rel="nofollow"><i class="fa fa-instagram" aria-hidden="true"></i></a><a href="https://www.youtube.com/channel/UCGYK4UomSRtIMOXwmGe00jg?view_as=subscriber" target="_blank" rel="nofollow"><i class="fa fa-youtube-play" aria-hidden="true"></i></a>
+        </div>
+      </div>
+      <button class="navbar-toggler collapsed openbtn" type="button" data-toggle="collapse" aria-expanded="false" aria-label="Toggle navigation" onclick="openNav()" (click)="clickMenu()"> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span></button>
+      <a itemprop="url" href="" class="logo"><img itemprop="logo" src="{{baseImageUrl+'logo.png'}}" alt="Odigos" title="Odigos Logo" class="img-responsive"></a>
+      <a *ngIf="isLoggedIn" class="apply-pointer visible-xs notification-icon-mobile" (click)="openNotification()"><i class="fa fa-lg fa-bell-o" aria-hidden="true"><span class="badge count">{{notificationCount}}</span></i></a>
+      <div class="search">
+        <div class="form">
+          <input class="form-control" name="key" [(ngModel)]="keyWord" (keyup)="keywordSearchKeyUpEvent()" placeholder="Cities / Monuments / Experiences" type="text">
+        </div>
+        <ul *ngIf="searchList" class="search-listing" [ngStyle]="{'display':searchList.length>0 ? 'block' : 'none' }">
+          <li class="apply-pointer" *ngFor="let item of searchList">
+            <a (click)="searchTripListing(item)">{{item}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 top-link hidden-xs">
+    <!-- <a routerLink="India-heritage-walk-festival"><img src="{{baseImageUrl+'ihwf-logo.png'}}" class="img-responsive" width="63" alt="ihwf"></a> -->
+    <a routerLink="/tour-guides">Meet Our Guides</a><a routerLink="/become-guide">Become A Guide</a>
+
+    <span *ngIf="isLoggedIn">
+      <a class="apply-pointer"  (click)="openNotification()"><i class="fa fa-lg fa-bell-o" aria-hidden="true"><span class="badge count">{{notificationCount}}</span></i></a>
+      <a data-toggle="dropdown" class="dropdown apply-pointer" id="dropdownMenu1" (click)="openLoginMenu()">
+        <img *ngIf="userDetail.image_url==''" src="{{baseImageUrl+'profile-icon.png'}}" class="profile-icon" alt="profile">
+        <img *ngIf="userDetail.image_url!=''" src="{{userDetail.image_url}}" class="profile-icon" alt="profile"> Hi {{touristName}} &nbsp;<i class="fa fa-lg fa-angle-down" aria-hidden="true"></i>
+      </a>
+      <div aria-labelledby="dropdownMenu1" class="dropdown-menu"><span class="arrow"></span>
+        <ul class="clearfix">
+          <li><a class="apply-pointer" routerLink="/my-profile"><img src="{{baseImageUrl+'my-profile-icon.png'}}" class="img-responsive" alt="my profile">&nbsp; My Profile</a></li>
+          <li><a class="apply-pointer"><img src="{{baseImageUrl+'credit-point-icon.png'}}" class="img-responsive" alt="Credit Points">&nbsp; Credit Points<span class="badge">{{userDetail.credit_points}}</span></a></li>
+          <li><a class="apply-pointer"  routerLink="/inbox"><img src="{{baseImageUrl+'inbox-icon.png'}}" class="img-responsive" alt="Inbox">&nbsp; Inbox</a></li>
+          <li><a class="apply-pointer" routerLink="/my-trips"><img src="{{baseImageUrl+'trip-icon.png'}}" class="img-responsive" alt="My Trips">&nbsp; My Trips</a></li>
+          <li><a class="apply-pointer" href="https://goo.gl/forms/pgf5dGrKrNxwymnS2"><img src="{{baseImageUrl+'travel-request-icon.png'}}" class="img-responsive" alt="Travel Request">&nbsp; Travel Request</a></li>
+          <li><a class="apply-pointer" routerLink="/refer-and-earn"><img src="{{baseImageUrl+'refer-earn-icon.png'}}" class="img-responsive" alt="Refer & Earn">&nbsp; Refer &amp; Earn</a></li>
+          <li><a class="apply-pointer" (click)="logOut()"><img src="{{baseImageUrl+'logout-icon.png'}}" class="img-responsive" alt="Log Out">&nbsp; Log Out</a></li>
+        </ul>
+      </div>
+    </span>
+    <a *ngIf="!isLoggedIn" class="last" style="cursor: pointer;" (click)="openLoginForm=true">Login</a>
+  </div> 
+  <app-notifications *ngIf="openNotificationPanel"></app-notifications>
+</header> 
+
+<!-- Download App Modal -->
+<div id="DownloadApp" class="modal popup-download-app fade">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <a class="close clearfix" data-dismiss="modal"><img src="{{baseImageUrl+'close-btn.png'}}" alt="X"></a>
+        <h3>Download Odigos App<span></span></h3>
+      </div>
+      <div class="modal-body">
+        <div><a href="https://itunes.apple.com/us/app/odigos-guides/id1389841153?ls=1&mt=8" target="_blank"><img src="{{baseImageUrl+'app-store.png'}}" alt="App Store" id="app-store" title="App Store" class="img-responsive" /></a>  <a href="https://play.google.com/store/apps/details?id=com.birdapps.odigostourist" target="_blank"><img src="{{baseImageUrl+'google-play.png'}}" alt="Play Store" id="play-store" title="Play Store" class="img-responsive" /></a></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-login *ngIf="openLoginForm && !forgotPass" (closeLoginFormEvent)="receiveLoginCloseEvent($event)"></app-login>
+<app-forgot-password *ngIf="forgotPass" (closeForgotPasswordEvent)="receiveForgotPasswordCloseEvent($event)"></app-forgot-password>
+<!-- <app-trip-search-list *ngIf="openSearchTripList" [placeName]="placeToBeSearch"></app-trip-search-list> -->

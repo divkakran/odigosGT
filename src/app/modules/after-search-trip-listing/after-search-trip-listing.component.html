@@ -1,0 +1,61 @@
+<section class="search-box">
+  <div class="container">
+    <div class="search-box-main">
+      <ul class="nav nav-tabs">
+        <li class="active apply-pointer"><a data-toggle="tab" (click)="typeOfPackageSelected('solo')">Solo Package</a></li>
+        <li class="apply-pointer"><a data-toggle="tab" (click)="typeOfPackageSelected('combo')">Combo Package</a></li>
+      </ul>
+      <div class="tab-content">
+        <div id="SoloPackage" class="tab-pane fade in active">
+          <form>
+            <div class="form-inner" *ngIf="dropDownController">
+              <div class="form-group">
+                <div class="custom-select city form-control apply-pointer">
+                  <p (click)="openDropdown('city')">{{dropDownValues.city.city_name}}</p>
+                  <ul *ngIf="dropDownController.city!='false'" class="select-items select-hide">
+                    <li *ngFor="let city of placesDetail; let i=index" (click)="updateDestinationList(i , city)">{{city.city_name}}</li>
+                  </ul>
+                </div>
+                <div *ngIf="typeOfPackage!='combo'" class="custom-select destination form-control apply-pointer">
+                  <p (click)="openDropdown('destination')">{{dropDownValues.destination.place_name.length>14?(dropDownValues.destination.place_name | slice:0:14)+'...':(dropDownValues.destination.place_name)}}</p>
+                  <ul *ngIf="dropDownController.destination!='false'" class="select-items select-hide">
+                    <li *ngFor="let place of destinations" (click)="updateDestinationList(null , place)">{{place.place_name}}</li>
+                  </ul>
+                </div>
+                <ng-datepicker class="form-control date apply-pointer" [(ngModel)]="selectedDate" name="date" [options]="options"></ng-datepicker>
+                <div class="language custom-select form-control apply-pointer">
+                  <p (click)="openDropdown('language')">{{dropDownValues.language.name}}</p>
+                  <ul *ngIf="dropDownController.language!='false'" class="select-items select-hide">
+                    <li *ngFor="let lang of languages" (click)="updateDestinationList(null , null , lang)">{{lang.name}}</li>
+                  </ul>
+                </div>
+                <div class="dropdown1 apply-pointer">
+                  <input type="button" class="form-control person dropdown-toggle" (click)="openDropdown('visitors')" value="{{totalVisitors}} person">
+                  <ul *ngIf="dropDownController.visitors!='false'" class="dropdown-menu1">
+                    <li class="clearfix"><strong>Adults<i>12 years and above</i></strong><span><a class="btn controls" (click)="addingVisitors('adult', 'substract')">-</a><em>{{numOfAdults}}</em><a class="btn controls" (click)="addingVisitors('adult' , 'add')">+</a></span></li>
+                    <li class="clearfix"><strong>Children<i>0 to 12 years old</i></strong><span><a class="btn controls" (click)="addingVisitors('children','substract')">-</a><em>{{numOfChildrens}}</em><a class="btn controls" (click)="addingVisitors('children', 'add')">+</a></span></li>
+                    <li class="clearfix"><a class="btn close" (click)="openDropdown('visitors')">Ok</a></li>
+                  </ul>
+                </div>
+                <input type="submit" class="search-button" (click)="searchTrips(typeOfPackage , soloOffset , soloPages)" value="Search">
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div *ngIf="isTripTypeCombo" class="col-md-offset-1 col-md-10">
+        <ul class="category-name">
+          <li *ngFor="let category of categories ; let i = index" [ngClass]="{'disable':category.has_data!='1' , 'active':categoryName==i}" (click)="categorySelected(i , category)">
+            {{(category.name.length> 16)? (category.name | slice:0:16)+'...' : category.name }}
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<app-category-trips *ngIf="!isCategorySelected" [placeName]=placeName [comboSearch]="searchData" [numOfVisitors]="numOfVisitors"></app-category-trips>
+<app-trip-card *ngIf= "isCategorySelected" [data]="listByCategory" [totalCount]="totalCount" (loadMore)="sendMoreTrips($event)" (soloTripLoadMore)="loadMoreSearchTripsSolo()"></app-trip-card>
+<!-- <app-see-all-trips *ngIf="seeAllTrips" [apiData]="seeAllDataForPass"></app-see-all-trips> -->

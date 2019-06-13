@@ -1,0 +1,487 @@
+.signup {
+    background: url("../../../assets/images/jal-mahal.jpg") no-repeat center center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.set-disable{
+    pointer-events: none;
+}
+.signup h1 {
+    font-size: 30px;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 1.3;
+    position: relative;
+    padding-bottom: 20px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.signup h1 span {
+    left: 50%;
+    bottom: 0;
+    height: 10px;
+    width: 187px;
+    position: absolute;
+    transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    background: url("../../../assets/images/heading-line.png") no-repeat center bottom / 100% auto;
+}
+.signup .layer {
+    padding: 60px 0 15px;
+    background: rgba(0, 0, 0, 0.42);
+}
+.signup .signup-box {
+    min-height: 358px;
+    margin: 70px 28px 0;
+    border-radius: 4px;
+    margin-bottom: 40px;
+    background: #ffffff;
+    padding: 0 40px 20px;
+    box-shadow: 0 2px 8px 2px rgba(255, 255, 255, 0.5);
+}
+.signup .signup-box h2 {
+    font-size: 24px;
+    color: #333333;
+    font-weight: 500;
+    line-height: normal;
+    position: relative;
+    margin: 15px 0 20px;
+    padding-bottom: 15px;
+    letter-spacing: 0.9px;
+}
+.signup .signup-box h2 span {
+    left: 50%;
+    bottom: 0;
+    height: 6px;
+    width: 110px;
+    position: absolute;
+    transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    background: url("../../../assets/images/heading-line.png") no-repeat center bottom / 100% auto;
+}
+.signup .signup-box .image-box {
+    margin-top: -50px;
+    text-align: center;
+}
+.signup .signup-box .image-box img {
+    width: 110px;
+}
+.signup .signup-box .content-box {
+    font-size: 16px;
+    color: #333333;
+    line-height: normal;
+    letter-spacing: 0.4px;
+}
+.signup .signup-box .content-box h3 {
+    font-size: 18px;
+    color: #333333;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: 0.6px;
+}
+.signup .buttom-box h4 {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 500;
+    text-align: center;
+    line-height: normal;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+}
+.signup .signup-box .content-box ul {
+    padding-left: 20px;
+}
+.signup .signup-box .content-box ul li {
+    padding: 3px 0 3px 10px;
+}
+.signup .signup-box .content-box .start {
+    position: relative;
+    padding-left: 60px;
+}
+.signup .signup-box .content-box .start p {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(196, 196, 196, 0.5);
+}
+.signup .signup-box .content-box .start:last-child p {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.signup .signup-box .content-box .counts {
+    top: 0;
+    left: 0;
+    width: 42px;
+    height: 42px;
+    font-size: 28px;
+    color: #18afc4;
+    font-weight: normal;
+    line-height: 36px;
+    position: absolute;
+    border-radius: 50%;
+    text-align: center;
+    border: 2px solid #18afc4;
+}
+.signup .bottom {
+    font-size: 16px;
+    color: #ffffff;
+    font-weight: normal;
+    line-height: 1.56;
+    text-align: center;
+    letter-spacing: 0.3px;
+}
+.signup .bottom h5 {
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: normal;
+    margin-top: 15px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    letter-spacing: 2px;
+    position: relative;
+    border-top: 1px solid rgba(255, 255, 255, 0.42);
+}
+.signup .bottom h5 span {
+    left: 50%;
+    bottom: 0;
+    height: 6px;
+    width: 110px;
+    position: absolute;
+    transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    background: url("../../../assets/images/heading-line.png") no-repeat center bottom / 100% auto;
+}
+.signup .bottom img {
+    width: 200px;
+    border-radius: 7px;
+    margin: 10px 0 15px;
+    border: 1px solid #ffffff;
+}
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .signup {
+        background-attachment: scroll !important;
+    }
+}
+@media handheld, only screen and (max-width: 668px) {
+    .signup {
+        background-attachment: scroll !important;
+    }
+}
+@media (max-width: 1199px) {
+    .signup .bottom img {
+        width: 160px;
+    }
+    .signup h1 {                      
+        font-size: 25px;
+        padding-bottom: 20px;
+    }
+    .signup .signup-box h2 {
+        font-size: 20px;
+        margin: 15px 0;
+    }
+}
+@media (max-width: 991px) {
+    .signup {
+        font-size: 16px;
+    }
+    .signup h1 {
+        font-size: 22px;
+        padding-bottom: 15px;
+    }
+    .signup .signup-box .image-box img {
+        width: 90px;
+    }
+    .signup .signup-box {
+        padding: 0 20px 20px;
+    }
+    .signup .signup-box h2 {
+        font-size: 19px;
+    }
+    .signup .bottom h5 {
+        font-size: 18px;
+    }
+    .signup .bottom img {
+        width: 100px;
+        border-radius: 3px;
+        border: 1px solid rgba(255, 255, 255, 0.7);
+    }
+}
+@media (max-width: 767px) {
+    .signup h1 {
+        font-size: 20px;
+        margin: 10px 0 15px;
+    }
+    .signup .signup-box {
+        min-height: auto;
+        margin: 40px 0 50px;
+        padding: 15px 20px 20px;
+    }
+    .signup .signup-box h2 {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .signup .signup-box .content-box ul li {
+        padding: 3px 0 3px 5px;
+    }
+    .signup .signup-box .content-box h3 {
+        font-size: 16px;
+        margin-bottom: 6px;
+    }
+    .signup .buttom-box h4 {
+        font-size: 18px;
+        margin-top: -20px;
+    }
+    .signup .bottom h5 {
+        font-size: 17px;
+    }
+    .signup .bottom img {
+        width: 90px;
+        margin: 5px 0;
+    }
+}
+@media (max-width: 640px) {
+    .signup {
+        font-size: 14px;
+        line-height: 1.4;
+        text-align: center;
+    }
+    .signup h1 span {
+        width: 110px;
+    }
+    .signup .signup-box h2 {
+            margin: 10px 0;
+    }
+    .signup .bottom h5 span,
+    .signup .signup-box h2 span {
+        width: 90px;
+    }
+    .signup .signup-box .image-box,
+    .signup .signup-box .content-box {
+        font-size: 14px;
+        text-align: left;
+    }
+    .signup .signup-box .image-box {
+        text-align: center;
+    }
+    .signup .bottom {
+        font-size: 12px;
+        text-align: center;
+        letter-spacing: 0.7px;
+    }
+    .signup .bottom h5 {
+        font-size: 16px;
+    }
+    .signup .signup-box .content-box .counts {
+        width: 32px;
+        height: 32px;
+        font-size: 20px;
+        line-height: 25px;
+    }
+    .signup .signup-box .content-box ul li {
+        padding: 1px 0 1px 5px;
+        letter-spacing: 0.4px;
+    }
+    .signup .buttom-box h4 {
+        font-size: 16px;
+        letter-spacing: 2px;
+    }
+}
+@media (max-width: 480px) {
+    .signup h1 {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+    .signup .signup-box h2 {
+        font-size: 16px;
+        padding-bottom: 10px;
+    }
+    .signup .signup-box .image-box,
+    .signup .signup-box .content-box {
+        font-size: 14px;
+        letter-spacing: 0.2px;
+    }
+    .signup .signup-box .content-box .start {
+        padding-left: 40px;
+        margin-bottom: 15px;
+    }
+    .signup .buttom-box h4 {
+        font-size: 14px;
+    }
+}
+
+/*------------------------Contact----------------------------*/
+.contact {
+    text-align: left;
+    position: relative;
+    padding: 20px 0 50px;
+}
+.contact .form {
+    margin-top: 50px;
+}
+.contact #msg_span {
+    left: 0;
+    right: 0;
+    top: -35px;
+    font-size: 12px;
+    color: #008000;
+    line-height: 1.3;
+    position: absolute;
+}
+.contact .form-group {
+    font-style: normal;
+    position: relative;
+    margin-bottom: 25px;
+}
+.contact label.error {
+    font-size: 12px;
+    color: #f72f2f;
+    margin-bottom: 0;
+    letter-spacing: 0;
+    bottom: -18px;
+    left: 0;
+    position: absolute;
+    font-weight: normal;
+}
+.contact .form-control {
+    font-size: 18px;
+    color: #666666;
+    height: 44px;
+    padding: 0 15px;
+    box-shadow: none;
+    border-radius: 4px;
+    background: #ffffff;
+    appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    letter-spacing: 0.6px;
+    outline: none !important;
+    text-decoration: none !important;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(196, 196, 196, 0.5);
+}
+.contact .form-control::-webkit-input-placeholder {
+    color: #c7c7c7;
+}
+.contact .form-control:-moz-placeholder {/* FF 4-18 */    
+    color: #c7c7c7;
+}
+.contact .form-control::-moz-placeholder {/* FF 19+ */    
+    color: #c7c7c7;
+}
+.contact .form-control:-ms-input-placeholder {/* IE 10+ */    
+    color: #c7c7c7;
+}
+.contact textarea.form-control {
+    resize: none;
+    min-height: 150px;
+    padding: 10px 13px;
+}
+.contact .form-control:focus {
+    outline: none !important;
+    box-shadow: none;
+}
+.contact-btn {
+    font-size: 18px;
+    color: #ffffff;
+    font-weight: 500;
+    line-height: 22px;
+    border: none;
+    padding: 9px 20px;
+    border-radius: 4px;
+    background: #18afc4;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+    -ms-transition: all 0.5s ease 0s;
+    width: 100%;
+    max-width: 33%;
+    display: block;
+    margin: 5px auto 0;
+    border: 1px solid #18afc4;
+    box-shadow: 0 0 2px 1px rgba(226, 226, 226, 0.5);
+}
+.contact-btn:focus {
+    color: #ffffff;
+}
+.contact-btn:hover {
+    color: #18afc4;
+    background: #ffffff;
+}
+@media (max-width: 767px) {
+    .contact {                          
+        padding: 0 0 20px;
+    }
+    .contact .form {
+        margin-top: 40px;
+    }
+    .contact-btn {
+        width: 45%;
+        max-width: 100%;
+    }
+    .contact textarea.form-control {
+        min-height: 80px;
+    }
+    .contact .form-control {
+        height: 36px;
+        line-height: 36px;
+        padding: 0 12px;
+    }
+    .contact .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        height: 36px;
+    }
+    .contact .form-control::-moz-placeholder { /* Firefox 19+ */
+        height: 36px;
+    }
+    .contact .form-control:-ms-input-placeholder { /* IE 10+ */
+        height: 36px;
+    }
+    .contact .form-control:-moz-placeholder { /* Firefox 18- */
+        height: 36px;
+    }
+}
+@media (max-width: 480px) {
+    .contact .form-control {
+        font-size: 14px;
+        height: 32px;
+        padding: 0 10px;
+        outline: none !important;
+        line-height: 32px;
+    }
+    .contact .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+        height: 32px;
+    }
+    .contact .form-control::-moz-placeholder { /* Firefox 19+ */
+        height: 32px;
+    }
+    .contact .form-control:-ms-input-placeholder { /* IE 10+ */
+        height: 32px;
+    }
+    .contact .form-control:-moz-placeholder { /* Firefox 18- */
+        height: 32px;
+    }
+    .contact  textarea.form-control {
+        padding: 5px 10px;
+    }
+    .contact-btn {
+        font-size: 16px;
+        color: #ffffff;
+        line-height: 24px;
+        padding: 4px 15px;
+        width: auto;
+        max-width: none;
+    }
+}

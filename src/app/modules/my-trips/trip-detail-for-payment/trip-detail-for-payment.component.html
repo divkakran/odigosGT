@@ -1,0 +1,50 @@
+<section class="my-trips">
+  <div class="container">
+    <div class="make-payment chat-box">
+      <div class="chating-box">
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+            <div class="chating-box">
+              <div class="row">
+                <div class="col-sm-12 success-msg">
+                  <p><img src="{{baseImageUrl+'success-icon.png'}}" alt="success"></p>
+                  <p>Your request for tour guide has been <br/>accepted by <span class="blue">"{{paymentDetail.guide_name}}"</span></p>
+                </div>
+                <div class="col-sm-10 col-sm-offset-1">
+                  <h5>Trip Details :</h5>
+                  <div class="chating-inner">
+                    <ul>
+                      <li>Destination <span>{{(paymentDetail.tour_name.length>10)? ' '+(paymentDetail.tour_name | slice:0:10)+'...':' '+(paymentDetail.tour_name)}}</span></li>
+                      <li>Date <span>{{paymentDetail.date_of_tour | date: 'dd-MM-yyyy'}}</span></li>
+                      <li>Rate <span>₹ {{paymentDetail.guide_charges | number: '.0-0'}}</span></li>
+                      <li>Visit <span>1 Places</span></li>
+                      <li>Duration <span>{{paymentDetail.duration_hours}}</span></li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-10 col-sm-offset-1">
+                  <h5>Please Pay to Confirm :<br><span class="blue" style="font-size:14px; font-weight:normal;">( Time Remaining - {{getHoursFromTimeStamp(paymentDetail.time_remaining)}} )</span></h5>
+                  <div class="chating-inner">
+                    <form>
+                      <div class="form-group radio-form">
+                        <label for="full-pay" class="radio-wrap" (click)="amountPay('full')">Pay Full Amount
+                        <input type="radio" name="payment" id="full-pay" value="Pay Full Amount" checked="checked">
+                        <span class="checkmark"><i></i></span> </label>
+                      </div>
+                      <div class="form-group radio-form">
+                        <label for="half-pay" class="radio-wrap" (click)="amountPay('percent')">{{paymentDetail.advance_percent}}% Advance &amp; Rest in Cash
+                        <input type="radio" name="payment" id="half-pay" value="30% Advance">
+                        <span class="checkmark"><i></i></span> </label>
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a routerLink = "/my-trips/payment-summary" class="btn proceed button1 apply-pointer">Proceed</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,36 @@
+<!-- Login Modal -->
+<div *ngIf="!openSignUp && !openSocialLogin" id="Login" class="login-signup right" style="position: fixed;right: 0;top: 0;z-index: 1;">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content text-center">
+      <div class="modal-header">
+        <a class="close" (click)="closeLoginFormOnClick({openLoginForm:false})"><img src="{{baseImageUrl+'cross-icon.png'}}" alt="X"></a>
+        <h3>Login</h3>
+      </div>
+      <div class="modal-body">
+        <form (ngSubmit)="normalLogin(loginForm.value)" #loginForm="ngForm">
+          <div class="social-login"><a (click)="socialLogin('FB')" class="btn facebook social-login apply-pointer"><span><img src="{{baseImageUrl+'facebook.png'}}" alt="F"></span>Login</a><a (click)="socialLogin('GOOGLE_PLUS')" class="btn google social-login apply-pointer"><span><img src="{{baseImageUrl+'google+.png'}}" alt="g"></span>Login</a></div>
+          <h4>Or</h4>
+          <h5>Login Using Email ID</h5>
+          <div class="form-box">
+            <div class="form-group text-left">
+              <label>Email-id</label>
+              <input type="email" name="email" autocomplete="off" [(ngModel)]="loginFormObject.email" class="form-control" placeholder="abcde@gmail.com">
+            </div>
+            <div class="form-group text-left">
+              <label>Password</label>
+              <input [type]="showPassword?'text':'password'" name="password" autocomplete="off" [(ngModel)]="loginFormObject.password" class="form-control" id="myInput" maxlength="15" placeholder="* * * * * * * *">
+              <img   [src] ="showPassword? baseImageUrl+'show-password.png' : baseImageUrl+'hide-password.png'" (click)="showPasswordClick()" class="password-checkbox apply-pointer" alt="hide password">
+            </div>
+            <button type="submit" class="btn submit button4 text-uppercase" [disabled]="setButtonDisable">Login</button>
+            <p class="text-right forgot-pass"><a (click)="openForgotPassword()" class="email-pass apply-pointer">Forgot Password ?</a></p>
+            <p>Don't have a account? <a (click)="openSignUpForm()" class="signup-link apply-pointer">Sign Up</a></p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-sign-up *ngIf = "openSignUp && !openSocialLogin" (closeSignUpFormEvent) = "closeLoginFormOnClick($event)"></app-sign-up>
+<app-social-login *ngIf = "openSocialLogin" (closeSocialLoginEvent) = "closeLoginFormOnClick($event)" [signUpWithSocial]="_userDetailSignUp"></app-social-login>

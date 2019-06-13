@@ -1,0 +1,105 @@
+.trending {
+	padding: 20px 0 70px;
+}
+.setDisable{
+	pointer-events: none;
+}
+.trending .load-more-button{
+	margin-top: 30px;
+}
+.trending .trending-box {
+	text-align: left;
+	margin-top: 30px;
+	border-radius: 5px;
+	background: #ffffff;
+	max-width: 100%;
+	position: relative;
+	transform: scale(1);
+	-o-transform: scale(1);
+	-ms-transform: scale(1);
+	-moz-transform: scale(1);
+	-webkit-transform: scale(1);
+	transition-duration: 1s;
+	border: 1px solid #d5e3e3;
+	transition: all 0.5s ease 0s;
+    -o-transition: all 0.5s ease 0s;
+	-ms-transition: all 0.5s ease 0s;
+    -moz-transition: all 0.5s ease 0s;
+    -webkit-transition: all 0.5s ease 0s;
+}
+.trending .trending-box:hover {
+	transform: scale(1.08);
+	-o-transform: scale(1.08);
+	-ms-transform: scale(1.08);
+	-moz-transform: scale(1.08);
+	-webkit-transform: scale(1.08);
+	box-shadow: 0 2px 5px 1px #cad5d5;
+}
+.trending .heading1 a {
+	color: #333333;
+	text-decoration: none;
+}
+.trending .heading1 a:hover {
+	color: #18afc4;
+}
+.trending .trending-box img {
+	border-radius: 5px 5px 0 0;
+}
+.trending .trending-box .guide-name {
+	font-size: 14px;
+	color: #333333;
+	font-weight: normal;
+	line-height: normal;
+	position: relative;
+}
+.trending .trending-box .guide-name .rating {
+	display: block;
+	margin-top: 6px;
+}
+.trending .trending-box .guide-name .amount {
+	top: 8px;
+	right: 0;
+	font-size: 16px;
+	color: #ffffff;
+	font-weight: 500;
+	line-height: normal;
+	padding: 4px 20px;
+	position: absolute;
+	border-radius: 2px;
+	background: #38b963;
+	letter-spacing: 0.3px;	
+}
+.trending .trending-box .guide-name i {
+	font-size: 19px;
+	color: #fed953;
+	margin-right: 6px;
+}
+.trending .trending-inner {
+	padding: 10px 20px;
+}
+.trending .trending-inner .heading1 {
+	min-height: 41px;
+}
+.trending .view-all {
+	margin-top: 35px;
+	text-align: center;
+}
+.trending .view-all a {
+	text-decoration: underline;
+}
+.trending .view-all a:hover {
+	text-decoration: none;
+}
+@media (max-width: 580px) {
+	.trending-outer {
+		float: none;
+		width: 100%;
+	}
+	.trending .trending-inner .heading1 {
+		min-height: auto;
+	}
+	.trending .trending-box {
+		max-width: 90%;
+		margin: 30px auto 0;
+	}
+}

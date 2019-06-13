@@ -1,0 +1,93 @@
+.faq-section {
+    /*background: #f3f3f3;*/
+}
+.faq-box .panel-group .panel {
+    border: none;
+    margin: 0 0 15px;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.faq-box .panel-default > .panel-heading {
+    padding: 0;
+}
+.faq-box .panel-default .panel-heading {
+    position: relative;
+}
+.faq-box .panel-default .panel-heading a {
+    font-size: 16px;
+    line-height: 1.6;
+    display: block;
+    font-weight: 500;
+    letter-spacing: 0.6px;
+    text-decoration: none;
+    color: #ffffff !important;
+    padding: 10px 30px 10px 15px;
+    background: #18afc4 !important;
+}
+.faq-box .panel-default .panel-heading .collapsed {
+    color: #18afc4 !important;
+    background: #ffffff !important;
+}
+.faq-box .panel-default .panel-heading a:hover {
+    color: #ffffff !important;
+    background: #18afc4 !important;
+}
+.faq-box .panel-default .panel-heading a::after {
+    top: 45%;
+    right: 15px;
+    content: "–";
+    font-size: 22px;
+    position: absolute;
+    transform: translateY(-50%);
+    -o-transition: translateY(-50%);
+    -ms-transition: translateY(-50%);
+    -moz-transition: translateY(-50%);
+    -webkit-transition: translateY(-50%);
+}
+.faq-box .panel-default .panel-heading a.collapsed::after {
+    content: "+";
+}
+.faq-box .panel-body {
+    font-size: 15px;
+    padding: 15px;
+    background: #ffffff;
+    letter-spacing: 0.5px;
+    border: none !important;
+}
+@media (max-width: 767px) {
+    .faq-section {
+                   padding: 0 0 10px;          
+    }
+    .faq-box .panel-group .panel {
+                   margin: 0 0 10px;
+    }
+    .faq-box .panel-default .panel-heading a {
+                   font-size: 15px;
+                   line-height: 1.4;
+                   letter-spacing: 0.5px;
+                   padding: 10px 25px 10px 10px;
+    }
+    .faq-box .panel-default .panel-heading a::after {
+                   right: 10px;
+                   font-size: 20px;
+    }
+    .faq-box .panel-body {
+                   font-size: 14px;
+                   padding: 10px;
+    }
+}
+@media (max-width: 480px) {
+    .faq-box .panel-default .panel-heading a {
+                   font-size: 14px;
+                   line-height: 1.3;
+                   padding: 10px 22px 10px 10px;
+    }
+    .faq-box .panel-default .panel-heading a::after {
+                   right: 8px;
+                   font-size: 18px;
+    }
+    .faq-box .panel-body {
+                   font-size: 13px;
+    }
+}

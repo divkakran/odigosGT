@@ -1,0 +1,218 @@
+.chat-box .chating-box h5 {
+    font-size: 16px;
+    color: #333333;
+    font-weight: 500;
+    line-height: normal;
+}
+.chat-box .chating-inner {
+    padding: 10px 20px;
+    border-radius: 4px;
+    background: #ffffff;
+    margin-bottom: 15px;
+    border: 1px solid rgba(151, 151, 151, 0.5);        
+}
+.chat-box .chating-inner ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.chat-box .chating-inner ul li {
+    font-size: 16px;
+    color: #666666;
+    font-weight: normal;
+    line-height: normal;
+    padding: 2px 0;
+}
+.chat-box .chating-inner ul li span {
+    color: #333333;
+    float: right;
+}
+.chat-box .radio-wrap {
+    font-size: 16px;
+    color: #333333;
+    font-weight: normal;
+    display: block;
+    position: relative;
+    padding-right: 32px;
+    cursor: pointer;
+    margin: 3px 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.chat-box .radio-wrap [type="radio"] {
+    position: absolute;
+    opacity: 0;
+    right: 0;
+    top: 0;
+    margin: 0;
+   z-index: 10;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+.chat-box .checkmark {
+    position: absolute;
+    right: 0;
+    top: -4px;
+    width: 32px;
+    height: 32px;
+    background: transparent;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    border: 2px solid #b4b3b4;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+}
+.chat-box .checkmark i {
+    width: 20px;
+    height: 20px;
+    background: #0d3a43;
+    border-radius: 50%;
+    display: none;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    transition: all 0.3s ease-in-out;
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    -o-transition: all 0.3s ease-in-out;
+    -ms-transition: all 0.3s ease-in-out;
+
+}
+/* On mouse-over, add a grey background color */
+
+.chat-box .radio-wrap input:checked ~ .checkmark {
+   border-color: #18afc4;
+}
+/* When the radio button is checked, add a blue background */
+
+.chat-box .radio-wrap input:checked ~ .checkmark i {
+    background-color: #18afc4;
+    display: block;
+}
+.chat-box .form-group:first-child {
+    margin-bottom: 20px;
+}
+.chat-box .form-group:last-child {
+    margin-bottom: 0;
+}
+.chat-box .success-msg {
+    text-align: center;
+}
+.chat-box .success-msg img {
+    width: 56px;
+}
+::-webkit-inner-spin-button {
+    display: none;
+}
+::-webkit-calendar-picker-indicator {
+   background: #3e727a;
+   position: relative;
+   width: 30px;
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .chat-box .chating-box {
+        margin: 20px;
+    }
+}
+@media (max-width: 767px) {
+    .chat-box .success-msg img {
+        width: 38px;
+    }
+    .chat-box .chating-box {
+        font-size: 15px;
+        padding: 15px 0;
+        margin: 0;
+        line-height: 1.4;
+    }
+    .chat-box .checkmark {
+        top: -4px;
+        width: 24px;
+        height: 24px;
+        border: 2px solid #b4b3b4;
+    }
+    .chat-box .checkmark i {
+        width: 12px;
+        height: 12px;
+    }
+    .chat-box .radio-wrap {
+        font-size: 14px;
+        padding-right: 26px;
+        margin: 3px 0;
+    }
+    .chat-box .chating-inner {
+        padding: 10px;
+    }
+    .chat-box .chating-inner ul li {
+        font-size: 15px;
+    }
+    .chat-box .form-group:first-child {
+        margin-bottom: 10px;
+    }
+}
+.make-payment .chating-box {
+    margin: 10px 0;
+    padding: 25px 15px;
+    border-radius: 4px;
+    background: #ffffff;
+}
+.payment-summary-box h4 {
+    font-size: 18px;
+    color: #333333;
+    font-weight: 500;
+    line-height: normal;
+    text-align: left;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #dedede;
+}
+.payment-summary-box .payment-inner {
+    padding: 0 15px;
+    list-style: none;
+    text-align: left;
+    margin-bottom: 20px;
+}
+.payment-summary-box .payment-inner li {
+    font-size: 16px;
+    color: #666666;
+    font-weight: normal;
+    line-height: normal;
+    padding: 5px 0;
+}
+.payment-summary-box .payment-inner li.total {
+    color: #333333;
+    font-weight: 500;
+    margin: 8px 0 15px;
+    padding: 15px 0;
+    border-top: 1px solid #999999;
+    border-bottom: 1px solid #999999;
+}
+.payment-summary-box .payment-inner li.half-payment {
+    color: #333333;
+    margin: 10px 0;
+    padding: 5px 10px;
+    background: rgba(24, 175, 196, 0.2);
+}
+.payment-summary-box .payment-inner li span {
+    float: right;
+    color: #333333;
+}
+.payment-summary-box .payment-inner li.half-payment span {
+    font-weight: 700;
+}
+.make-payment .chating-box .proceed {
+    display: block;
+}
+@media (max-width: 767px) {
+    .make-payment .chating-box {
+        font-size: 16px;
+        padding: 15px;
+    }
+}

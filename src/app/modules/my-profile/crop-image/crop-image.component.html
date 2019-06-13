@@ -1,0 +1,33 @@
+<div id="uploadimageModal" role="dialog" class="profile-photo">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close"  (click)="closeCropImageComponent({closeCropComponent: true , updatedGuideImage: false})">&times;</button>
+        <h4 class="modal-title">Upload & Crop Image</h4>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <div class="col-md-8 text-center">
+            <image-cropper
+            [imageChangedEvent]="image.image"
+            [maintainAspectRatio]="true"
+            [aspectRatio]="200 / 200"
+            [resizeToWidth]="128"
+            format="png, jpg , jpeg"
+            (imageCroppedBase64)="croppedImage($event)"
+            ></image-cropper>
+          </div>
+          <div class="col-md-4" style="padding-top:30px;">
+            <br/>
+            <br/>
+            <br/>
+            <button class="btn btn-success crop_image" (click)="uploadImage()">Crop & Upload Image</button>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" (click)="closeCropImageComponent({closeCropComponent: true , updatedGuideImage: false})">Close</button>
+      </div>
+    </div>
+  </div>
+</div> 

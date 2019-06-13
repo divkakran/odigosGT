@@ -1,0 +1,14 @@
+<section class="my-trips">
+  <div *ngIf="tripDetail" class="container">
+    <ul class="nav nav-tabs">
+      <li class="apply-pointer" [ngClass]="{'active':tripDetail.type=='Pending Trips'}"><a (click)="tripTypeChange('Pending Trips')">Pending <span>Trips</span></a></li>
+      <li class="apply-pointer" [ngClass]="{'active':tripDetail.type=='Upcoming Trips'}"><a (click)="tripTypeChange('Upcoming Trips')">Upcoming <span>Trips</span></a></li>
+      <li class="apply-pointer" [ngClass]="{'active':tripDetail.type=='Past Trips'}"><a (click)="tripTypeChange('Past Trips')">Past <span>Trips</span></a></li>
+      <li class="apply-pointer" [ngClass]="{'active':tripDetail.type=='Cancelled Trips'}"><a (click)="tripTypeChange('Cancelled Trips')">Cancelled <span>Trips</span></a></li>
+    </ul>
+  </div>
+</section>
+<app-trip-card [tripDetail]="tripDetail" (cancelTrips)="loadTripOnCancel()"></app-trip-card>
+<div class="text-center"  *ngIf= "tripDetail['totalRecords'] > tripDetail['tripList'].length">
+  <a class="btn button3" (click)="loadMoreTrips()">Load More...</a><br><br>
+</div>

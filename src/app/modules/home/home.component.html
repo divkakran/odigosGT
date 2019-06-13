@@ -1,0 +1,185 @@
+<section class="main-banner">
+  <!-- <img src="{{baseImageUrl+'main-banner.jpg'}}" alt="Odigos Slide 1" class="img-responsive"> -->
+  <div class="banner-caption">
+    <div class="container">
+      <h1>Making Discoveries Easy</h1>
+      <p>Explore India with curated tours and experiences</p>
+      <div class="row">
+        <div class="col-sm-6 col-sm-offset-3">
+          <ul class="counter clearfix">
+            <li class="list"><span>500+</span>Guides</li>
+            <li class="list"><span>2000+</span>Packages</li>
+            <li class="list"><span>50+</span>Cities</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="about">
+  <div class="container">
+    <h2 class="main_heading">About Us</h2>
+    <p>Odigos, meaning 'guide' in Greek, is an online marketplace that connects tourists to certified guides across India. Select your dates, destination and language to uncover a world of adventures by booking reliable tour guides and curated experiences. Odigos tour guide app and website help travellers explore the nuances of 100+ cities and have a positive travel experience.</p>
+  </div>
+</section>
+<section class="trending text-center">
+  <div class="container">
+    <h2 class="main_heading">Trending Destinations</h2>
+    <h4 class="main_heading2">Don't miss out on our handpicked attractions</h4>
+    <div class="row">
+      <div class="col-sm-4" *ngFor = "let item of trendingData" >
+        <a href="/tour-guide/{{item.web_url}}/{{item.place_url}}"><div class="trending-box">
+          <a>
+            <img *ngIf="item.package_image!=''" [src]="item.package_image" alt="Trending Destinations" class="img-responsive">
+            <img *ngIf="item.package_image==''" src ="{{baseImageUrl+'no-img.png'}}" alt="Trending Destinations" class="img-responsive">
+          </a>
+          <div class="trending-inner">
+            <h3 class="heading1"><a>{{(item.tour_name.length>20) ? (item.tour_name | slice:0:20)+'...':(item.tour_name)}}</a></h3>
+            <p class="guide-name">By {{(item.guide_name.length>20)? (item.guide_name | slice:0:15)+'...':(item.guide_name) }}
+              <span class="rating">
+                <i *ngFor="let rating of [1,2,3,4,5]" [ngClass]= "rating <= item.guide_rating ? 'fa fa-star':'fa fa-star-o'" aria-hidden="true"></i>
+                <!-- <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i>
+                <i class="fa fa-star-o" aria-hidden="true"></i> -->
+              </span><span class="amount">&#8377; {{item.guide_charges}}</span>
+            </p>
+          </div>
+        </div></a>
+      </div>
+      <!-- <div class="col-sm-4">
+        <div class="trending-box">
+          <a href="#"><img src="{{baseImageUrl+'trending2.png'}}" alt="Trending Destinations" class="img-responsive"></a>
+          <div class="trending-inner">
+            <h3 class="heading1"><a href="#">Agra Tour</a></h3>
+            <p class="guide-name">By Akash<span class="rating"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span><span class="amount">&#8377; 5000</span></p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="trending-box">
+          <a href="#"><img src="{{baseImageUrl+'trending3.png'}}" alt="Trending Destinations" class="img-responsive"></a>
+          <div class="trending-inner">
+            <h3 class="heading1"><a href="#">Delhi Darshan</a></h3>
+            <p class="guide-name">By Sunny<span class="rating"><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i><i class="fa fa-star-o" aria-hidden="true"></i></span><span class="amount">&#8377; 5000</span></p>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <p class="view-all"><a routerLink="/trending-destinations-in-india">See All</a></p>
+  </div>
+</section>
+<section class="download-app">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6 download-app-left">
+        <img src="{{baseImageUrl+'book-your-next-advanture.jpg'}}" alt="How to Book your next Adventure" class="img-responsive">
+      </div>
+      <div class="col-sm-6">
+        <div class="download-app-box">
+          <h2 class="heading2">How to Book your next Adventure</h2>
+          <ul>
+            <li><img src="{{baseImageUrl+'select-destination.png'}}" alt="Select a Destination" class="img-responsive"> Select a Destination</li>
+            <li><img src="{{baseImageUrl+'pick-guide.png'}}" alt="Pick a Guide" class="img-responsive"> Pick a Guide</li>
+            <li><img src="{{baseImageUrl+'book-experience.png'}}" alt="Book your Experience" class="img-responsive"> Book your Experience</li>
+          </ul>
+          <h3>Download the App</h3>
+          <div class="app-icon">
+            <a target="_blank" href="https://itunes.apple.com/us/app/odigos-guides/id1389841153?ls=1&mt=8"><img src="{{baseImageUrl+'app-store.png'}}" alt="App Store" class="img-responsive"></a> &nbsp; <a target="_blank" href="https://play.google.com/store/apps/details?id=com.birdapps.odigostourist"><img src="{{baseImageUrl+'google-play.png'}}" alt="Google Play" class="img-responsive"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="why-choose-us">
+  <div class="container">
+    <h2 class="main_heading">Why Choose Us</h2>
+    <h4 class="main_heading2">Enjoy a seamless and memorable experience at exclusive prices</h4>
+    <div class="row">
+      <div class="col-sm-4">
+        <img src="{{baseImageUrl+'selection-process.png'}}" alt="Selection Process" class="img-responsive">
+        <h3 class="heading3">Selection Process</h3>
+        <p class="col-md-10 col-md-offset-1">Our guides are certified by the Ministry of Tourism</p>
+      </div>
+      <div class="col-sm-4">
+        <img src="{{baseImageUrl+'secured-payments.png'}}" alt="Secured Payments" class="img-responsive">
+        <h3 class="heading3">Secured Payments</h3>
+        <p class="col-md-10 col-md-offset-1">Transactions are handled by Paytm / PayU</p>
+      </div>
+      <div class="col-sm-4">
+        <img src="{{baseImageUrl+'easy-booking.png'}}" alt="Easy Booking" class="img-responsive">
+        <h3 class="heading3">Easy Booking</h3>
+        <p class="col-md-10 col-md-offset-1">Personalise your booking as per your preference</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="contact-form">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-offset-6 col-sm-6">
+        <form name="contact-form" class="form" (ngSubmit)="getInTouchSubmit(getInTouch.value)" #getInTouch="ngForm">
+          <h2 class="main_heading">Get In Touch With Us</h2>
+          <h4 class="main_heading2">Our team will contact you soon</h4>
+          <span id="msg_span" ></span>
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label>Name</label>
+                <input type="text" name="contact_name" autocomplete="off" [(ngModel)]="getInTouchObject.name" placeholder="Your Name" class="form-control" maxlength="20">
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="contact_email" autocomplete="off" [(ngModel)]="getInTouchObject.email" placeholder="Enter your email" class="form-control" maxlength="30" >
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="form-group">
+                <label>Mobile</label>
+                <input type="tel" name="contact_mobile" autocomplete="off" [(ngModel)]="getInTouchObject.mobile" onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106) || (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )" placeholder="Enter your Number" maxlength="10" class="form-control" >
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label>City</label>
+                <input type="text" name="contact_city" autocomplete="off" [(ngModel)]="getInTouchObject.city" placeholder="Enter city name" class="form-control" maxlength="20">
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="form-group">
+                <label>Comment</label>
+                <textarea name="contact_comments" autocomplete="off" [(ngModel)]="getInTouchObject.comment" placeholder="Enter Comment" class="form-control"></textarea>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <input type="hidden" name="submit_btn" value="submit_btn">
+              <button type="submit" name="btn_cont" id="btn_cont" value="" class="btn contact-btn">Submit</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="media-list">
+  <div class="container">
+    <div class="media-logo slider">
+      <a target="_blank" rel="nofollow" href="https://www.businesstoday.in/technology/news/travel-technology-firm-bird-group-goes-digital-launches-consumer-centric-apps/story/278710.html" class="slide"><img src="{{baseImageUrl+'media1.png'}}" class="img-responsive" alt="Business Standard" /></a>
+      <a target="_blank" rel="nofollow" href="http://www.traveltradejournal.com/bird-apps-launches-odigos-app-to-help-travellers-select-and-book-tour-guides-on-the-go/" class="slide"><img src="{{baseImageUrl+'media2.png'}}" class="img-responsive" alt="BW Disrupt" /></a>
+      <a target="_blank" rel="nofollow" href="https://tourismbreakingnews.com/bird-apps-launches-odigos-app-to-help-travellers-select-and-book-tour-guides-on-the-go/" class="slide"><img src="{{baseImageUrl+'media3.png'}}" class="img-responsive" alt="Cosmopolitan" /></a>
+      <a target="_blank" rel="nofollow" href="http://www.travelbizmonitor.com/Top-Stories/bird-apps-launches-odigos-app-to-prebook-tourist-guide-36120"><img src="{{baseImageUrl+'media4.png'}}" class="img-responsive" alt="Hospitality Talk" /></a>
+      <a target="_blank" rel="nofollow" href="http://www.travelspan.in/bird-apps-launches-odigos-app-help-travellers-select-book-tour-guides-go/" class="slide"><img src="{{baseImageUrl+'media5.png'}}" class="img-responsive" alt="Technuter" /></a>
+    </div>
+  </div>
+</section>
+
+<!-- messanger boat -->
+<div id="fb-root"></div>
+<div class="fb-customerchat"
+  attribution=setup_tool
+  page_id="183675952281475">
+</div>
+

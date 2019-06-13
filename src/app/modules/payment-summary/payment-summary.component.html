@@ -1,0 +1,41 @@
+<section class="payment-summary">
+    <div class="container">
+      <div class="payment-summary-inner text-center">
+        <div class="row">
+          <div class="col-sm-8 col-sm-offset-2">
+            <div class="payment-summary-box">
+              <h3 class="heading4">Payment Summary<span></span></h3>
+              <div class="form-group clearfix" *ngIf="userDetail">
+                <form class="form-inline apply-coupon">
+                  <h4 class="apply-coupon-heading">Apply Coupon / Refferal Code</h4>
+                  <div class="form-group clearfix">
+                    <input type="text" [readonly]="isCouponApplied" class="form-control pull-left" name="ref" placeholder="Enter Code" [(ngModel)]="originalValues.referalCodeBinding">
+                    <input *ngIf="!isCouponApplied" type="button" class="pull-right button3" (click)= "applyCoupon()" value="APPLY">
+                    <input *ngIf="isCouponApplied" type="button" class="pull-right button3" (click)= "cancelCoupon()" value="CANCEL">
+                    <input *ngIf= "false" type="button" class="pull-right button3 cancel" value="CANCEL">
+                    <span  *ngIf="isCouponApplied" class="applied">Coupon Code Applied</span>
+                  </div>
+                  <div class="credit-points">Credit Points<span>{{creditPoints}}</span></div>
+                </form>    
+              </div>
+              <ul *ngIf="payData" class="payment-inner">
+                <h4>Charge Details:<label class="pull-right credit-points-text"><input type="checkbox" (change)="applyCredit()"><span class="checkmark"></span> Use Credit Point</label></h4>
+                <li>Package Rate <span>₹ {{packageRate}}</span></li>
+                <li>Convenience Fees <span><strong class="discount" *ngIf="!isCreditApply">₹ {{lessAmountCredit}}</strong> ₹ {{convienceFee}}</span></li>
+                <li>Total GST <span>₹ {{totalGst}}</span></li>
+                <li *ngIf="isCouponApplied">Discount <span>-₹ {{disountValue}}</span></li>
+                <li class="total">Amount Payable 
+                  <span>₹ {{totalAmount}}</span>
+                </li>
+                <li class="partial-payment" *ngIf="payData.amountPay=='percent'">Advance Amount ({{payData.advance_percent}}%)<span>₹ {{advanceAmountToPaid | number: '.0-2'}}</span></li>
+                <li class="partial-payment" *ngIf="payData.amountPay=='percent'">Balance Amount ({{100-payData.advance_percent}}%)<span>₹ {{balanceAmountToPaid | number: '.0-2'}}</span></li><br>
+                <a class="button1 text-center apply-pointer" (click)="payUDataSubmit()">Make Payment</a>
+                <p class="short-decription">A detailed invoice will be emailed on your registered ID shortly.</p>
+              </ul>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>

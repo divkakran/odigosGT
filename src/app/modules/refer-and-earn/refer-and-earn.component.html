@@ -1,0 +1,40 @@
+<section class="refer-earn">
+  <div class="container">
+    <div class="refer-earn-inner">
+      <div class="row">
+        <div *ngIf="loadDetail" class="col-sm-10 col-sm-offset-1">
+          <h1>{{loadDetail.invite_msg}} 
+            <!-- <span class="blue">Earn Rs.{{loadDetail.ref_amount}} !</span> -->
+          </h1>
+          <!-- <h2>Your friend gets Rs. 2000 on installing the Odigos App</h2> -->
+          <div class="refer-steps">
+            <div class="row">
+              <div class="col-sm-4 refer-steps-item">
+                <img src="{{baseImageUrl+'refer-step1.png'}}" class="img-responsive" alt="refer step1">
+                <p>Invite a friend to<br>download the App</p>
+              </div>
+              <div class="col-sm-4 refer-steps-item">
+                <img src="{{baseImageUrl+'refer-step2.png'}}" class="img-responsive" alt="refer step2">
+                <p>Friend signs up on the App</p>
+              </div>
+              <div class="col-sm-4 refer-steps-item">
+                <img src="{{baseImageUrl+'refer-step3.png'}}" class="img-responsive" alt="refer step3">
+                <p>You earn Rs. {{loadDetail.ref_amount}} on <br/>every invite</p>
+              </div>
+            </div>
+          </div>
+          <span class="invite-code">Your Invite Code: {{loadDetail.referral_code}}</span>
+          <div class="share-via">
+            <h3>Share Via</h3>
+            <ul class="clearfix">
+              <li><a (click)="facebookSharing(shareObj)" class="apply-pointer"><img src="{{baseImageUrl+'share-facebook.png'}}" class="img-responsive" alt="Facebook"><span>Facebook</span></a></li>
+              <li><a href="https://web.whatsapp.com/send?text={{loadDetail.ref_msg_link}}" target="_blank"><img src="{{baseImageUrl+'share-whatsapp.png'}}" class="img-responsive" alt="WhatsApp"><span>WhatsApp</span></a></li>
+              <li><a href="https://twitter.com/intent/tweet?original_referer=&text={{loadDetail.ref_msg_link}}" target="_blank"><img src="{{baseImageUrl+'share-twitter.png'}}" class="img-responsive" alt="Twitter"><span>Twitter</span></a></li>
+              <li><a href="mailto:?subject=Subject&body={{loadDetail.ref_msg_link}}"><img src="{{baseImageUrl+'share-email.png'}}" class="img-responsive" alt="E-mail"><span>E-mail</span></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
