@@ -18,7 +18,7 @@
           </div>
           <div class="listing-right">
             <h3><a (click)="viewDetail(item)">{{(item.name.length>20) ? (item.name | slice:0:20)+'...':(item.name) }}</a><br>
-            <i *ngFor="let rating of [1,2,3,4,5]" [ngClass]= "rating <= item.guide_rating ? 'fa fa-star rated':'fa fa-star'" aria-hidden="true"></i> 
+            <i *ngFor="let rating of [1,2,3,4,5]" [ngClass]= "rating <= item.guide_rating ? 'fa fa-star rated':'fa fa-star'" aria-hidden="true">&nbsp;</i>
             <!-- <i class="fa fa-star rated" aria-hidden="true"></i> 
             <i class="fa fa-star rated" aria-hidden="true"></i> 
             <i class="fa fa-star rated" aria-hidden="true"></i> 
@@ -31,14 +31,14 @@
                   <sup><i class="fa fa-quote-right" aria-hidden="true"></i></sup>
                 </span>
               </div>
-              <div class="col-xs-4 text-left">
+              <!-- <div class="col-xs-4 text-left">
                 <h4><span>Tour</span>{{(item.tourist_place.length>10) ? (item.tourist_place| slice:0:10)+'...':(item.tourist_place) }} </h4>
               </div>
               <div class="col-xs-4 text-left">
                 <h4><span>Duration</span>{{item.duration_hours}}</h4>
-              </div>
-              <div class="col-xs-4 text-right" style="margin-top:18px;">
-                <a class="btn button3"  href="/tour-guide/{{item.web_url}}/{{item.place_url}}">View Details</a>
+              </div> -->
+              <div class="col-xs-12 text-right">
+                <a class="button3"  href="/tour-guide/{{item.web_url}}">View Details</a>
               </div>
             </div>
           </div>

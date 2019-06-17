@@ -11,7 +11,7 @@ import { ThankYouComponent } from './thank-you/thank-you.component';
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    FormsModule
+    FormsModule ,
   ],
   declarations: [GuideInformationComponent, ThankYouComponent],
   exports: [ GuideInformationComponent ]

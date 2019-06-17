@@ -1,103 +1,117 @@
-<div class="bread-crumb">
-  <div class="container" *ngIf="guideDetail">
-    <a routerLink="/">Home</a> > <a routerLink="/tour-guides">Tour Guide List</a> > <span class="selected">{{guideDetail.name}}</span>
-  </div>
-</div>
-<div class="combo-banner slider">
-  <div class="slide" *ngFor = "let banner of packageBanner"> 
-    <img [src]="banner" alt="Banner 1" class="img-responsive">
-  </div>
-</div>
-<section class="guide-details" *ngIf="guideDetail">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-2 guide-box">
-        <div class="guide-pic slider">
-          <div class="slide"> <img [src]="guideDetail.image_url" alt="Ravi Sharma" class="img-responsive"> </div>
-        </div>
-      </div>
-      <div class="col-xs-10 guide-box">
-        <h1 class="heading5">{{guideDetail.name}}&nbsp; 
-          <i *ngFor="let rating of [1,2,3,4,5]" [ngClass]= "rating <= guideDetail.guide_rating ? 'fa fa-star rated':'fa fa-star-o'" aria-hidden="true"></i> 
-          <span>{{guideDetail.address.city}}, {{guideDetail.address.country}}</span>
-        </h1>
-        <a *ngIf="isUserLogin" class="btn button1" [ngClass]= "{'btn-disable': guidePackageDetail.is_booked=='1'}" data-toggle="modal" data-dismiss="modal" data-target="#BookNow">Book Now</a>
-        <a *ngIf="!isUserLogin" class="btn button1"  data-toggle="modal" data-dismiss="modal" data-target="#NotLogin">Book Now</a>
-      </div>
+<span *ngIf="packageBanner && packageBanner.length>0">
+  <div class="bread-crumb">
+    <div class="container" *ngIf="guideDetail">
+      <a routerLink="/">Home</a> > <a routerLink="/tour-guides">Tour Guide List</a> > 
+      <span class="selected" *ngIf="plceNameForMeta==''">{{guideDetail.name}}</span> 
+      <span class="selected apply-pointer" *ngIf="plceNameForMeta!=''" (click)="navigate(name)">{{guideDetail.name}}</span>
+      <span *ngIf="plceNameForMeta!=''"> > </span> 
+      <span class="selected" *ngIf="plceNameForMeta!=''">{{guidePackageDetail.tour_name.length> 21 ? (guidePackageDetail.tour_name | slice:0:21)+'...' : guidePackageDetail.tour_name }}</span>
     </div>
-    <div class="row">
-      <div class="col-md-9 col-sm-8 guide-box">
-        <div class="guide-inner-box">
-          <h2 class="heading5">About Me</h2>
-          <span innerHTML="{{(guideDetail.about_me.length > expectedLength ) ? (guideDetail.about_me | slice:0:expectedLength)+'...':(guideDetail.about_me)}}"></span>
-            <a *ngIf="guideDetail.about_me.length >= expectedLength" class="add-cursor-pointer" 
-            (click)="readMoreClick(guideDetail.about_me, 'about_me')">{{readTypeHandle}}</a> 
+  </div>
+  <div class="combo-banner slider">
+    <div class="slide" *ngFor = "let banner of packageBanner"> 
+      <img [src]="banner" alt="Banner 1" class="img-responsive">
+    </div>
+  </div>
+  <section class="guide-details" *ngIf="guideDetail">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-2 guide-box">
+          <div class="guide-pic slider">
+            <div class="slide"> <img [src]="guideDetail.image_url" alt="Ravi Sharma" class="img-responsive"> </div>
+          </div>
         </div>
-        <div class="guide-inner-box">
-          <h2 class="heading5">Itinerary</h2>
-          <span [innerHTML]="(guidePackageDetail.itinerary.length > expectedLengthForItinery) ? (guidePackageDetail.itinerary | slice:0:expectedLengthForItinery)+'...':(guidePackageDetail.itinerary)"></span> 
-            <a *ngIf="guidePackageDetail.itinerary.length >= expectedLengthForItinery" class="add-cursor-pointer" 
-              (click)="readMoreClick(guidePackageDetail.itinerary,'itinerary')">{{readTypeHandleForIntinery}}</a>
+        <div class="col-xs-10 guide-box">
+          <h1 class="heading5">{{guideDetail.name}}&nbsp; 
+            <i *ngFor="let rating of [1,2,3,4,5]" [ngClass]= "rating <= guideDetail.guide_rating ? 'fa fa-star rated':'fa fa-star-o'" aria-hidden="true"></i> 
+            <span>{{guideDetail.address.city}}, {{guideDetail.address.country}}</span>
+          </h1>
+          <a *ngIf="isUserLogin" class="btn button1" [ngClass]= "{'btn-disable': guidePackageDetail.is_booked=='1'}" data-toggle="modal" data-dismiss="modal" data-target="#BookNow">Book Now</a>
+          <a *ngIf="!isUserLogin" class="btn button1"  data-toggle="modal" data-dismiss="modal" data-target="#NotLogin">Book Now</a>
         </div>
       </div>
-      <div class="col-md-3 col-sm-4 guide-box">
-        <div class="guide-right-box clearfix">
-          <div class="col-xs-12">
-            <h3><span>Experience</span>{{guideDetail.experience_years}} Yrs {{guideDetail.experience_months}} Months</h3>
+      <div class="row">
+        <div class="col-md-9 col-sm-8 guide-box">
+          <div class="guide-inner-box">
+            <h2 class="heading5">About Me</h2>
+            <span innerHTML="{{(guideDetail.about_me.length > expectedLength ) ? (guideDetail.about_me | slice:0:expectedLength)+'...':(guideDetail.about_me)}}"></span>
+              <a *ngIf="guideDetail.about_me.length >= expectedLength" class="add-cursor-pointer" 
+              (click)="readMoreClick(guideDetail.about_me, 'about_me')">{{readTypeHandle}}</a> 
           </div>
-          <div class="col-xs-6">
-            <h3><span>Gender</span> {{guideDetail.gender | titlecase}}</h3>
-          </div>
-          <div class="col-xs-6">
-            <h3><span>Age</span> {{guideDetail.age}} Yrs</h3>
+          <div class="guide-inner-box">
+            <h2 class="heading5">Itinerary</h2>
+            <span [innerHTML]="(guidePackageDetail.itinerary.length > expectedLengthForItinery) ? (guidePackageDetail.itinerary | slice:0:expectedLengthForItinery)+'...':(guidePackageDetail.itinerary)"></span> 
+              <a *ngIf="guidePackageDetail.itinerary.length >= expectedLengthForItinery" class="add-cursor-pointer" 
+                (click)="readMoreClick(guidePackageDetail.itinerary,'itinerary')">{{readTypeHandleForIntinery}}</a>
           </div>
         </div>
-        <div class="guide-right-box clearfix">
-          <div class="col-xs-12">
-            <h3><span>Tour</span> {{guidePackageDetail.tour_name}}</h3>
+        <div class="col-md-3 col-sm-4 guide-box">
+          <div class="guide-right-box clearfix">
+            <div class="col-xs-12">
+              <h3><span>Experience</span>{{guideDetail.experience_years}} Yrs {{guideDetail.experience_months}} Months</h3>
+            </div>
+            <div class="col-xs-6">
+              <h3><span>Gender</span> {{guideDetail.gender | titlecase}}</h3>
+            </div>
+            <div class="col-xs-6">
+              <h3><span>Age</span> {{guideDetail.age}} Yrs</h3>
+            </div>
           </div>
-          <div class="col-xs-6">
-            <h3><span>Charge</span> ₹ {{guidePackageDetail.package_charges}}</h3>
-          </div>
-          <div class="col-xs-6">
-            <div class="dropdown select-language">
-              <h3><span class="dropdown-toggle" data-toggle="dropdown">Language <i class="fa fa-angle-down" aria-hidden="true"></i></span>
-              <ul class="dropdown-menu">
-                <li *ngFor="let lang of guidePackageDetail.languages" class="apply-pointer" (click)="selectingLanguage(lang)">
-                  <a value="English">{{lang.name}}</a>
-                </li>
-              </ul> {{defaultLangSelect.name}} </h3>
+          <div class="guide-right-box clearfix">
+            <div class="col-xs-12">
+              <h3><span>Tour</span> {{guidePackageDetail.tour_name}}</h3>
+            </div>
+            <div class="col-xs-6">
+              <h3><span>Charge</span> ₹ {{guidePackageDetail.package_charges}}</h3>
+            </div>
+            <div class="col-xs-6">
+              <div class="dropdown select-language">
+                <h3><span class="dropdown-toggle" data-toggle="dropdown">Language <i class="fa fa-angle-down" aria-hidden="true"></i></span>
+                <ul class="dropdown-menu">
+                  <li *ngFor="let lang of guidePackageDetail.languages" class="apply-pointer" (click)="selectingLanguage(lang)">
+                    <a value="English">{{lang.name}}</a>
+                  </li>
+                </ul> {{defaultLangSelect.name}} </h3>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="col-sm-12 guide-box" *ngIf="OtherPackages.length>0">
-        <div class="guide-inner-box">                
-          <h2 class="heading5">Other Packages</h2>
-          <div class="other-packages slider">              
-            <!-- Wrapper for slides -->
-            <div class="col-sm-3" *ngFor="let item of OtherPackages">
-              <div class="package-box slide" (click)="reloadOnOtherPackageSelect(item)">
-                <img *ngIf="item.package_image!=''" [src]="item.package_image" class="img-responsive" alt="Lotus Temple">
-                <img *ngIf="item.package_image==''" src="../../../assets/images/other-packages3.png" class="img-responsive" alt="Lotus Temple">
-                <div class="package-box-inner">
-                  <h4>{{(item.tour_name.length > 20) ? (item.tour_name | slice:0:20)+'...' : (item.tour_name)}}</h4>
-                  <p>Duration<span class="rate">₹ {{item.guide_charges}}</span><span class="duration">{{item.duration_hours}}</span></p>
+        <div class="col-sm-12 guide-box" *ngIf="OtherPackages.length>0">
+          <div class="guide-inner-box">                
+            <h2 class="heading5">Other Packages</h2>
+            <div class="other-packages slider">              
+              <!-- Wrapper for slides -->
+              <div class="col-sm-3" *ngFor="let item of OtherPackages">
+                <div class="package-box slide" (click)="reloadOnOtherPackageSelect(item)">
+                  <img *ngIf="item.package_image!=''" [src]="item.package_image" class="img-responsive" alt="Lotus Temple">
+                  <img *ngIf="item.package_image==''" src="../../../assets/images/other-packages3.png" class="img-responsive" alt="Lotus Temple">
+                  <div class="package-box-inner">
+                    <h4>{{(item.tour_name.length > 20) ? (item.tour_name | slice:0:20)+'...' : (item.tour_name)}}</h4>
+                    <p>Duration<span class="rate">₹ {{item.guide_charges}}</span><span class="duration">{{item.duration_hours}}</span></p>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </div>    
+      <!-- loader -->
+      <div *ngIf="showLoader" class="loader-container">
+        <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
       </div>
-    </div>    
-    <!-- loader -->
-    <div *ngIf="showLoader" class="loader-container">
-      <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+      <!-- loader -->
     </div>
-    <!-- loader -->
-  </div>
-  
-</section>
+    
+  </section>
+</span>
+
+<!-- <div *ngIf="packageBanner && packageBanner.length==0" class="loading">
+  yahhhhoooo
+</div> -->
+
+<!-- <div *ngIf="packageBanner && packageBanner.length==0" class="loader-container">
+  <div class="lds-default"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>
+</div> -->
 
 
 <!-- Book now Modal -->
@@ -147,5 +161,6 @@
 <!-- login component -->
 <!-- <app-login *ngIf="openLoginForm" (closeLoginFormEvent)="receiveLoginCloseEvent($event)"></app-login> -->
 <!-- login component -->
+
 
 

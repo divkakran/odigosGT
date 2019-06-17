@@ -92,10 +92,10 @@ export class CategoryTripsComponent implements OnInit , OnChanges{
 
     localStorage.setItem('$datatype' , JSON.stringify(data));
     // console.log("see all data" , data);
-    // this.router.navigate(['trip-listing/see-all'] , {queryParams: {destination:data.placeName , cat_id:  data.cat_id , cat_name: data.cat_name, offset: '9' , page: '0'
-    // , keyword: data.placeName , no_of_adults: data.no_of_adults , no_of_children: data.no_of_children , hire_date: data.hire_date}});
+    this.router.navigate(['trip-listing/see-all'] , {queryParams: {destination:data.placeName , cat_id:  data.cat_id , cat_name: data.cat_name, offset: '9' , page: '0'
+    , keyword: data.placeName , no_of_adults: data.no_of_adults , no_of_children: data.no_of_children , hire_date: data.hire_date}});
 
-    this.router.navigate(['trip-listing/see-all']);
+    // this.router.navigate(['trip-listing/see-all']);
   }
   viewDetail(guideDetail){
     this.router.navigate(['/tour-guide' , guideDetail.web_url , guideDetail.place_url]);

@@ -19,7 +19,7 @@ export class MeetOurGuideComponent implements OnInit {
   baseImageUrl     : String;
   guideList        : Array<String>;
   initialOffset    :number = 0;
-  initialPage      :number = 4;
+  initialPage      :number = 8;
   totalNumOfRecords:number;
   buttonDisable    :boolean = false;
 
@@ -43,7 +43,7 @@ export class MeetOurGuideComponent implements OnInit {
   }
   loadMoreGuideListing(){
     this.buttonDisable = true;
-    this.initialPage   = 4+this.initialPage;
+    this.initialPage   = 8+this.initialPage;
     this.loadGuides(this.initialOffset , this.initialPage);
   }
   loadInitialGuideList(res){
@@ -59,7 +59,8 @@ export class MeetOurGuideComponent implements OnInit {
     }
   }
   viewDetail(guideDetail){
-    this.route.navigate(['/tour-guide' , guideDetail.web_url , guideDetail.place_url]);
+    window.location.href = "tour-guide/"+guideDetail.web_url+"/"+guideDetail.place_url;
+    // this.route.navigate(['/tour-guide' , guideDetail.web_url , guideDetail.place_url]);
   }
   loadScript(){
     this.loadAPI = new Promise((resolve) => {

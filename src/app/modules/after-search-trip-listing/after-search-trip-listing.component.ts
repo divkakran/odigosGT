@@ -352,7 +352,7 @@ export class AfterSearchTripListingComponent implements OnInit {
   }
 
   numOfVisitors: any;
-  async searchTrips(type , offset , page ){
+  async searchTrips(type , offset , page , validate){
     // hide visitor dropdown on search click
     this.dropDownController['visitors'] = 'false';
     // to disable actve class from category
@@ -362,8 +362,57 @@ export class AfterSearchTripListingComponent implements OnInit {
     this.soloTripSearchModel['page']= page;
 
     await this.setSoloTripPostData();
-    let _temp = new Validations().validateSearchField(this.soloTripSearchModel , type , this.selectedDate);
-    if(_temp.isOkay){
+    if(validate!="dontValidate"){
+      let _temp = new Validations().validateSearchField(this.soloTripSearchModel , type , this.selectedDate);
+      if(_temp.isOkay){
+        switch(type){ 
+          case 'solo': {
+            // this.soloPages = 8 ;
+            this.httpCall.callApi('POST' , apiUrl.soloTripSearch , this.soloTripSearchModel).subscribe((res) => {
+              if(res && res['body']){
+                this.isCategorySelected = true;
+                this.isTripTypeCombo    = false; 
+                this.listByCategory = res['body']['guideList'];
+                this.totalCount     = res['body']['total_records'];
+                let _temp = {"city_id": res['body']['city_id'] ,
+                "language_id": res['body']['language_id'] , 
+                "no_of_adults":res['body']['no_of_adults'],
+                "no_of_children": res['body']['no_of_children'] ,
+                "hire_date": this.setDate(this.selectedDate)};
+                localStorage.setItem("$otherTripDateWise" , "true");
+                localStorage.setItem("$otherTrips" , JSON.stringify(_temp));
+              }
+            });
+            break;
+          }
+          case 'combo':{ 
+            let _tempo = {'city_id':this.soloTripSearchModel['city_id'] , 'place_id':'' , 'language_id':this.soloTripSearchModel['language_id'] , 
+            'hire_date':this.setDate(this.selectedDate) , 'no_of_adults':this.numOfAdults , 'no_of_children': this.numOfChildrens , 'offset':offset ,'page':page};
+            
+            this.httpCall.callApi('POST' , apiUrl.categoryTourList , _tempo).subscribe((res) => {
+              if(res && res['body']){
+                this.isTripTypeCombo    = true;
+                this.isCategorySelected = false;
+                this.searchData = res['body']['list'];
+                this.numOfVisitors = res['body'];
+                // same as solo trip search
+                let _temp = {"city_id": res['body']['city_id'] ,
+                "language_id": res['body']['language_id'] , 
+                "no_of_adults":res['body']['no_of_adults'],
+                "no_of_children": res['body']['no_of_children'] ,
+                "hire_date": this.setDate(this.selectedDate)};
+                localStorage.setItem("$otherTripDateWise" , "true");
+                localStorage.setItem("$otherTrips" , JSON.stringify(_temp));
+                this.router.navigate(['/trip-listing'], {queryParams:{'destination':this.cityName}})
+              }
+            });
+            break;
+          }
+        }
+      } else{
+        this.toastr.showWaring(_temp.msg);
+      }
+    }else{
       switch(type){ 
         case 'solo': {
           // this.soloPages = 8 ;
@@ -408,8 +457,6 @@ export class AfterSearchTripListingComponent implements OnInit {
           break;
         }
       }
-    } else{
-      this.toastr.showWaring(_temp.msg);
     }
   }
 
@@ -453,7 +500,7 @@ export class AfterSearchTripListingComponent implements OnInit {
 
 
   loadMoreSearchTripsSolo(){
-    this.searchTrips('solo' , this.soloOffset , this.soloPages+=8)
+    this.searchTrips('solo' , this.soloOffset , this.soloPages+=8 , "dontValidate")
   }
 
   loadDefaultConfigLanguage(){

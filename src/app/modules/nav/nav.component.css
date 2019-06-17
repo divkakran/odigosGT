@@ -47,6 +47,7 @@ header.navbar-static-top {
     padding: 15px 0;
     position: relative;
     background: #ffffff;
+    box-shadow: 0 2px 4px rgba(213, 213, 213, 0.5);
 }
 header.navbar-static-top .logo {
     float: left;

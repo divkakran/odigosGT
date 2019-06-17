@@ -22,12 +22,12 @@ export class GuideInformationComponent implements OnInit {
   name                     : String;
   guideDetail              : Object;
   guidePackageDetail       : Object;
-  OtherPackages            : Array<Object>;
+  OtherPackages            : Array<Object>=[];
   readTypeHandle           : String = "Read More";
   readTypeHandleForIntinery: String = "Read More";
   expectedLength           : number = 300;
   expectedLengthForItinery : number = 300;
-  packageBanner            : Array<String>;
+  packageBanner            : Array<String>=[];
   baseImageUrl             : String;
   metaName                 : String;
   placeUrl                 : String;
@@ -38,15 +38,24 @@ export class GuideInformationComponent implements OnInit {
   openLoginForm            : Boolean = false;
   showLoader               : Boolean = false;
 
+  plceNameForMeta          : string = '';
+
   constructor(private httpCall: HttpCallService , private dataPassingService: DataPassingService , private route: ActivatedRoute , private meta: Meta , 
     private title: Title , private routeNavigate: Router , @Inject(WINDOW) private window: Window , private toastr: Toaster) {
     this.route.params.subscribe((params) => {
-      this.metaName = params.name.charAt(0).toUpperCase()+(params.name.replace(/-/g," ")).slice(1);
+      if(!params.placeUrl){
+        this.metaName = params.name.charAt(0).toUpperCase()+(params.name.replace(/-/g," ")).slice(1);
+        this.title.setTitle(this.metaName+" Tour Guides - Odigos");
+        this.meta.addTags([{ name:"description" , content: 'I am '+ this.metaName +' working as a private tour guide. If you want to know about our culture, Art & history of the tourist place then Hire me & Enjoy your trip hassle-free. I love to stay in touch with people.' } ,
+        {name:'keywords' , content: 'Hire tour guides, India tour Guide, best tour guide India'}]);
+      }else{
+        this.metaName = params.name.charAt(0).toUpperCase()+(params.name.replace(/-/g," ")).slice(1);
+        this.plceNameForMeta = params.placeUrl.charAt(0).toUpperCase()+(params.placeUrl.replace(/-/g," ")).slice(1);
+        this.title.setTitle(this.metaName+" Tour Guides | "+ this.plceNameForMeta);
+        this.meta.addTags([{ name:"description" , content: this.metaName+"Tour Guides |"+ this.placeUrl } ,
+        {name:'keywords' , content: 'Hire tour guides, India tour Guide, best tour guide India'}]);
+      }
     });
-    this.title.setTitle(this.metaName+" Tour Guides - Odigos");
-    this.meta.addTags([{ name:"description" , content: 'I am '+ this.metaName +' working as a private tour guide. If you want to know about our culture, Art & history of the tourist place then Hire me & Enjoy your trip hassle-free. I love to stay in touch with people.' } ,
-    {name:'keywords' , content: 'Hire tour guides, India tour Guide, best tour guide India'}]);
-
     // reload route
     this.routeNavigate.routeReuseStrategy.shouldReuseRoute = function(){
       return false;
@@ -231,5 +240,8 @@ export class GuideInformationComponent implements OnInit {
       // let backdrop = document.querySelector('.backdrop');
       // backdrop.classList.remove('backdrop');
     }
+  }
+  navigate(name){
+    window.location.href = "tour-guide/"+name;
   }
 }

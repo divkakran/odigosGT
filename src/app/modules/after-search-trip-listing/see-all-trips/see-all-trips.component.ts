@@ -24,12 +24,18 @@ export class SeeAllTripsComponent implements OnInit {
 
   ngOnInit() {
     this.baseImageUrl = environment.baseImageUrl;
-    this.apiData = JSON.parse(localStorage.getItem('$datatype'));
-    this.loadTrendingDestinations(this.initialOffset , this.initialPage);
+    // this.apiData = JSON.parse(localStorage.getItem('$datatype'));
+    // this.loadTrendingDestinations(this.initialOffset , this.initialPage);
     // getting queryParams
     this.ac.queryParams.subscribe(params => { 
-      // this.apiData = params;
-      // this.loadTrendingDestinations(this.initialOffset , this.initialPage);
+      this.apiData = Object.create(params);
+      // var _temp = params['keyword'];
+      Object.defineProperty(this.apiData , 'keyword' , {
+        writable: true,
+        value: this.apiData['keyword'].replace(/-/g, ' ')
+      })
+      this.apiData['keyword'] =  this.apiData['keyword'].replace(/-/g, ' ');
+      this.loadTrendingDestinations(this.initialOffset , this.initialPage);
       // console.log("Parameters received" , params);
       // this.placeName = params['destination'];
       // this.placeName = this.placeName.replace(/-/g, " ");
@@ -37,9 +43,15 @@ export class SeeAllTripsComponent implements OnInit {
     });
   }
   loadTrendingDestinations(offset , page){
+    // let obj = {"cat_id": this.apiData['cat_id'] , "cat_name": this.apiData['cat_name'] ,
+    // "offset" : offset , "page": page , "keyword":this.apiData['placeName'] , "no_of_adults": this.apiData['no_of_adults'],
+    // "no_of_children": this.apiData['no_of_children'] , "hire_date":this.apiData['hire_date']};
+
+    // new for seo
     let obj = {"cat_id": this.apiData['cat_id'] , "cat_name": this.apiData['cat_name'] ,
-    "offset" : offset , "page": page , "keyword":this.apiData['placeName'] , "no_of_adults": this.apiData['no_of_adults'],
+    "offset" : offset , "page": page , "keyword":this.apiData['keyword'] , "no_of_adults": this.apiData['no_of_adults'],
     "no_of_children": this.apiData['no_of_children'] , "hire_date":this.apiData['hire_date']};
+
     this.httpCall.callApi( 'POST' , apiUrl.seeAllTour , obj).subscribe((res) => {
       if(res && res["body"] && res["body"].status==1){
         this.tourList = res["body"].list;

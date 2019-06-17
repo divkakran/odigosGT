@@ -1,6 +1,9 @@
 .trending {
 	padding: 20px 0 70px;
 }
+.trending a {
+    text-decoration: none;
+}
 .setDisable{
 	pointer-events: none;
 }
