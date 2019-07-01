@@ -22,7 +22,7 @@
                     <li *ngFor="let place of destinations" (click)="updateDestinationList(null , place)">{{place.place_name}}</li>
                   </ul>
                 </div>
-                <ng-datepicker class="form-control date apply-pointer" [(ngModel)]="selectedDate" name="date" [options]="options"></ng-datepicker>
+                <ng-datepicker class="form-control date" [(ngModel)]="selectedDate" name="date" [options]="options"></ng-datepicker>
                 <div class="language custom-select form-control apply-pointer">
                   <p (click)="openDropdown('language')">{{dropDownValues.language.name}}</p>
                   <ul *ngIf="dropDownController.language!='false'" class="select-items select-hide">

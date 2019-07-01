@@ -3,7 +3,7 @@
 }
 .faq-box .panel-group .panel {
     border: none;
-    margin: 0 0 15px;
+    margin: 0 0 18px;
     border-radius: 0;
     background: transparent;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
@@ -55,39 +55,42 @@
     letter-spacing: 0.5px;
     border: none !important;
 }
+@media (max-width: 991px) {
+    .faq-box .panel-default .panel-heading a {
+        font-size: 14px;
+    }
+}
 @media (max-width: 767px) {
     .faq-section {
-                   padding: 0 0 10px;          
+        padding: 0 0 10px;          
     }
     .faq-box .panel-group .panel {
-                   margin: 0 0 10px;
+        margin: 0 0 10px;
     }
     .faq-box .panel-default .panel-heading a {
-                   font-size: 15px;
-                   line-height: 1.4;
-                   letter-spacing: 0.5px;
-                   padding: 10px 25px 10px 10px;
+        line-height: 1.4;
+        letter-spacing: 0.5px;
+        padding: 10px 30px 10px 10px;
     }
     .faq-box .panel-default .panel-heading a::after {
-                   right: 10px;
-                   font-size: 20px;
+        right: 10px;
+        font-size: 20px;
     }
     .faq-box .panel-body {
-                   font-size: 14px;
-                   padding: 10px;
+        font-size: 14px;
+        padding: 10px;
     }
 }
 @media (max-width: 480px) {
     .faq-box .panel-default .panel-heading a {
-                   font-size: 14px;
-                   line-height: 1.3;
-                   padding: 10px 22px 10px 10px;
+        line-height: 1.3;
     }
     .faq-box .panel-default .panel-heading a::after {
-                   right: 8px;
-                   font-size: 18px;
+        right: 8px;
+        font-size: 18px;
+        top: 6px;
     }
     .faq-box .panel-body {
-                   font-size: 13px;
+        font-size: 13px;
     }
 }

@@ -2,7 +2,8 @@
     padding: 15px 0 30px;
 }
 .guide-details h1 i {
-    font-size: 18px;
+    font-size: 16px;
+    margin: 0 2px;
     color: #cecdcd;
 }
 .guide-details h1 i.rated {
@@ -109,7 +110,7 @@
 /* book now end */
 .guide-details .guide-pic.slick-slider {
     position: relative;
-    margin: -106px -20px 0;
+    margin: -100px -20px 0;
 }
 .guide-details .guide-pic.slick-slider img {
     width: 100%;
@@ -182,14 +183,12 @@
     border: 1px solid #979797;
 }
 .guide-details .other-packages .slick-dots li.slick-active button {
-    width: 16px;
-    height: 16px;
     background: #18afc4;
-    margin: -3px 2px 0 2px;
     border: 1px solid #18afc4;
 }
 .guide-details .guide-box {
     position: relative;
+    margin-top: 15px;
 }
 .guide-details .guide-box .add-cursor-pointer{
    cursor: pointer;;
@@ -204,11 +203,10 @@
     position: absolute;
 }
 .guide-details .guide-inner-box {
-    min-height: 147px;
+    min-height: 142px;
     background: #ffffff;
     margin-bottom: 20px;
     padding: 15px 20px 20px;
-    font-size: 16px;
 }
 .guide-details .guide-inner-box p,
 .guide-details .guide-inner-box span {
@@ -354,7 +352,7 @@
 
 .combo-banner .slick-dots {
     padding: 0;
-    z-index: 1;
+    z-index: 0;
     height: 18px;
     margin: -32px 0 0;
     list-style: none;
@@ -403,7 +401,6 @@
         line-height: 1.45;
     }
     .guide-details .guide-right-box h3 {
-        font-size: 16px;
         margin: 3px 0;
     }
     .guide-details .guide-right-box h3 span {
@@ -418,13 +415,22 @@
         min-height: 1px;
         margin: 0 15px;
     }
+    .guide-details .guide-box .button1 {
+        max-width: 36%;
+    }
+    .guide-details .guide-box {
+        margin-top: 10px;
+    }
+    .guide-details .guide-pic.slick-slider {
+        margin: -55px -20px 0;
+    }
 }
 @media (max-width: 767px) {
     .guide-details {
         padding: 15px 0 0;
     }
     .guide-details h1 i {
-        font-size: 15px;
+        font-size: 13px;
     }
     .guide-details .package-box {
         margin: 0 5px 10px;
@@ -452,10 +458,25 @@
         margin-bottom: 15px;
     }
     .guide-details .guide-box .button1 {
+        font-size: 14px;
+        line-height: 20px;
+        padding: 5px 15px;
         margin: 5px 0;
-        width: 100%;
+        width: 60%;
         max-width: 100%;
         position: static;
+    }
+    .guide-details .guide-right-box h3 {
+        font-size: 14px;
+    }
+    .guide-details .guide-pic.slick-slider {
+        margin: -55px -20px 0;
+    }
+    .guide-details .guide-box .heading5 {
+        font-size: 15px;
+    }
+    .guide-details .guide-box .heading5 span {
+        font-size: 13px;
     }
     .download-app-now .modal-dialog {
         width: 60%;
@@ -485,6 +506,16 @@
         font-size: 14px;
     }
 }
+@media (max-width: 640px) {
+    .guide-details .guide-pic.slick-slider {
+        margin: -35px -20px 0;
+    }
+}
+@media (max-width: 560px) {
+    .guide-details .guide-pic.slick-slider {
+        margin: -15px -20px 0;
+    }
+}
 @media (max-width: 480px) {
     .guide-details .guide-box {
         width: 100%;
@@ -492,19 +523,22 @@
         margin-bottom: 10px;
         text-align: left !important;
     }
-    .download-app-now .modal-dialog {
-        width: 90%;
+    .guide-details .guide-pic.slick-slider {
+        margin: -80px -20px 0;
+    }
+    .guide-details .guide-box .button1 {
+        width: 100%;
     }
 }
 header.combo-header {
     position: static;
 }
 .bread-crumb {
-    font-size: 16px;
+    font-size: 14px;
     color: #333333;
+    padding: 15px 0;
     font-weight: normal;
     line-height: normal;
-    padding: 15px 0;
 }
 .bread-crumb a {
     color: #333333;
@@ -513,6 +547,7 @@ header.combo-header {
 .bread-crumb span.selected {
     font-weight: 500;
 }
+
 
 /* login pop */
 .not-login .modal-dialog {

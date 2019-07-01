@@ -7,7 +7,7 @@
     pointer-events: none;
 }
 .signup h1 {
-    font-size: 30px;
+    font-size: 28px;
     color: #ffffff;
     font-weight: 500;
     line-height: 1.3;
@@ -43,7 +43,7 @@
     box-shadow: 0 2px 8px 2px rgba(255, 255, 255, 0.5);
 }
 .signup .signup-box h2 {
-    font-size: 24px;
+    font-size: 22px;
     color: #333333;
     font-weight: 500;
     line-height: normal;
@@ -70,7 +70,7 @@
     text-align: center;
 }
 .signup .signup-box .image-box img {
-    width: 110px;
+    width: 100px;
 }
 .signup .signup-box .content-box {
     font-size: 16px;
@@ -117,12 +117,12 @@
 .signup .signup-box .content-box .counts {
     top: 0;
     left: 0;
-    width: 42px;
-    height: 42px;
-    font-size: 28px;
+    width: 32px;
+    height: 32px;
+    font-size: 18px;
     color: #18afc4;
     font-weight: normal;
-    line-height: 36px;
+    line-height: 1.6;
     position: absolute;
     border-radius: 50%;
     text-align: center;
@@ -162,7 +162,7 @@
     background: url("../../../assets/images/heading-line.png") no-repeat center bottom / 100% auto;
 }
 .signup .bottom img {
-    width: 200px;
+    width: 150px;
     border-radius: 7px;
     margin: 10px 0 15px;
     border: 1px solid #ffffff;
@@ -179,10 +179,10 @@
 }
 @media (max-width: 1199px) {
     .signup .bottom img {
-        width: 160px;
+        width: 130px;
     }
     .signup h1 {                      
-        font-size: 25px;
+        font-size: 26px;
         padding-bottom: 20px;
     }
     .signup .signup-box h2 {
@@ -217,13 +217,16 @@
     }
 }
 @media (max-width: 767px) {
+    .signup .layer {
+        padding: 30px 0 15px;
+    }
     .signup h1 {
         font-size: 20px;
         margin: 10px 0 15px;
     }
     .signup .signup-box {
         min-height: auto;
-        margin: 40px 0 50px;
+        margin: 50px 0 60px;
         padding: 15px 20px 20px;
     }
     .signup .signup-box h2 {
@@ -282,10 +285,9 @@
         font-size: 16px;
     }
     .signup .signup-box .content-box .counts {
-        width: 32px;
-        height: 32px;
-        font-size: 20px;
-        line-height: 25px;
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
     }
     .signup .signup-box .content-box ul li {
         padding: 1px 0 1px 5px;
@@ -353,7 +355,7 @@
     font-weight: normal;
 }
 .contact .form-control {
-    font-size: 18px;
+    font-size: 15px;
     color: #666666;
     height: 44px;
     padding: 0 15px;
@@ -423,7 +425,7 @@
 }
 @media (max-width: 767px) {
     .contact {                          
-        padding: 0 0 20px;
+        padding: 20px 0 25px;
     }
     .contact .form {
         margin-top: 40px;
@@ -456,10 +458,8 @@
 @media (max-width: 480px) {
     .contact .form-control {
         font-size: 14px;
-        height: 32px;
         padding: 0 10px;
         outline: none !important;
-        line-height: 32px;
     }
     .contact .form-control::-webkit-input-placeholder { /* Chrome/Opera/Safari */
         height: 32px;

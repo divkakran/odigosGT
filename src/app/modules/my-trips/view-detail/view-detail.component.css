@@ -1,5 +1,5 @@
 .main-listing {
-    padding: 0 0 50px;
+    padding: 0 0 25px;
     position: relative;
 }
 @media (min-width: 768px) {
@@ -126,6 +126,9 @@
     -webkit-transition: translateY(-50%);    
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+    .main-listing {
+        padding: 0 0 20px;
+    }
     .main-listing .detail-box .pending-trips-detail {
         font-size: 14px;
     }
@@ -139,6 +142,14 @@
     .main-listing .detail-box .guide-desc {
         font-size: 13px;
         margin-top: 10px;
+    }
+    .main-listing .guide-detail::before {
+        left: 15px;
+        width: 93%;
+    }
+    .main-listing .guide-detail .button6,
+    .main-listing .guide-detail .button7 {
+        padding: 5px 7px;
     }
 }
 @media (max-width: 767px) {
@@ -163,9 +174,23 @@
         padding: 8px 0 0;
         margin-top: 10px;
     }
+    .main-listing .guide-detail::before {
+        width: 93%;
+    }
 }
 @media (max-width: 480px) {
     .detail-box {
         width: 90%;
+    }
+    .main-listing .guide-detail::before {
+        width: 89%;
+    }
+}
+@media (min-width: 361px) and (max-width: 480px) {
+    .main-listing .listing-right h4 {
+        margin: 15px 0 10px;
+    }
+    .main-listing .guide-detail::before {
+        width: 91%;
     }
 }

@@ -18,6 +18,7 @@ ng-datepicker::ng-deep .ngx-datepicker-container .ngx-datepicker-input{
     background: none !important;
     text-decoration: none !important;
     width: auto !important;
+    cursor: pointer;
 } 
 ng-datepicker::ng-deep .ngx-datepicker-container .ngx-datepicker-input::-webkit-input-placeholder {
     color: #333333 !important;

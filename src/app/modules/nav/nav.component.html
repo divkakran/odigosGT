@@ -11,7 +11,7 @@
   </div>
 
   <!-- main menu -->  
-  <div class="col-sm-6 header-left">
+  <div class="col-md-6 col-sm-4 header-left">
     <div class="navbar">
       <div id="mySidepanel" class="sidepanel">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()" (click)="removeMenuClass()"><img src="{{baseImageUrl+'close-icon.png'}}" width="15" alt="x" class="img-responsive"></a>
@@ -63,13 +63,24 @@
         </div>
         <ul *ngIf="searchList" class="search-listing" [ngStyle]="{'display':searchList.length>0 ? 'block' : 'none' }">
           <li class="apply-pointer" *ngFor="let item of searchList">
-            <a (click)="searchTripListing(item)">{{item}}</a>
+            <a (click)="searchTripListing(item)" [routerLink]="">{{item}}</a>
           </li>
         </ul>
       </div>
+
+      <!-- testing dropdown -->
+      <!-- <div class="dropdown">
+          <button class="btn btn-primary dropdown-toggle"  data-toggle="dropdown">
+            <input type="text" name="key" [(ngModel)]="keyWord" (keyup)="keywordSearchKeyUpEvent()" placeholder="eeee"> </button>
+            <ul class="dropdown-menu">
+              <li *ngFor="let item of searchList"><a (click)="searchTripListing(item)" [routerLink]="">{{item}}</a></li>
+            </ul>
+          </div> -->
+        
+      <!-- testing dropdown -->
     </div>
   </div>
-  <div class="col-sm-6 top-link hidden-xs">
+  <div class="col-md-6 col-sm-8 top-link hidden-xs">
     <!-- <a routerLink="India-heritage-walk-festival"><img src="{{baseImageUrl+'ihwf-logo.png'}}" class="img-responsive" width="63" alt="ihwf"></a> -->
     <a routerLink="/tour-guides">Meet Our Guides</a><a routerLink="/become-guide">Become A Guide</a>
 

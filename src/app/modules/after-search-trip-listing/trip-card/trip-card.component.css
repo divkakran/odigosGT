@@ -1,12 +1,12 @@
 .main-listing {
-	padding: 0 0 50px;
+	padding: 0 0 25px;
 	position: relative;
 }
 .disableButtonEvent{
 	pointer-events: none;
 }
 .main-listing .listing {
-	margin-top: 30px;
+	margin : 0 0 30px;
 	position: relative;
 	border-radius: 4px;
 	background: #ffffff;
@@ -113,6 +113,7 @@
 .main-listing .listing-right i {
 	font-size: 14px;
 	color: #e6e6e6;
+	margin-right: 4px;
 }
 .main-listing .listing-right i.rated {
 	color: #fed953;
@@ -293,12 +294,9 @@
 .main-listing .listing .cancelled-trip {
 	color: #f44336;
 }
-.main-listing.guideList .listing {
+/* .main-listing.guideList .listing { my changes
     margin-top: 50px;
-}
-.main-listing.guideList .listing {
-    margin-top: 50px;
-}
+} */
 .main-listing.guideList .details {
     font-size: 13px;
     color: #18afc4;
@@ -378,8 +376,7 @@
     padding: 8px 0 9px;
     border-radius: 0px;
     margin-left: -5px;
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
+    border-radius: 4px; /*my change*/
     border: 1px solid #f3f2f2;
     box-shadow: none;
 	outline: none !important;
@@ -419,6 +416,9 @@
 }
 /*changes end*/
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	.main-listing {
+        padding: 0 0 20px;
+    }
 	.main-listing .listing-left .guide-fee {
 		font-size: 14px;
 		padding: 4px;
@@ -443,7 +443,7 @@
 	}
 	.main-listing .listing-right h4 {
 		font-size: 14px;
-		margin: 10px 0 5px;
+		margin: 13px 0 8px;
 	}
 	.main-listing .listing-right h4 span {
 		font-size: 12px;
@@ -499,13 +499,21 @@
 		font-size: 13px;
 		margin-top: 10px;
 	}
+	.main-listing .guide-detail::before {
+        left: 15px;
+        width: 93%;
+    }
+    .main-listing .guide-detail .button6,
+    .main-listing .guide-detail .button7 {
+        padding: 5px 7px;
+    }
 }
 @media (max-width: 767px) {
 	.main-listing {
 		padding: 0 0 20px;
 	}
 	.main-listing .listing {
-		margin-top: 15px;
+		margin: 0 0 15px;
 		padding: 10px 10px 0;
 	}	
 	.main-listing .listing-left a::before {
@@ -527,10 +535,23 @@
 		left: -10px;
 		right: -10px;
 	}
+	.main-listing .guide-detail::before {
+        left: 15px;
+        width: 95%;
+    }
+    .main-listing .listing-right h4 {
+        margin: 15px 0 10px;
+    }
+	.main-listing.guideList .guideButtonNormal.btn,
+	.main-listing.guideList .btn.guideButtonBooked,
+	.main-listing.guideList .button7 {
+		width: 50%;
+		margin: 0 -2px 0 0 !important;
+	}
 }
 /*changes start*/
 .main-listing.guideList .listing-right h4 span {
-	display: inline-block;
+	display: block; /*my changes*/
 	padding-right: 8px;
 }
 .textRight {
@@ -567,12 +588,9 @@
 		font-size: 12px;
 	}
 	.main-listing .listing-right h4 {
-		font-size: 16px;
-		color: #666666;
-		font-weight: 500;
-		margin: 15px 0 20px;
-		line-height: normal;
-	}
+        font-size: 14px;
+        margin: 15px 0 10px;
+    }
 	.main-listing .listing-right h4 span {
 		font-size: 12px;
 	}
@@ -604,6 +622,9 @@
 	.main-listing .listing .request-pending {
 		font-size: 12px;
 	}
+	.main-listing .guide-detail::before {
+        width: 93%;
+    }
 }
 @media (max-width: 480px) {
 	.main-listing .listing-left {
@@ -625,7 +646,7 @@
 	}
 	.main-listing .listing-right h4 {
 		font-size: 13px;
-		margin: 10px 0 5px;
+		margin: 12px 0 5px;
 	}
 	.main-listing .listing-right .time-remain {
 		font-size: 10px;
@@ -657,17 +678,29 @@
 	.main-listing.guideList .guideButtonNormal.btn,
 	.main-listing.guideList .btn.guideButtonBooked,
 	.main-listing.guideList .button7 {
-		width: 130px;
 		font-size: 12px !important;
 	}
+	.main-listing .guide-detail::before {
+        width: 89%;
+    }
+	.main-listing .listing-left .guide-fee { /*my changes*/
+		font-size: 12px;
+	}
+}
+@media (min-width: 361px) and (max-width: 480px) {
+    .main-listing .listing-right h4 {
+        margin: 15px 0 10px;
+    }
+    .main-listing .guide-detail::before {
+        width: 91%;
+    }
 }
 .bread-crumb {
 	font-size: 14px;
 	color: #333333;
-	padding: 15px 0 0;
+	padding: 15px 0;
 	font-weight: normal;
 	line-height: normal;
-	margin-bottom: -20px;
 }
 .bread-crumb a {
 	color: #18afc4;	
@@ -682,13 +715,11 @@
 @media (max-width: 767px) {
 	.bread-crumb {
 		font-size: 13px;
-		margin-bottom: -10px;
 	}
 }
 @media (max-width: 480px) {
 	.bread-crumb {
 		font-size: 12px;
-		margin-bottom: -10px;
 	}
 }
 

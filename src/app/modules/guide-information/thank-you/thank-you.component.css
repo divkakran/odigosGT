@@ -36,6 +36,7 @@
     color: #999999;
     font-weight: normal;
     line-height: 1.2;
+    margin: 0 0 23px;
     text-align: center;
 }
 .booking-thankyou p span {
@@ -43,7 +44,7 @@
     color: #666666;
     line-height: normal;
     display: block;
-    padding-bottom: 5px;
+    padding: 5px 0 10px;
 }
 @media (max-width: 767px) {
     .booking-thankyou .booking-thankyou-inner {

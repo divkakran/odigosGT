@@ -14,7 +14,7 @@
 }
 .support form {
     width: 70%;
-    padding: 40px 20px 30px;
+    padding: 30px 20px;
     margin: 0 auto;
 }
 .support form h3 {
@@ -100,7 +100,7 @@
 .support form .btn {
     font-size: 14px;    
     font-weight: 500;
-    margin-top: 10px;
+    margin-top: -20px;
     letter-spacing: 0;
 }
 .support .small-box {
@@ -136,6 +136,9 @@
     }
     .support .form-group {
         margin-bottom: 10px;
+    }
+    .support form .btn {
+        margin-top: 10px;
     }
 }
 @media (max-width: 480px) {

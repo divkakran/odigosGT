@@ -15,11 +15,11 @@
             <h3><a class="apply-pointer">{{item.guide_name.length> 21 ? (item.guide_name | slice:0:21)+'...' : item.guide_name }}</a></h3>
             <i *ngFor="let i of [1,2,3,4,5]" [ngClass]="{'rated': i<=item.guide_rating}" class="fa fa-star" aria-hidden="true"></i> 
             <div class="guide-detail row">
-              <div class="col-xs-12 col-sm-8">
+              <div class="col-sm-8 col-xs-6">
                 <h4><span>Tour</span>{{item.tour_name.length>21 ? (item.tour_name | slice:0:21)+'...' : item.tour_name}}</h4>
                 <!--<a class="btn button6 text-uppercase" id="details">View Details</a> -->                     
               </div>
-              <div class="col-xs-12 col-sm-4 textRight">
+              <div class="col-sm-4 col-xs-6 textRight">
                 <h4 class="brown"><span>Date</span>{{item.tour_date}}</h4>                      
                 <!--<a href="#" class="btn button7 text-uppercase" data-toggle="modal" data-dismiss="modal" data-target="#RequestNow">Request Now</a>-->
               </div>
@@ -52,7 +52,7 @@
         </div> 
       </div>
     </div>
-    <div class="text-center load-more-button" *ngIf="data"><br><br>
+    <div class="text-center load-more-button" *ngIf="data"><br><br class="hidden-xs">
       <button *ngIf="totalCount > data.length" [ngClass] = "{'setDisable':buttonDisable}" class="btn button3" (click)="loadMoreTrips()" [disabled]="buttonDisable">Load More...</button>
     </div>
   </div>

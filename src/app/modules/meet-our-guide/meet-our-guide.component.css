@@ -147,18 +147,6 @@
  }
  /* end */
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
-    /* .find-guides .guide-detail .text-left {
-        width: 50%;
-    }
-    .find-guides .guide-detail .text-right {
-        width: 100%;
-        float: none;
-        clear: both;
-        text-align: left;
-    } */
-    .find-guides .guide-detail .text-right {
-        padding: 0;
-    }
     .find-guides .guide-detail .text-right .button3 {
         font-size: 12px;
         padding: 4px 8px;
@@ -173,13 +161,15 @@
     .find-guides .listing-left .guide-fee {
         font-size: 14px;
         padding: 5px;
+        margin-top: 15px;
     }
     .find-guides .listing-left {
         width: 20%;
+        padding-bottom: 15px;
     }
     .find-guides .listing-right {
         width: 76%;
-        padding-bottom: 10px;
+        padding-bottom: 15px;
     }
     .find-guides .listing-right h3 {
         font-size: 14px;
@@ -189,6 +179,12 @@
     }
     .find-guides .certified-badge img {
         width: 120px;
+    }
+    .find-guides .listing-right .shortnote span {
+        margin-bottom: 5px;
+    }
+    .find-guides .listing-right i {
+        margin-top: 5px;
     }
 }
 @media (max-width: 991px) {
@@ -213,6 +209,14 @@
     .find-guides .guide-detail .text-right .button3 {
         font-size: 12px;
         padding: 4px 8px;
+        text-decoration: none;
+    }
+    .find-guides .listing-right .shortnote span {
+        margin-bottom: 5px;
+    }
+    .find-guides .listing-left,
+    .find-guides .listing-right {
+        padding-bottom: 15px;
     }
 }
 @media (max-width: 640px) {
@@ -233,6 +237,7 @@
     .find-guides .listing-left .guide-fee {
         font-size: 14px;
         padding: 5px;
+        margin-top: 15px;
     }
     .find-guides .listing-right h4 {
         font-size: 14px;
@@ -257,7 +262,6 @@
         width: 100%;
         float: none;
         clear: both;
-        text-align: left;
     }
 }
 .guide-details-banner {

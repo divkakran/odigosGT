@@ -11,6 +11,11 @@
 .payment-thankyou .success-img {    
     width: 56px;
 }
+@media (max-width: 991px) {
+    .payment-thankyou .success-img {    
+        width: 45px;
+    }
+}
 @media (max-width: 767px) {
     .payment-thankyou .payment-thankyou-inner {
         font-size: 16px;
@@ -18,5 +23,8 @@
     }
     .payment-thankyou .success-img {
         width: 38px;
+    }
+    .payment-thankyou .button3 {
+        margin-top: -20px;
     }
 }

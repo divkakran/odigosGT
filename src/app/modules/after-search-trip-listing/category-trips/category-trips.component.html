@@ -2,7 +2,7 @@
   <div class="container">
     <h2 class="main_heading">{{tourCategory.cat_name_display}}</h2>
     <div class="row">
-      <div class="col-sm-4" *ngFor="let tourList of tourCategory.cat_list ; let i = index" (click)="viewDetail(tourList)">
+      <div class="col-sm-4 col-xs-6 trending-box-outer" *ngFor="let tourList of tourCategory.cat_list ; let i = index" (click)="viewDetail(tourList)">
         <a href="/tour-guide/{{tourList.web_url}}/{{tourList.place_url}}"><div class="trending-box" *ngIf="i<3"  (click)= "viewDetail(tourList)"> <a class="apply-pointer">
           <img *ngIf="tourList.package_image!=''" [src]=tourList.package_image alt="Trending Destinations" class="img-responsive">
           <img *ngIf="tourList.package_image==''" src="{{baseImageUrl+'no-img.png'}}" alt="Trending Destinations" class="img-responsive">

@@ -94,9 +94,6 @@
     border: 1px solid #ffffff;
 }*/
 @media (max-width: 1199px) {
-    .main-banner .banner-caption {
-        width: 97%;
-    }
     .main-banner .banner-caption h1 {
         font-size: 20px;
     }
@@ -156,6 +153,11 @@
     line-height: 1.5;
     letter-spacing: 0.5px;
     color: rgba(51, 51, 51, 0.8);
+}
+@media (max-width: 991px) {
+    .about p {
+        font-size: 18px;
+    }    
 }
 @media (max-width: 767px) {
     .about {
@@ -278,7 +280,7 @@
     }
     .trending .trending-box {
         width: 90%;
-        margin: 15px auto 30px;
+        margin: 15px auto 0;
     }
     .trending .trending-box:hover {
         transform: scale(1.05);
@@ -289,12 +291,20 @@
         box-shadow: 0 2px 5px #cad5d5;
     }
     .trending .view-all {
-        margin: 0px 0 20px;
+        margin: 20px 0 0;
     }
 }
-@media (max-width: 480px) {
+@media (max-width:580px) {
+    .trending-outer {
+        float: none;
+        width: 100%;
+    }
+    .trending .trending-inner .heading1 {
+        min-height: auto;
+    }
     .trending .trending-box {
-        width: 90%;
+        max-width: 90%;
+        margin: 30px auto 0;
     }
 }
 /*----------------------Download App-------------------------*/
@@ -430,8 +440,8 @@
         padding: 30px 0 20px;
     }
     .why-choose-us img {
-        height: 80px;
-        margin: 10px 0;
+        height: 70px;
+        margin: 10px 0 0;
     }
     .why-choose-us p {
         font-size: 17px;
@@ -439,19 +449,16 @@
 }
 @media (max-width: 767px) {
     .why-choose-us img {
-        height: 70px;
-        margin: 20px 0 -10px;
-    }
-    .why-choose-us p {
-        font-size: 16px;
+        height: 60px;
     }
 }
 @media (max-width: 480px) {
     .why-choose-us img {
-        height: 55px;
+        height: 50px;
     }
     .why-choose-us p {
         font-size: 15px;
+        margin-bottom: 25px;
     }
 }
 /*------------------------Contact----------------------------*/

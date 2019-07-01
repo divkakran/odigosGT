@@ -5,11 +5,15 @@ import { Injectable } from "@angular/core";
 export class DataPassingService {
     guideDetail   = new Subject<Object>();
     paymentDetail = new Subject<Object>();
+    footerSetting = new Subject<Object>();
     constructor(){}
     public sendGuideDetail(data){
         this.guideDetail.next(data);
     }
     public sendPaymentDetail(data){
         this.paymentDetail.next(data);
+    }
+    public footerFlagSet(){
+        this.footerSetting.next({flag: false});
     }
 }

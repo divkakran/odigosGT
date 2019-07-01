@@ -8,7 +8,6 @@
             <h4 [innerHTML]="thankMsg"></h4>
             <p><span>*Disclaimer*</span>{{disclaimer.length > discLength ? (disclaimer | slice:0:discLength)+'....' : disclaimer}}
               <a (click)="readMoreReadLess()" class="apply-pointer" style="text-decoration:underline;">{{itineryText}}</a></p>
-            <br/>
             <a (click)="dashboard()" class="btn button9 text-uppercase">Dashboard</a> &nbsp; 
             <a class="apply-pointer" routerLink="/my-trips" class="btn button9 text-uppercase">My Trips</a>
             <p></p>

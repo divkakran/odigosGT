@@ -139,7 +139,8 @@
 .my-profile form .button {
     font-size: 14px;    
     font-weight: 500;    
-    margin-top: 30px;
+    margin: 20px 15px 0 0;
+    min-width: 195px;
 }
 .my-profile .small-box {
     width: 45%;
@@ -160,7 +161,7 @@
     position: relative;
     padding-right: 25px;
     cursor: pointer;
-    margin: 3px 10px 3px 0;
+    margin: 8px 10px 8px 0;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
@@ -175,6 +176,7 @@
 .my-profile .checkmark {
     position: absolute;
     top: -2px;
+    right: 0;
     width: 24px;
     height: 24px;
     background: transparent;
@@ -227,9 +229,9 @@
         padding: 20px 0;
     }
     .my-profile form {    
-        padding: 20px 20px 0 0; 
+        padding: 10px 20px 0 0; 
     }
-    .my-profile form .btn {    
+    .my-profile form .button {    
         margin-top: 20px;
     }
     .my-profile label {
@@ -241,25 +243,32 @@
     }
     .my-profile .radio-wrap {
         font-size: 14px;
-        padding-right: 25px;
+        padding-right: 20px;
+        margin: 5px 6px 5px 0;
     }
     .my-profile .checkmark {
         top: 1px;
-        width: 20px;
-        height: 20px;
+        width: 19px;
+        height: 19px;
     }
     .my-profile .checkmark i {
-        width: 11px;
-        height: 11px;
+        width: 9px;
+        height: 9px;
     }
     .my-profile .small-box {
+        width: 40%;
+        float: left;
         margin-bottom: 10px;
     }
     .my-profile select.form-control {
         background: url("../../../assets/images/select-arrow.png") no-repeat right center / 12px !important;
     }
+    .my-profile .full-box {
+        width: 100%;
+        float: none;
+    }
 }
-@media (max-width: 560px) {
+@media (max-width: 640px) {
     .my-profile .my-profile-box,
     .my-profile .my-profile-form,
     .my-profile .small-box {
@@ -285,10 +294,10 @@
         bottom: 0;
         position: absolute;
     }
-    .my-profile form .btn {
+    .my-profile form .button {
         font-size: 14px;
         padding: 5px 10px;        
-        margin-top: 10px;
+        margin: 10px 10px 0 0;
     }
     .my-profile .radio-wrap {
         padding-right: 20px;
@@ -297,6 +306,10 @@
 @media (max-width: 480px) {
     .my-profile .form-box .form-control {
         font-size: 14px;
+    }
+    .my-profile form .button {
+        width: 100%;       
+        margin: 10px 0 0;
     }
 }
 

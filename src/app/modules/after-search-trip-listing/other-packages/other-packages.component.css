@@ -1,5 +1,5 @@
 .main-listing {
-	padding: 0 0 50px;
+	padding: 0 0 25px;
 	position: relative;
 }
 .textRight {
@@ -17,7 +17,7 @@
    margin-top: 10px;
 }
 .main-listing .listing {
-	margin-top: 30px;
+	margin : 0 0 30px;
 	position: relative;
 	border-radius: 4px;
 	background: #ffffff;
@@ -395,6 +395,9 @@
 	border: 1px solid #f3f2f2;
 }
 @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) {
+	.main-listing {
+        padding: 0 0 20px;
+    }
 	.main-listing .listing-left .guide-fee {
 		font-size: 14px;
 		padding: 5px;
@@ -419,7 +422,7 @@
 	}
 	.main-listing .listing-right h4 {
 		font-size: 14px;
-		margin: 10px 0 5px;
+		margin: 13px 0 8px;
 	}
 	.main-listing .listing-right h4 span {
 		font-size: 12px;
@@ -467,13 +470,21 @@
 		font-size: 13px;
 		margin-top: 10px;
 	}
+	.main-listing .guide-detail::before {
+        left: 15px;
+        width: 93%;
+    }
+    .main-listing .guide-detail .button6,
+    .main-listing .guide-detail .button7 {
+        padding: 5px 7px;
+    }
 }
 @media (max-width: 767px) {
 	.main-listing {
 		padding: 0 0 20px;
 	}
 	.main-listing .listing {
-		margin-top: 15px;
+		margin: 0 0 15px;
 		padding: 10px 10px 0;
 	}	
 	.main-listing .listing-left a::before {
@@ -496,7 +507,7 @@
 		right: -10px;
 	}
 	.main-listing.guideList .listing-right h4 span {
-        display: inline-block;
+        display: block;
         padding-right: 8px;
     }
     .textRight {
@@ -510,6 +521,13 @@
     }    
     .main-listing.guideList .listing {
         padding-bottom: 10px;
+	}
+	.main-listing .guide-detail::before {
+        left: 15px;
+        width: 95%;
+    }
+    .main-listing .listing-right h4 {
+        margin: 15px 0 10px;
     }
 }
 @media (max-width: 640px) {
@@ -533,9 +551,9 @@
 		font-size: 12px;
 	}
 	.main-listing .listing-right h4 {
-		font-size: 14px;
-		margin: 10px 0 5px;
-	}
+        font-size: 14px;
+        margin: 15px 0 10px;
+    }
 	.main-listing .listing-right h4 span {
 		font-size: 12px;
 	}
@@ -567,6 +585,9 @@
 	.main-listing .listing .request-pending {
 		font-size: 12px;
 	}
+	.main-listing .guide-detail::before {
+        width: 93%;
+    }
 }
 @media (max-width: 480px) {
 	.main-listing .listing-left {
@@ -588,7 +609,7 @@
 	}
 	.main-listing .listing-right h4 {
 		font-size: 13px;
-		margin: 10px 0 5px;
+		margin: 12px 0 5px;
 	}
 	.main-listing .listing-right .time-remain {
 		font-size: 10px;
@@ -617,6 +638,17 @@
 	.main-listing .detail-box .pending-trips-detail li img {
 		width: 16px;
 	}
+	.main-listing .guide-detail::before {
+        width: 89%;
+    }
+}
+@media (min-width: 361px) and (max-width: 480px) {
+    .main-listing .listing-right h4 {
+        margin: 15px 0 10px;
+    }
+    .main-listing .guide-detail::before {
+        width: 91%;
+    }
 }
 
 /* book now css */

@@ -7,6 +7,7 @@ import { Encryption } from '../../helper/encryption';
 import { Toaster } from '../../helper/toaster';
 import { DatepickerOptions } from 'ng2-datepicker';
 import { Validations } from '../../helper/validations';
+import { DataPassingService } from '../../helper/dataPassingService';
 
 @Component({
   selector: 'app-after-search-trip-listing',
@@ -73,7 +74,7 @@ export class AfterSearchTripListingComponent implements OnInit {
     useEmptyBarTitle: false, // Defaults to true. If set to false then barTitleIfEmpty will be disregarded and a date will always be shown 
   };
   constructor(private httpCall: HttpCallService , private route: ActivatedRoute,
-    private router: Router , private encrypt: Encryption , private toastr: Toaster) { }
+    private router: Router , private dataPass: DataPassingService , private toastr: Toaster) { }
   
   ngOnInit() { 
     localStorage.removeItem('$trip_date');
