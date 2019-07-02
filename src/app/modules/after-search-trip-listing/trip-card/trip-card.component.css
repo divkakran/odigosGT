@@ -58,7 +58,7 @@
 	background: #e89c59;
 }
 .main-listing .listing-left .guide-fee {
-	font-size: 18px;
+	font-size: 16px;
 	color: #38b963;
 	font-weight: 500;
 	line-height: normal;
@@ -127,7 +127,7 @@
 }
 .main-listing .listing-right h4 span {
 	font-size: 14px;
-	display: block;
+	display: block !important;
 	margin-bottom: 3px;
 	font-weight: normal;
 }

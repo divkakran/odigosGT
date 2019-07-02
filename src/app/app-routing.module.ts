@@ -30,6 +30,7 @@ const routes: Routes = [
   {path: 'enquiry' , loadChildren: './modules/enquiry/enquiry.module#EnquiryModule'},
   {path: 'notifications' , loadChildren: './modules/notifications/notifications.module#NotificationsModule'},
   {path: 'trip-listing' , loadChildren: './modules/after-search-trip-listing/after-search-trip-listing.module#AfterSearchTripListingModule'},
+  {path: 'easy-booking' , loadChildren: './modules/easy-booking/easy-booking.module#EasyBookingModule'},
   {path: 'my-trips' , loadChildren: './modules/my-trips/my-trips.module#MyTripsModule' , canActivate: [RouteGuard]},
   {path: 'blog/:id'  , loadChildren: './modules/blog-redirection/blog-redirection.module#BlogRedirectionModule'},
   {path: 'blog'  , redirectTo: 'blog/'},

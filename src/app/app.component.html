@@ -1,4 +1,4 @@
 <!--The content below is only a placeholder and can be replaced.-->
-<app-nav></app-nav>
+<app-nav *ngIf="hideHeaderFooter"></app-nav>
 <router-outlet (activate)="onActivate($event)"></router-outlet>
 <app-footer *ngIf="showContent"></app-footer>

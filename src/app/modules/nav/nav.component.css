@@ -1,4 +1,3 @@
-/*--------------------------Header--------------------------*/
 /* downlaod start */
 app-notifications{
     
@@ -278,9 +277,11 @@ header.navbar-static-top.sticky {
 .top-link a:hover {
     color: #18afc4;
 }
+a .fa-bell-o,
 .top-link a .fa-bell-o {
     position: relative;
 }
+a span.badge.count,
 .top-link a span.badge.count {
     font-family: "HelveticaNeue";
     font-size: 10px;

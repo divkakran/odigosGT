@@ -103,7 +103,7 @@ $(document).ready(function(){
 	  $('body .overlay').remove();
   });
   $(window).scroll(function() {
-	if ($(this).scrollTop() > 80){
+	if ($(this).scrollTop() > 80 && window.location.pathname!="/easy-booking"){
 		$('header').addClass("sticky");
 		$('body').addClass("stick_body");	 
 	}

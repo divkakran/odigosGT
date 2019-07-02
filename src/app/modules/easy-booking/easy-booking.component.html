@@ -1,0 +1,102 @@
+<div class="touch-wrap" id="getInTouch">
+	<div class="row">
+    	<div class="col-md-5 touch-left">
+        	<div class="row">
+            	<div class="col-sm-12 touch-logo text-center">
+                	<a href=""><img src="{{baseImageUrl+'logo.png'}}" alt="Odigos"></a>
+                </div><!-- logo end -->
+                <div class="col-sm-12 touch-form">
+                	<h2 class="text-center">Easy Booking</h2>
+                	<h4 class="text-center">Our team will contact you soon</h4>
+                    <form name="touchForm"  (ngSubmit)="submitData(getInTouch.value)" #getInTouch="ngForm">
+                    	<span id="msg_span" ></span>
+                    	<div class="row">
+                        	<div class="col-sm-12 form-group">
+                                <input type="text" name="contact_name" autocomplete="off" [(ngModel)]="getInTouchObject.name" placeholder="Your Name" class="form-control" >
+                            </div>
+                        </div><!-- touchForm>row end -->
+                        <div class="row">
+                        	<div class="col-sm-6 form-group">
+                            	<input type="tel" name="contact_mobile" autocomplete="off" [(ngModel)]="getInTouchObject.mobile" onkeydown="return ( event.ctrlKey || event.altKey || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) || (95<event.keyCode && event.keyCode<106) || (event.keyCode==8) || (event.keyCode==9) || (event.keyCode>34 && event.keyCode<40) || (event.keyCode==46) )" placeholder="Mobile no." maxlength="10" class="form-control" >
+                            </div>
+                            <div class="col-sm-6 form-group">
+                            	<input type="text" name="contact_city" autocomplete="off" [(ngModel)]="getInTouchObject.city" placeholder="City" class="form-control" >
+                            </div>
+                        </div><!-- touchForm>row end -->
+                        <div class="row">
+                        	<div class="col-sm-12 form-group">
+                                <input type="email" name="contact_email" autocomplete="off" [(ngModel)]="getInTouchObject.email" placeholder="Email" class="form-control" >
+                            </div>
+                        </div><!-- touchForm>row end -->
+                        <div class="row">
+                        	<div class="col-sm-12 form-group">
+                            	<textarea name="contact_comments" placeholder="Type your message...."  [(ngModel)]="getInTouchObject.comment" class="form-control"></textarea>
+                            </div>
+                        </div><!-- touchForm>row end -->
+                        <div class="row">
+                        	<div class="col-sm-12">
+                                <button type="submit" name="btn_cont" id="touchSubmit" class="btn touch-btn" [disabled]="setButtonDisable">Submit</button>
+                            </div>
+                        </div><!-- touchForm>row end -->
+                    </form>
+                </div><!-- touch-form end -->                
+                <div class="col-sm-12 touch-download hidden-xs hidden-sm">
+                    <h3>Book your next adventure in just easy 3 steps.</h3>
+                    <h4>Download the App</h4>
+                    <p class="app-icon">
+                    <a href="https://itunes.apple.com/us/app/odigos-guides/id1389841153?ls=1&amp;mt=8">
+                        <img src="{{baseImageUrl+'app-store.png'}}" alt="App Store" class="img-responsive">
+                    </a> &nbsp; 
+                    <a href="https://play.google.com/store/apps/details?id=com.birdapps.odigostourist">
+                        <img src="{{baseImageUrl+'google-play.png'}}" alt="Google Play" class="img-responsive">
+                    </a>
+                    </p>
+                </div>
+            </div>
+        </div><!-- touch-left end -->
+        <div class="col-md-7 touch-right">
+        	<div class="touch-rOverlay"></div>
+            <div class="touch-rtext">
+                <h6>We Know Places</h6>
+                <h4>Book reliable tour guides and curated experiences</h4>
+                <ul>
+                	<li><strong>500+</strong> Guides</li>
+                    <li><strong>2000+</strong> Packages</li>
+                    <li><strong>50+</strong> Cities</li>
+                </ul>
+            </div>
+        </div><!-- touch-right end -->        
+        <div class="touch-bottom col-sm-12">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 touch-bottombox">
+                    <img src="{{baseImageUrl+'select-destination.png'}}" alt="Select Destination" class="img-responsive">
+                    <h3>Select Destination</h3>
+                    <p>Discover experiences in the places you visit</p>
+                    </div>
+                    <div class="col-md-4 touch-bottombox">
+                    <img src="{{baseImageUrl+'pick-guide.png'}}" alt="Pick a Guide" class="img-responsive">
+                    <h3>Pick a Guide</h3>
+                    <p>Book a guide & make the most of your trip</p>
+                    </div>
+                    <div class="col-md-4 touch-bottombox">
+                    <img src="{{baseImageUrl+'book-experience.png'}}" alt="Book your Experience" class="img-responsive">
+                    <h3>Book your Experience</h3>
+                    <p>Transform ordinary trips into extraordinary ones</p>
+                    </div>
+                </div><!-- row end -->
+            </div><!-- container end -->
+        </div><!-- touch-bottom end  -->
+        <div class="col-sm-12 touch-download hidden-md hidden-lg">
+            <h3>Book your next adventure in just easy 3 steps.</h3>
+            <h4>Download the App</h4>
+            <p class="app-icon">
+            <a href="https://itunes.apple.com/us/app/odigos-guides/id1389841153?ls=1&amp;mt=8">
+                <img src="{{baseImageUrl+'app-store.png'}}" alt="App Store" class="img-responsive">
+            </a> &nbsp; 
+            <a href="https://play.google.com/store/apps/details?id=com.birdapps.odigostourist">
+                <img src="{{baseImageUrl+'google-play.png'}}" alt="Google Play" class="img-responsive">
+            </a>
+            </p>
+        </div>
+    </div>
